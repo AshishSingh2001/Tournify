@@ -54,27 +54,30 @@ public class Home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
+        setMaximumSize(new java.awt.Dimension(1200, 500));
         setMinimumSize(new java.awt.Dimension(990, 500));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1200, 750));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         side_pane.setBackground(new java.awt.Color(23, 35, 51));
         side_pane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel17.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("TOURNIFY");
-        side_pane.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 90, 50));
+        side_pane.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 120, 50));
 
         jSeparator1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jSeparator1MouseClicked(evt);
             }
         });
-        side_pane.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 120, 10));
+        side_pane.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 170, 10));
 
-        kButton1.setText("Admin");
-        kButton1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        kButton1.setText("   Admin");
+        kButton1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         kButton1.setkAllowGradient(false);
         kButton1.setkBackGroundColor(new java.awt.Color(23, 35, 51));
         kButton1.setkHoverColor(new java.awt.Color(57, 62, 70));
@@ -84,10 +87,10 @@ public class Home extends javax.swing.JFrame {
                 kButton1ActionPerformed(evt);
             }
         });
-        side_pane.add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 260, -1, 40));
+        side_pane.add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 280, 270, 40));
 
         kButton2.setText("  Home");
-        kButton2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        kButton2.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         kButton2.setkAllowGradient(false);
         kButton2.setkBackGroundColor(new java.awt.Color(23, 35, 51));
         kButton2.setkHoverColor(new java.awt.Color(57, 62, 70));
@@ -97,11 +100,11 @@ public class Home extends javax.swing.JFrame {
                 kButton2ActionPerformed(evt);
             }
         });
-        side_pane.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 140, 190, 40));
+        side_pane.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 160, 290, 40));
 
         kButton3.setBorder(null);
-        kButton3.setText("Teams");
-        kButton3.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        kButton3.setText("   Teams");
+        kButton3.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         kButton3.setkAllowGradient(false);
         kButton3.setkBackGroundColor(new java.awt.Color(23, 35, 51));
         kButton3.setkHoverColor(new java.awt.Color(57, 62, 70));
@@ -111,10 +114,10 @@ public class Home extends javax.swing.JFrame {
                 kButton3ActionPerformed(evt);
             }
         });
-        side_pane.add(kButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 180, -1, 40));
+        side_pane.add(kButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 200, 270, 40));
 
-        kButton4.setText("  Players");
-        kButton4.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        kButton4.setText("    Players");
+        kButton4.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         kButton4.setkAllowGradient(false);
         kButton4.setkBackGroundColor(new java.awt.Color(23, 35, 51));
         kButton4.setkHoverColor(new java.awt.Color(57, 62, 70));
@@ -124,9 +127,9 @@ public class Home extends javax.swing.JFrame {
                 kButton4ActionPerformed(evt);
             }
         });
-        side_pane.add(kButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 220, -1, 40));
+        side_pane.add(kButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 240, 270, 40));
 
-        getContentPane().add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 500));
+        getContentPane().add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 850));
 
         jPanel2.setBackground(new java.awt.Color(71, 120, 197));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -163,27 +166,28 @@ public class Home extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(600, Short.MAX_VALUE)
+                .addContainerGap(814, Short.MAX_VALUE)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
-                .addGap(56, 56, 56)
+                .addGap(47, 47, 47)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(19, 19, 19))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 870, 50));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 1080, 80));
 
+        card.setPreferredSize(new java.awt.Dimension(830, 750));
         card.setLayout(new java.awt.CardLayout());
 
         player.setBackground(new java.awt.Color(255, 102, 102));
@@ -192,11 +196,11 @@ public class Home extends javax.swing.JFrame {
         player.setLayout(playerLayout);
         playerLayout.setHorizontalGroup(
             playerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
+            .addGap(0, 970, Short.MAX_VALUE)
         );
         playerLayout.setVerticalGroup(
             playerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
 
         card.add(player, "card4");
@@ -208,11 +212,11 @@ public class Home extends javax.swing.JFrame {
         Home.setLayout(HomeLayout);
         HomeLayout.setHorizontalGroup(
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
+            .addGap(0, 970, Short.MAX_VALUE)
         );
         HomeLayout.setVerticalGroup(
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
 
         card.add(Home, "card2");
@@ -223,11 +227,11 @@ public class Home extends javax.swing.JFrame {
         admin.setLayout(adminLayout);
         adminLayout.setHorizontalGroup(
             adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
+            .addGap(0, 970, Short.MAX_VALUE)
         );
         adminLayout.setVerticalGroup(
             adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
 
         card.add(admin, "card5");
@@ -236,16 +240,16 @@ public class Home extends javax.swing.JFrame {
         teams.setLayout(teamsLayout);
         teamsLayout.setHorizontalGroup(
             teamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
+            .addGap(0, 970, Short.MAX_VALUE)
         );
         teamsLayout.setVerticalGroup(
             teamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
 
         card.add(teams, "card3");
 
-        getContentPane().add(card, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 830, 450));
+        getContentPane().add(card, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 970, 800));
 
         pack();
         setLocationRelativeTo(null);
