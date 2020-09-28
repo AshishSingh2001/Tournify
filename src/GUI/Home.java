@@ -22,7 +22,7 @@ public class Home extends javax.swing.JFrame {
     JTabbedPane t = new JTabbedPane();
     public Home() {
         initComponents();
-       cd = (CardLayout)(card.getLayout());
+       cd = (CardLayout)(CardHolder.getLayout());
     }
 
     /**
@@ -34,176 +34,162 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        side_pane = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
+        NavBar = new javax.swing.JPanel();
+        LogoTournify = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        kButton1 = new keeptoo.KButton();
-        kButton2 = new keeptoo.KButton();
-        kButton3 = new keeptoo.KButton();
-        kButton4 = new keeptoo.KButton();
-        jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        card = new javax.swing.JPanel();
-        player = new javax.swing.JPanel();
+        HomeBtn = new keeptoo.KButton();
+        TeamsBtn = new keeptoo.KButton();
+        PlayersBtn = new keeptoo.KButton();
+        AdminBtn = new keeptoo.KButton();
+        TopBar = new javax.swing.JPanel();
+        SearchBar = new javax.swing.JTextField();
+        SearchIcon = new javax.swing.JLabel();
+        ExitIcon = new javax.swing.JLabel();
+        CardHolder = new javax.swing.JPanel();
         Home = new javax.swing.JPanel();
-        admin = new javax.swing.JPanel();
-        teams = new javax.swing.JPanel();
+        Players = new javax.swing.JPanel();
+        Teams = new javax.swing.JPanel();
+        Admin = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setLocationByPlatform(true);
-        setMaximumSize(new java.awt.Dimension(1200, 500));
+        setLocation(new java.awt.Point(360, 110));
         setMinimumSize(new java.awt.Dimension(990, 500));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1200, 750));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        side_pane.setBackground(new java.awt.Color(23, 35, 51));
-        side_pane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        NavBar.setBackground(new java.awt.Color(23, 35, 51));
+        NavBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel17.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("TOURNIFY");
-        side_pane.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 120, 50));
+        LogoTournify.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        LogoTournify.setForeground(new java.awt.Color(255, 255, 255));
+        LogoTournify.setText("TOURNIFY");
+        NavBar.add(LogoTournify, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 120, 50));
 
         jSeparator1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jSeparator1MouseClicked(evt);
             }
         });
-        side_pane.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 170, 10));
+        NavBar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 170, 10));
 
-        kButton1.setText("   Admin");
-        kButton1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        kButton1.setkAllowGradient(false);
-        kButton1.setkBackGroundColor(new java.awt.Color(23, 35, 51));
-        kButton1.setkHoverColor(new java.awt.Color(57, 62, 70));
-        kButton1.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
-        kButton1.addActionListener(new java.awt.event.ActionListener() {
+        HomeBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        HomeBtn.setText("  Home");
+        HomeBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        HomeBtn.setkAllowGradient(false);
+        HomeBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
+        HomeBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
+        HomeBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        HomeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kButton1ActionPerformed(evt);
+                HomeBtnActionPerformed(evt);
             }
         });
-        side_pane.add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 280, 270, 40));
+        NavBar.add(HomeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 150, 290, 60));
 
-        kButton2.setText("  Home");
-        kButton2.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        kButton2.setkAllowGradient(false);
-        kButton2.setkBackGroundColor(new java.awt.Color(23, 35, 51));
-        kButton2.setkHoverColor(new java.awt.Color(57, 62, 70));
-        kButton2.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
-        kButton2.addActionListener(new java.awt.event.ActionListener() {
+        TeamsBtn.setBorder(null);
+        TeamsBtn.setText("   Teams");
+        TeamsBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        TeamsBtn.setkAllowGradient(false);
+        TeamsBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
+        TeamsBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
+        TeamsBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        TeamsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kButton2ActionPerformed(evt);
+                TeamsBtnActionPerformed(evt);
             }
         });
-        side_pane.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 160, 290, 40));
+        NavBar.add(TeamsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 220, 270, 60));
 
-        kButton3.setBorder(null);
-        kButton3.setText("   Teams");
-        kButton3.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        kButton3.setkAllowGradient(false);
-        kButton3.setkBackGroundColor(new java.awt.Color(23, 35, 51));
-        kButton3.setkHoverColor(new java.awt.Color(57, 62, 70));
-        kButton3.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
-        kButton3.addActionListener(new java.awt.event.ActionListener() {
+        PlayersBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        PlayersBtn.setText("    Players");
+        PlayersBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        PlayersBtn.setkAllowGradient(false);
+        PlayersBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
+        PlayersBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
+        PlayersBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        PlayersBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kButton3ActionPerformed(evt);
+                PlayersBtnActionPerformed(evt);
             }
         });
-        side_pane.add(kButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 200, 270, 40));
+        NavBar.add(PlayersBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 290, 270, 60));
 
-        kButton4.setText("    Players");
-        kButton4.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        kButton4.setkAllowGradient(false);
-        kButton4.setkBackGroundColor(new java.awt.Color(23, 35, 51));
-        kButton4.setkHoverColor(new java.awt.Color(57, 62, 70));
-        kButton4.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
-        kButton4.addActionListener(new java.awt.event.ActionListener() {
+        AdminBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        AdminBtn.setText("   Admin");
+        AdminBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AdminBtn.setkAllowGradient(false);
+        AdminBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
+        AdminBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
+        AdminBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        AdminBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kButton4ActionPerformed(evt);
+                AdminBtnActionPerformed(evt);
             }
         });
-        side_pane.add(kButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 240, 270, 40));
+        NavBar.add(AdminBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 360, 270, 60));
 
-        getContentPane().add(side_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 850));
+        getContentPane().add(NavBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 850));
 
-        jPanel2.setBackground(new java.awt.Color(71, 120, 197));
-        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        TopBar.setBackground(new java.awt.Color(71, 120, 197));
+        TopBar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel2MouseDragged(evt);
+                TopBarMouseDragged(evt);
             }
         });
-        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        TopBar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel2MousePressed(evt);
+                TopBarMousePressed(evt);
             }
         });
 
-        jTextField1.setBackground(new java.awt.Color(123, 156, 225));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(null);
-        jTextField1.setCaretColor(new java.awt.Color(255, 255, 255));
-        jTextField1.setPreferredSize(new java.awt.Dimension(2, 20));
+        SearchBar.setBackground(new java.awt.Color(123, 156, 225));
+        SearchBar.setForeground(new java.awt.Color(255, 255, 255));
+        SearchBar.setBorder(null);
+        SearchBar.setCaretColor(new java.awt.Color(255, 255, 255));
+        SearchBar.setPreferredSize(new java.awt.Dimension(2, 20));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Search_18px.png"))); // NOI18N
+        SearchIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Search_18px.png"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("X");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        ExitIcon.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ExitIcon.setForeground(new java.awt.Color(255, 255, 255));
+        ExitIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ExitIcon.setText("X");
+        ExitIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                ExitIconMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(814, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout TopBarLayout = new javax.swing.GroupLayout(TopBar);
+        TopBar.setLayout(TopBarLayout);
+        TopBarLayout.setHorizontalGroup(
+            TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopBarLayout.createSequentialGroup()
+                .addContainerGap(812, Short.MAX_VALUE)
+                .addComponent(SearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
+                .addComponent(SearchIcon)
                 .addGap(47, 47, 47)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ExitIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        TopBarLayout.setVerticalGroup(
+            TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TopBarLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ExitIcon)
+                    .addComponent(SearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 1080, 80));
+        getContentPane().add(TopBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 1080, 80));
 
-        card.setPreferredSize(new java.awt.Dimension(830, 750));
-        card.setLayout(new java.awt.CardLayout());
-
-        player.setBackground(new java.awt.Color(255, 102, 102));
-
-        javax.swing.GroupLayout playerLayout = new javax.swing.GroupLayout(player);
-        player.setLayout(playerLayout);
-        playerLayout.setHorizontalGroup(
-            playerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 970, Short.MAX_VALUE)
-        );
-        playerLayout.setVerticalGroup(
-            playerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-        );
-
-        card.add(player, "card4");
+        CardHolder.setPreferredSize(new java.awt.Dimension(830, 750));
+        CardHolder.setLayout(new java.awt.CardLayout());
 
         Home.setBackground(new java.awt.Color(102, 102, 0));
         Home.setForeground(new java.awt.Color(255, 255, 255));
@@ -219,104 +205,119 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 800, Short.MAX_VALUE)
         );
 
-        card.add(Home, "card2");
+        CardHolder.add(Home, "card2");
 
-        admin.setBackground(new java.awt.Color(0, 153, 255));
+        Players.setBackground(new java.awt.Color(255, 102, 102));
 
-        javax.swing.GroupLayout adminLayout = new javax.swing.GroupLayout(admin);
-        admin.setLayout(adminLayout);
-        adminLayout.setHorizontalGroup(
-            adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout PlayersLayout = new javax.swing.GroupLayout(Players);
+        Players.setLayout(PlayersLayout);
+        PlayersLayout.setHorizontalGroup(
+            PlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 970, Short.MAX_VALUE)
         );
-        adminLayout.setVerticalGroup(
-            adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        PlayersLayout.setVerticalGroup(
+            PlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 800, Short.MAX_VALUE)
         );
 
-        card.add(admin, "card5");
+        CardHolder.add(Players, "card4");
 
-        javax.swing.GroupLayout teamsLayout = new javax.swing.GroupLayout(teams);
-        teams.setLayout(teamsLayout);
-        teamsLayout.setHorizontalGroup(
-            teamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout TeamsLayout = new javax.swing.GroupLayout(Teams);
+        Teams.setLayout(TeamsLayout);
+        TeamsLayout.setHorizontalGroup(
+            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 970, Short.MAX_VALUE)
         );
-        teamsLayout.setVerticalGroup(
-            teamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        TeamsLayout.setVerticalGroup(
+            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 800, Short.MAX_VALUE)
         );
 
-        card.add(teams, "card3");
+        CardHolder.add(Teams, "card3");
 
-        getContentPane().add(card, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 970, 800));
+        Admin.setBackground(new java.awt.Color(0, 153, 255));
+
+        javax.swing.GroupLayout AdminLayout = new javax.swing.GroupLayout(Admin);
+        Admin.setLayout(AdminLayout);
+        AdminLayout.setHorizontalGroup(
+            AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 970, Short.MAX_VALUE)
+        );
+        AdminLayout.setVerticalGroup(
+            AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+        );
+
+        CardHolder.add(Admin, "card5");
+
+        getContentPane().add(CardHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 970, 800));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     int xx,xy;
-    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
+    private void TopBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TopBarMousePressed
         // TODO add your handling code here:
         //drag this pane
         xx = evt.getX();
         xy = evt.getY();
-    }//GEN-LAST:event_jPanel2MousePressed
+    }//GEN-LAST:event_TopBarMousePressed
 
-    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
+    private void TopBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TopBarMouseDragged
         // TODO add your handling code here:
         
         //source to drag
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x-xx,y-xy);
-    }//GEN-LAST:event_jPanel2MouseDragged
+    }//GEN-LAST:event_TopBarMouseDragged
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void ExitIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitIconMouseClicked
         System.exit(0);
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_ExitIconMouseClicked
 
     private void jSeparator1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSeparator1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jSeparator1MouseClicked
 
-    private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
+    private void TeamsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamsBtnActionPerformed
         // TODO add your handling code here:
-       card.removeAll();
-   card.add(teams);
-   card.repaint();
-   card.revalidate();
+       CardHolder.removeAll();
+   CardHolder.add(Teams);
+   CardHolder.repaint();
+   CardHolder.revalidate();
 
-    }//GEN-LAST:event_kButton3ActionPerformed
+    }//GEN-LAST:event_TeamsBtnActionPerformed
 
-    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
+    private void HomeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBtnActionPerformed
         // TODO add your handling code here:
-        card.removeAll();
-   card.add(Home);
-   card.repaint();
-   card.revalidate();
+        CardHolder.removeAll();
+   CardHolder.add(Home);
+   CardHolder.repaint();
+   CardHolder.revalidate();
 
-    }//GEN-LAST:event_kButton2ActionPerformed
+    }//GEN-LAST:event_HomeBtnActionPerformed
 
-    private void kButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton4ActionPerformed
+    private void PlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayersBtnActionPerformed
         // TODO add your handling code here:
-        card.removeAll();
-   card.add(player);
-   card.repaint();
-   card.revalidate();
+        CardHolder.removeAll();
+   CardHolder.add(Players);
+   CardHolder.repaint();
+   CardHolder.revalidate();
 
 
-    }//GEN-LAST:event_kButton4ActionPerformed
+    }//GEN-LAST:event_PlayersBtnActionPerformed
 
-    private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
+    private void AdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminBtnActionPerformed
         // TODO add your handling code here:
        
-   card.removeAll();
-   card.add(admin);
-   card.repaint();
-   card.revalidate();
+   CardHolder.removeAll();
+   CardHolder.add(Admin);
+   CardHolder.repaint();
+   CardHolder.revalidate();
 
-    }//GEN-LAST:event_kButton1ActionPerformed
+    }//GEN-LAST:event_AdminBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -373,21 +374,21 @@ public class Home extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Admin;
+    private keeptoo.KButton AdminBtn;
+    private javax.swing.JPanel CardHolder;
+    private javax.swing.JLabel ExitIcon;
     private javax.swing.JPanel Home;
-    private javax.swing.JPanel admin;
-    private javax.swing.JPanel card;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel2;
+    private keeptoo.KButton HomeBtn;
+    private javax.swing.JLabel LogoTournify;
+    private javax.swing.JPanel NavBar;
+    private javax.swing.JPanel Players;
+    private keeptoo.KButton PlayersBtn;
+    private javax.swing.JTextField SearchBar;
+    private javax.swing.JLabel SearchIcon;
+    private javax.swing.JPanel Teams;
+    private keeptoo.KButton TeamsBtn;
+    private javax.swing.JPanel TopBar;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private keeptoo.KButton kButton1;
-    private keeptoo.KButton kButton2;
-    private keeptoo.KButton kButton3;
-    private keeptoo.KButton kButton4;
-    private javax.swing.JPanel player;
-    private javax.swing.JPanel side_pane;
-    private javax.swing.JPanel teams;
     // End of variables declaration//GEN-END:variables
 }
