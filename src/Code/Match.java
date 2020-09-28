@@ -7,7 +7,7 @@ package Code;
 
 /**
  *
- * @author Ashish Kumar Singh
+ * @author Nikhil Rana
  */
 public class Match {
     private Team team1;
