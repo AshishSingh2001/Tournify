@@ -19,6 +19,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        this.setLocationRelativeTo(null);
 //        LogUser.setBackground(new java.awt.Color(0,0,0,1));
 //        LogPass.setBackground(new java.awt.Color(0,0,0,1));
     }
@@ -33,20 +34,21 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         HomePanel = new keeptoo.KGradientPanel();
-        TextUser = new javax.swing.JTextField();
-        TextPass = new javax.swing.JPasswordField();
+        UserIcon = new javax.swing.JLabel();
         LabelUser = new javax.swing.JLabel();
+        TextUser = new javax.swing.JTextField();
         LabelPass = new javax.swing.JLabel();
-        ExitIcon = new javax.swing.JLabel();
-        BtnAdmin = new keeptoo.KButton();
+        TextPass = new javax.swing.JPasswordField();
         BtnGuest = new keeptoo.KButton();
         BtnOr = new javax.swing.JLabel();
-        UserIcon = new javax.swing.JLabel();
+        BtnAdmin = new keeptoo.KButton();
+        ExitIcon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(360, 110));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1200, 850));
+        setPreferredSize(new java.awt.Dimension(1210, 700));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HomePanel.setkEndColor(new java.awt.Color(15, 76, 117));
         HomePanel.setkGradientFocus(800);
@@ -68,6 +70,13 @@ public class Login extends javax.swing.JFrame {
         });
         HomePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        UserIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/user.png"))); // NOI18N
+        HomePanel.add(UserIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 70, 70));
+
+        LabelUser.setForeground(new java.awt.Color(254, 254, 254));
+        LabelUser.setText("Username");
+        HomePanel.add(LabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 250, 40));
+
         TextUser.setBackground(new java.awt.Color(0,0,0,1));
         TextUser.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
         TextUser.setForeground(new java.awt.Color(254, 254, 254));
@@ -78,21 +87,50 @@ public class Login extends javax.swing.JFrame {
                 TextUserActionPerformed(evt);
             }
         });
-        HomePanel.add(TextUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, 390, 40));
+        HomePanel.add(TextUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 390, 40));
+
+        LabelPass.setForeground(new java.awt.Color(254, 254, 254));
+        LabelPass.setText("Password");
+        HomePanel.add(LabelPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 250, 40));
 
         TextPass.setBackground(new java.awt.Color(0,0,0,1));
         TextPass.setForeground(new java.awt.Color(254, 254, 254));
         TextPass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
         TextPass.setOpaque(false);
-        HomePanel.add(TextPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, 390, 40));
+        HomePanel.add(TextPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, 390, 40));
 
-        LabelUser.setForeground(new java.awt.Color(254, 254, 254));
-        LabelUser.setText("Username");
-        HomePanel.add(LabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, 250, 40));
+        BtnGuest.setText("View as Guest");
+        BtnGuest.setkBorderRadius(30);
+        BtnGuest.setkEndColor(new java.awt.Color(252, 218, 183));
+        BtnGuest.setkHoverEndColor(new java.awt.Color(50, 130, 184));
+        BtnGuest.setkHoverForeGround(new java.awt.Color(227, 223, 200));
+        BtnGuest.setkHoverStartColor(new java.awt.Color(26, 166, 183));
+        BtnGuest.setkStartColor(new java.awt.Color(50, 130, 184));
+        BtnGuest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuestActionPerformed(evt);
+            }
+        });
+        HomePanel.add(BtnGuest, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, 160, -1));
 
-        LabelPass.setForeground(new java.awt.Color(254, 254, 254));
-        LabelPass.setText("Password");
-        HomePanel.add(LabelPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 250, 40));
+        BtnOr.setText("Or");
+        HomePanel.add(BtnOr, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, -1, -1));
+
+        BtnAdmin.setText("Login as Admin");
+        BtnAdmin.setkAllowTab(true);
+        BtnAdmin.setkBorderRadius(30);
+        BtnAdmin.setkEndColor(new java.awt.Color(0, 204, 204));
+        BtnAdmin.setkFillButton(false);
+        BtnAdmin.setkHoverEndColor(new java.awt.Color(217, 236, 242));
+        BtnAdmin.setkHoverForeGround(new java.awt.Color(227, 223, 200));
+        BtnAdmin.setkHoverStartColor(new java.awt.Color(30, 95, 116));
+        BtnAdmin.setkStartColor(new java.awt.Color(254, 254, 254));
+        BtnAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAdminActionPerformed(evt);
+            }
+        });
+        HomePanel.add(BtnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 490, 160, -1));
 
         ExitIcon.setFont(new java.awt.Font("Ubuntu", 1, 21)); // NOI18N
         ExitIcon.setForeground(new java.awt.Color(254, 254, 254));
@@ -103,54 +141,9 @@ public class Login extends javax.swing.JFrame {
                 ExitIconMouseClicked(evt);
             }
         });
-        HomePanel.add(ExitIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 50, 20, 30));
+        HomePanel.add(ExitIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 40, 20, 30));
 
-        BtnAdmin.setText("View as Guest");
-        BtnAdmin.setkBorderRadius(30);
-        BtnAdmin.setkEndColor(new java.awt.Color(252, 218, 183));
-        BtnAdmin.setkHoverEndColor(new java.awt.Color(50, 130, 184));
-        BtnAdmin.setkHoverForeGround(new java.awt.Color(227, 223, 200));
-        BtnAdmin.setkHoverStartColor(new java.awt.Color(26, 166, 183));
-        BtnAdmin.setkStartColor(new java.awt.Color(50, 130, 184));
-        BtnAdmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAdminActionPerformed(evt);
-            }
-        });
-        HomePanel.add(BtnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 160, -1));
-
-        BtnGuest.setText("Login as Admin");
-        BtnGuest.setkAllowTab(true);
-        BtnGuest.setkBorderRadius(30);
-        BtnGuest.setkEndColor(new java.awt.Color(0, 204, 204));
-        BtnGuest.setkFillButton(false);
-        BtnGuest.setkHoverEndColor(new java.awt.Color(217, 236, 242));
-        BtnGuest.setkHoverForeGround(new java.awt.Color(227, 223, 200));
-        BtnGuest.setkHoverStartColor(new java.awt.Color(30, 95, 116));
-        BtnGuest.setkStartColor(new java.awt.Color(254, 254, 254));
-        BtnGuest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnGuestActionPerformed(evt);
-            }
-        });
-        HomePanel.add(BtnGuest, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 530, 160, -1));
-
-        BtnOr.setText("Or");
-        HomePanel.add(BtnOr, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 540, -1, -1));
-
-        UserIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/user.png"))); // NOI18N
-        HomePanel.add(UserIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 70, 70));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(HomePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1210, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(HomePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
-        );
+        getContentPane().add(HomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -175,16 +168,16 @@ public class Login extends javax.swing.JFrame {
         //Use Mouse Always
     }//GEN-LAST:event_HomePanelMousePressed
 
-    private void BtnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAdminActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnAdminActionPerformed
-
     private void BtnGuestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuestActionPerformed
         // TODO add your handling code here:
         Home GuestHome = new Home();
         GuestHome.setVisible(true);
         LoginPage.setVisible(false);
     }//GEN-LAST:event_BtnGuestActionPerformed
+
+    private void BtnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnAdminActionPerformed
 
     private void ExitIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitIconMouseClicked
         // TODO add your handling code here:

@@ -22,6 +22,7 @@ public class Home extends javax.swing.JFrame {
     JTabbedPane t = new JTabbedPane();
     public Home() {
         initComponents();
+        this.setLocationRelativeTo(null);
        cd = (CardLayout)(CardHolder.getLayout());
     }
 
@@ -54,12 +55,15 @@ public class Home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setLocation(new java.awt.Point(360, 110));
+        setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(990, 500));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1210, 680));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         NavBar.setBackground(new java.awt.Color(23, 35, 51));
+        NavBar.setPreferredSize(new java.awt.Dimension(230, 680));
         NavBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LogoTournify.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
@@ -130,7 +134,7 @@ public class Home extends javax.swing.JFrame {
         });
         NavBar.add(AdminBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 360, 270, 60));
 
-        getContentPane().add(NavBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 850));
+        getContentPane().add(NavBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 680));
 
         TopBar.setBackground(new java.awt.Color(71, 120, 197));
         TopBar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -155,7 +159,7 @@ public class Home extends javax.swing.JFrame {
         ExitIcon.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ExitIcon.setForeground(new java.awt.Color(255, 255, 255));
         ExitIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ExitIcon.setText("X");
+        ExitIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Exit_25px.png"))); // NOI18N
         ExitIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ExitIconMouseClicked(evt);
@@ -167,26 +171,26 @@ public class Home extends javax.swing.JFrame {
         TopBarLayout.setHorizontalGroup(
             TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopBarLayout.createSequentialGroup()
-                .addContainerGap(812, Short.MAX_VALUE)
+                .addContainerGap(719, Short.MAX_VALUE)
                 .addComponent(SearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SearchIcon)
-                .addGap(47, 47, 47)
+                .addGap(39, 39, 39)
                 .addComponent(ExitIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addGap(20, 20, 20))
         );
         TopBarLayout.setVerticalGroup(
             TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopBarLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(29, 29, 29)
                 .addGroup(TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(ExitIcon)
                     .addComponent(SearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
-        getContentPane().add(TopBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 1080, 80));
+        getContentPane().add(TopBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 980, 80));
 
         CardHolder.setPreferredSize(new java.awt.Dimension(830, 750));
         CardHolder.setLayout(new java.awt.CardLayout());
@@ -198,11 +202,11 @@ public class Home extends javax.swing.JFrame {
         Home.setLayout(HomeLayout);
         HomeLayout.setHorizontalGroup(
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 970, Short.MAX_VALUE)
+            .addGap(0, 980, Short.MAX_VALUE)
         );
         HomeLayout.setVerticalGroup(
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         CardHolder.add(Home, "card2");
@@ -213,11 +217,11 @@ public class Home extends javax.swing.JFrame {
         Players.setLayout(PlayersLayout);
         PlayersLayout.setHorizontalGroup(
             PlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 970, Short.MAX_VALUE)
+            .addGap(0, 980, Short.MAX_VALUE)
         );
         PlayersLayout.setVerticalGroup(
             PlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         CardHolder.add(Players, "card4");
@@ -226,11 +230,11 @@ public class Home extends javax.swing.JFrame {
         Teams.setLayout(TeamsLayout);
         TeamsLayout.setHorizontalGroup(
             TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 970, Short.MAX_VALUE)
+            .addGap(0, 980, Short.MAX_VALUE)
         );
         TeamsLayout.setVerticalGroup(
             TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         CardHolder.add(Teams, "card3");
@@ -241,16 +245,16 @@ public class Home extends javax.swing.JFrame {
         Admin.setLayout(AdminLayout);
         AdminLayout.setHorizontalGroup(
             AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 970, Short.MAX_VALUE)
+            .addGap(0, 980, Short.MAX_VALUE)
         );
         AdminLayout.setVerticalGroup(
             AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         CardHolder.add(Admin, "card5");
 
-        getContentPane().add(CardHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 970, 800));
+        getContentPane().add(CardHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 980, 600));
 
         pack();
         setLocationRelativeTo(null);
