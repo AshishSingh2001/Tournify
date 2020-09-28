@@ -23,7 +23,7 @@ package Code;
  * </ul>
  * <p>
  * 
- * @author Ashish Kumar Singh
+ * @author Nikhil Rana
  * 
  */
 
