@@ -6,8 +6,7 @@
 package GUI;
 import java.awt.*;
 import javax.swing.*;
-import java.awt.Color;
-import javax.swing.JPanel;
+
 
 /**
  *
@@ -22,6 +21,7 @@ public class Home extends javax.swing.JFrame {
     JTabbedPane t = new JTabbedPane();
     public Home() {
         initComponents();
+        initScrollPanel();
         this.setLocationRelativeTo(null);
        cd = (CardLayout)(CardHolder.getLayout());
     }
@@ -47,9 +47,8 @@ public class Home extends javax.swing.JFrame {
         SearchIcon = new javax.swing.JLabel();
         ExitIcon = new javax.swing.JLabel();
         CardHolder = new javax.swing.JPanel();
-        Home = new javax.swing.JPanel();
+        HomePanel = new javax.swing.JPanel();
         Players = new javax.swing.JPanel();
-        Teams = new javax.swing.JPanel();
         Admin = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,60 +78,63 @@ public class Home extends javax.swing.JFrame {
         NavBar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 170, 10));
 
         HomeBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        HomeBtn.setText("  Home");
+        HomeBtn.setText("Home");
         HomeBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         HomeBtn.setkAllowGradient(false);
         HomeBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
         HomeBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
         HomeBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        HomeBtn.setPreferredSize(new java.awt.Dimension(230, 60));
         HomeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HomeBtnActionPerformed(evt);
             }
         });
-        NavBar.add(HomeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 150, 290, 60));
+        NavBar.add(HomeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 230, 60));
 
-        TeamsBtn.setBorder(null);
-        TeamsBtn.setText("   Teams");
+        TeamsBtn.setText("Teams");
         TeamsBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         TeamsBtn.setkAllowGradient(false);
         TeamsBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
         TeamsBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
         TeamsBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        TeamsBtn.setPreferredSize(new java.awt.Dimension(230, 60));
         TeamsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TeamsBtnActionPerformed(evt);
             }
         });
-        NavBar.add(TeamsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 220, 270, 60));
+        NavBar.add(TeamsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, 60));
 
         PlayersBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        PlayersBtn.setText("    Players");
+        PlayersBtn.setText("Players");
         PlayersBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         PlayersBtn.setkAllowGradient(false);
         PlayersBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
         PlayersBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
         PlayersBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        PlayersBtn.setPreferredSize(new java.awt.Dimension(230, 60));
         PlayersBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PlayersBtnActionPerformed(evt);
             }
         });
-        NavBar.add(PlayersBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 290, 270, 60));
+        NavBar.add(PlayersBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, 60));
 
         AdminBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        AdminBtn.setText("   Admin");
+        AdminBtn.setText("Admin");
         AdminBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         AdminBtn.setkAllowGradient(false);
         AdminBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
         AdminBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
         AdminBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        AdminBtn.setPreferredSize(new java.awt.Dimension(230, 60));
         AdminBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AdminBtnActionPerformed(evt);
             }
         });
-        NavBar.add(AdminBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 360, 270, 60));
+        NavBar.add(AdminBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, 60));
 
         getContentPane().add(NavBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 680));
 
@@ -150,7 +152,6 @@ public class Home extends javax.swing.JFrame {
 
         SearchBar.setBackground(new java.awt.Color(123, 156, 225));
         SearchBar.setForeground(new java.awt.Color(255, 255, 255));
-        SearchBar.setBorder(null);
         SearchBar.setCaretColor(new java.awt.Color(255, 255, 255));
         SearchBar.setPreferredSize(new java.awt.Dimension(2, 20));
 
@@ -195,21 +196,21 @@ public class Home extends javax.swing.JFrame {
         CardHolder.setPreferredSize(new java.awt.Dimension(830, 750));
         CardHolder.setLayout(new java.awt.CardLayout());
 
-        Home.setBackground(new java.awt.Color(102, 102, 0));
-        Home.setForeground(new java.awt.Color(255, 255, 255));
+        HomePanel.setBackground(new java.awt.Color(102, 102, 0));
+        HomePanel.setForeground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout HomeLayout = new javax.swing.GroupLayout(Home);
-        Home.setLayout(HomeLayout);
-        HomeLayout.setHorizontalGroup(
-            HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout HomePanelLayout = new javax.swing.GroupLayout(HomePanel);
+        HomePanel.setLayout(HomePanelLayout);
+        HomePanelLayout.setHorizontalGroup(
+            HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 980, Short.MAX_VALUE)
         );
-        HomeLayout.setVerticalGroup(
-            HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        HomePanelLayout.setVerticalGroup(
+            HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        CardHolder.add(Home, "card2");
+        CardHolder.add(HomePanel, "card2");
 
         Players.setBackground(new java.awt.Color(255, 102, 102));
 
@@ -225,19 +226,6 @@ public class Home extends javax.swing.JFrame {
         );
 
         CardHolder.add(Players, "card4");
-
-        javax.swing.GroupLayout TeamsLayout = new javax.swing.GroupLayout(Teams);
-        Teams.setLayout(TeamsLayout);
-        TeamsLayout.setHorizontalGroup(
-            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
-        );
-        TeamsLayout.setVerticalGroup(
-            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        CardHolder.add(Teams, "card3");
 
         Admin.setBackground(new java.awt.Color(0, 153, 255));
 
@@ -259,7 +247,25 @@ public class Home extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+    
+    
+    void initScrollPanel() {
+        TeamScrollPanel = new ScrollPanel();
+//        TeamScrollPanel.setBackground(new Color(255,255,255));
+//        javax.swing.GroupLayout TeamsLayout = new javax.swing.GroupLayout(TeamScrollPanel);
+//        TeamScrollPanel.setLayout(TeamsLayout);
+//        TeamsLayout.setHorizontalGroup(
+//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGap(0, 980, Short.MAX_VALUE)
+//        );
+//        TeamsLayout.setVerticalGroup(
+//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGap(0, 600, Short.MAX_VALUE)
+//        );
 
+        CardHolder.add(TeamScrollPanel, "card3");
+    }
+    
     int xx,xy;
     private void TopBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TopBarMousePressed
         // TODO add your handling code here:
@@ -287,17 +293,24 @@ public class Home extends javax.swing.JFrame {
 
     private void TeamsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamsBtnActionPerformed
         // TODO add your handling code here:
-       CardHolder.removeAll();
-   CardHolder.add(Teams);
-   CardHolder.repaint();
-   CardHolder.revalidate();
+        CardHolder.removeAll();
+//      CardHolder.add(Teams);
+        
+        CardHolder.repaint();
+        CardHolder.revalidate();
+        TeamScrollPanel.removeAll();
+        initScrollPanel();
+//        TeamScrollPanel.repaint();
+//        TeamScrollPanel.revalidate();
+        CardHolder.add(TeamScrollPanel);
+        
 
     }//GEN-LAST:event_TeamsBtnActionPerformed
 
     private void HomeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBtnActionPerformed
         // TODO add your handling code here:
         CardHolder.removeAll();
-   CardHolder.add(Home);
+   CardHolder.add(HomePanel);
    CardHolder.repaint();
    CardHolder.revalidate();
 
@@ -376,21 +389,20 @@ public class Home extends javax.swing.JFrame {
         
     }
     
-
+    private ScrollPanel TeamScrollPanel;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Admin;
     private keeptoo.KButton AdminBtn;
     private javax.swing.JPanel CardHolder;
     private javax.swing.JLabel ExitIcon;
-    private javax.swing.JPanel Home;
     private keeptoo.KButton HomeBtn;
+    private javax.swing.JPanel HomePanel;
     private javax.swing.JLabel LogoTournify;
     private javax.swing.JPanel NavBar;
     private javax.swing.JPanel Players;
     private keeptoo.KButton PlayersBtn;
     private javax.swing.JTextField SearchBar;
     private javax.swing.JLabel SearchIcon;
-    private javax.swing.JPanel Teams;
     private keeptoo.KButton TeamsBtn;
     private javax.swing.JPanel TopBar;
     private javax.swing.JSeparator jSeparator1;
