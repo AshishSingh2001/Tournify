@@ -7,13 +7,16 @@ package GUI;
 import java.awt.*;
 import javax.swing.*;    
 import javax.swing.border.EmptyBorder;
+import java.util.*;
+import java.io.*;
+import Code.*;
 
 /**
  *
  * @author Ashish Kumar Singh
  */
 public class PlayerScrollPanel extends javax.swing.JPanel {
-
+ static TournamentManagementSystem tms;
     /**
      * Creates new form HomePanel
      */
@@ -68,9 +71,10 @@ public class PlayerScrollPanel extends javax.swing.JPanel {
         columnpanel.setLayout(new GridLayout(0, 2, 60, 15)); //******setting the overall grid layout
         columnpanel.setBackground(Color.white);
         
+       ArrayList<Player> allPlayer =  tms.getAllPlayers();
         PlayerScrollCard[] rowPanel = new PlayerScrollCard[ctr];
         for (int i = 0; i < ctr; i++) {
-            rowPanel[i] = new PlayerScrollCard();
+            rowPanel[i] = new PlayerScrollCard(allPlayer.get(i).getName(),allPlayer.get(i).getTeamName(),allPlayer.get(i).getPosition());
 //            rowPanel[i].setPreferredSize(new Dimension(450, 250)); //*****size of the each card
             columnpanel.add(rowPanel[i]); 
             

@@ -7,6 +7,8 @@ package GUI;
 import java.awt.*;
 import javax.swing.*;    
 import javax.swing.border.EmptyBorder;
+import Code.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,7 +18,8 @@ public class TeamScrollPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form HomePanel
-     */
+     */ 
+    private TournamentManagementSystem tmc;
     public TeamScrollPanel() {
         ctr += 3;
         System.out.print("constructor called");
@@ -67,10 +70,10 @@ public class TeamScrollPanel extends javax.swing.JPanel {
         borderlaoutpanel.add(columnpanel, BorderLayout.NORTH);
         columnpanel.setLayout(new GridLayout(0, 2, 60, 15)); //******setting the overall grid layout
         columnpanel.setBackground(Color.white);
-        
+        ArrayList<Team> team =  tmc.getAllTeams();
         TeamScrollCard[] rowPanel = new TeamScrollCard[ctr];
         for (int i = 0; i < ctr; i++) {
-            rowPanel[i] = new TeamScrollCard();
+            rowPanel[i] = new TeamScrollCard(team.get(i).getTeamName(),team.get(i).getDescription());
 //            rowPanel[i].setPreferredSize(new Dimension(450, 250)); //*****size of the each card
             columnpanel.add(rowPanel[i]); 
             

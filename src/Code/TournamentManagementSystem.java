@@ -38,18 +38,18 @@ public class TournamentManagementSystem {
         ms = new MatchSchedule(pc.getAllTeams());
     }
 
-    void addNewPlayer(Player p) {
+    public void addNewPlayer(Player p) {
         if (pc.getTeamIndex(p.getTeamName()) == -1) {
             System.out.println("There is no team with the name " + p.getTeamName());
         }
         pc.addPlayer(p);
     }
 
-    void addNewTeam(Team t) {
+    public void addNewTeam(Team t) {
         pc.addTeam(t);
     }
 
-    void addNewMatch(String team1, String team2, int team1Points, int team2Points) {
+    public void addNewMatch(String team1, String team2, int team1Points, int team2Points) {
         ArrayList<Team> allTeams = pc.getAllTeams();
         int index1 = pc.getTeamIndex(team1);
         int index2 = pc.getTeamIndex(team2);
@@ -60,23 +60,23 @@ public class TournamentManagementSystem {
         ms.addMatch(new Match(allTeams.get(index1), allTeams.get(index2), team1Points, team2Points));
     }
 
-    ArrayList<Team> getLeaderboards() {
+    public ArrayList<Team> getLeaderboards() {
         return pc.getLeaderboards();
     }
 
-    ArrayList<Match> getMatchSchedule() {
+    public ArrayList<Match> getMatchSchedule() {
         return ms.getMatches();
     }
 
-    ArrayList<Team> getAllTeams() {
+    public ArrayList<Team> getAllTeams() {
         return pc.getAllTeams();
     }
 
-    ArrayList<Player> getAllPlayers() {
+    public ArrayList<Player> getAllPlayers() {
         return pc.getAllPlayers();
     }
 
-    ArrayList<Player> getTeamPlayers(String team) {
+    public ArrayList<Player> getTeamPlayers(String team) {
         ArrayList<Team> allTeams = pc.getAllTeams();
         int index = pc.getTeamIndex(team);
         if (index == -1) {
@@ -86,7 +86,7 @@ public class TournamentManagementSystem {
         return allTeams.get(index).getAllPlayers();
     }
 
-    boolean savePlayers() throws IOException {
+    public boolean savePlayers() throws IOException {
             try {
                 pc.savePlayers(file);
                 return true;
@@ -95,7 +95,7 @@ public class TournamentManagementSystem {
             }
     }
 
-    void saveAndClose() throws IOException {
+    public void saveAndClose() throws IOException {
         pc.savePlayers(file);
         System.exit(0);
     }

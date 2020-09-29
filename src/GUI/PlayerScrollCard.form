@@ -90,7 +90,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Ubuntu" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Ben Deirover"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -98,7 +97,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Ubuntu" size="16" style="3"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Detroit Blasters"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
@@ -106,7 +104,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Ubuntu" size="15" style="2"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Attacker"/>
           </Properties>
         </Component>
       </SubComponents>

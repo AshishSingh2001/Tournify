@@ -14,10 +14,27 @@ public class PlayerScrollCard extends javax.swing.JPanel {
     /**
      * Creates new form TeamScrollCard
      */
-    public PlayerScrollCard() {
+    private String name;
+    private String team;
+    private String position;
+    public PlayerScrollCard(String name,String Team,String position) {
         initComponents();
+        this.name = name;
+        this.team = Team;
+        this.position = position;
+        display();
     }
+private void display()
+{
+        jLabel2.setText(name);
 
+        
+        jLabel3.setText(team);
+
+       
+        jLabel4.setText(position);
+    
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,13 +59,10 @@ public class PlayerScrollCard extends javax.swing.JPanel {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imge_1.jpg"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        jLabel2.setText("Ben Deirover");
 
         jLabel3.setFont(new java.awt.Font("Ubuntu", 3, 16)); // NOI18N
-        jLabel3.setText("Detroit Blasters");
 
         jLabel4.setFont(new java.awt.Font("Ubuntu", 2, 15)); // NOI18N
-        jLabel4.setText("Attacker");
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
