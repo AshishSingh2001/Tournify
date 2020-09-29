@@ -15,13 +15,22 @@ public class Match {
     private int team1Points;
     private int team2Points;
 
-    Match(Team team1, Team team2, int team1Points, int team2Points) {
+    Match(Team team1, Team team2, int team1Points, int team2Points) {  
         this.team1 = team1;
         this.team2 = team2;
         this.team1Points = team1Points;
         this.team2Points = team2Points;
-        this.team1.updatePoints(this.team1Points);
-        this.team2.updatePoints(this.team2Points);
+        int diff = team1Points-team2Points;
+        if(diff>0) {
+            this.team1.updatePoints(2);
+            this.team2.updatePoints(0);
+        } else if(diff==0) { 
+            this.team2.updatePoints(1);
+            this.team1.updatePoints(1);
+        } else { 
+            this.team2.updatePoints(2);
+            this.team1.updatePoints(0);
+        }  
     }
 
 }

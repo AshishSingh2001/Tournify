@@ -21,7 +21,8 @@ public class Home extends javax.swing.JFrame {
     JTabbedPane t = new JTabbedPane();
     public Home() {
         initComponents();
-        initScrollPanel();
+        initTeamScrollPanel();
+        initPlayerScrollPanel();
         this.setLocationRelativeTo(null);
        cd = (CardLayout)(CardHolder.getLayout());
     }
@@ -48,7 +49,6 @@ public class Home extends javax.swing.JFrame {
         ExitIcon = new javax.swing.JLabel();
         CardHolder = new javax.swing.JPanel();
         HomePanel = new javax.swing.JPanel();
-        Players = new javax.swing.JPanel();
         Admin = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,7 +57,6 @@ public class Home extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(990, 500));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1210, 680));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -212,21 +211,6 @@ public class Home extends javax.swing.JFrame {
 
         CardHolder.add(HomePanel, "card2");
 
-        Players.setBackground(new java.awt.Color(255, 102, 102));
-
-        javax.swing.GroupLayout PlayersLayout = new javax.swing.GroupLayout(Players);
-        Players.setLayout(PlayersLayout);
-        PlayersLayout.setHorizontalGroup(
-            PlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
-        );
-        PlayersLayout.setVerticalGroup(
-            PlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        CardHolder.add(Players, "card4");
-
         Admin.setBackground(new java.awt.Color(0, 153, 255));
 
         javax.swing.GroupLayout AdminLayout = new javax.swing.GroupLayout(Admin);
@@ -249,8 +233,8 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     
-    void initScrollPanel() {
-        TeamScrollPanel = new ScrollPanel();
+    void initTeamScrollPanel() {
+        TeamScrPanel = new TeamScrollPanel();
 //        TeamScrollPanel.setBackground(new Color(255,255,255));
 //        javax.swing.GroupLayout TeamsLayout = new javax.swing.GroupLayout(TeamScrollPanel);
 //        TeamScrollPanel.setLayout(TeamsLayout);
@@ -263,7 +247,24 @@ public class Home extends javax.swing.JFrame {
 //            .addGap(0, 600, Short.MAX_VALUE)
 //        );
 
-        CardHolder.add(TeamScrollPanel, "card3");
+        CardHolder.add(TeamScrPanel, "card3");
+    }
+    
+    void initPlayerScrollPanel() {
+        PlayerScrPanel = new PlayerScrollPanel();
+//        TeamScrollPanel.setBackground(new Color(255,255,255));
+//        javax.swing.GroupLayout TeamsLayout = new javax.swing.GroupLayout(TeamScrollPanel);
+//        TeamScrollPanel.setLayout(TeamsLayout);
+//        TeamsLayout.setHorizontalGroup(
+//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGap(0, 980, Short.MAX_VALUE)
+//        );
+//        TeamsLayout.setVerticalGroup(
+//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGap(0, 600, Short.MAX_VALUE)
+//        );
+
+        CardHolder.add(PlayerScrPanel, "card3");
     }
     
     int xx,xy;
@@ -298,11 +299,11 @@ public class Home extends javax.swing.JFrame {
         
         CardHolder.repaint();
         CardHolder.revalidate();
-        TeamScrollPanel.removeAll();
-        initScrollPanel();
+        TeamScrPanel.removeAll();
+        initTeamScrollPanel();
 //        TeamScrollPanel.repaint();
 //        TeamScrollPanel.revalidate();
-        CardHolder.add(TeamScrollPanel);
+        CardHolder.add(TeamScrPanel);
         
 
     }//GEN-LAST:event_TeamsBtnActionPerformed
@@ -318,10 +319,21 @@ public class Home extends javax.swing.JFrame {
 
     private void PlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayersBtnActionPerformed
         // TODO add your handling code here:
-        CardHolder.removeAll();
-   CardHolder.add(Players);
-   CardHolder.repaint();
-   CardHolder.revalidate();
+//        CardHolder.removeAll();
+//   CardHolder.add(Players);
+//   CardHolder.repaint();
+//   CardHolder.revalidate();
+   
+   CardHolder.removeAll();
+//      CardHolder.add(Teams);
+        
+        CardHolder.repaint();
+        CardHolder.revalidate();
+        PlayerScrPanel.removeAll();
+        initPlayerScrollPanel();
+//        TeamScrollPanel.repaint();
+//        TeamScrollPanel.revalidate();
+        CardHolder.add(PlayerScrPanel);
 
 
     }//GEN-LAST:event_PlayersBtnActionPerformed
@@ -389,7 +401,8 @@ public class Home extends javax.swing.JFrame {
         
     }
     
-    private ScrollPanel TeamScrollPanel;
+    private TeamScrollPanel TeamScrPanel;
+    private PlayerScrollPanel PlayerScrPanel;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Admin;
     private keeptoo.KButton AdminBtn;
@@ -399,7 +412,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel HomePanel;
     private javax.swing.JLabel LogoTournify;
     private javax.swing.JPanel NavBar;
-    private javax.swing.JPanel Players;
     private keeptoo.KButton PlayersBtn;
     private javax.swing.JTextField SearchBar;
     private javax.swing.JLabel SearchIcon;

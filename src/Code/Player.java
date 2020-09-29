@@ -52,6 +52,12 @@ public class Player implements java.io.Serializable
         this.teamName =teamName ;
         this.team_id=team_id;
     }
+    
+    public Player(String name, String position, String teamName) {
+        this.name = name;
+        this.teamName = teamName;
+        this.position = position;
+    }
 
     public final String getName() {
         return name;

@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Ashish Kumar Singh
  */
-public class TeamScrollCard extends javax.swing.JPanel {
+public class PlayerScrollCard extends javax.swing.JPanel {
 
     /**
      * Creates new form TeamScrollCard
      */
-    public TeamScrollCard() {
+    public PlayerScrollCard() {
         initComponents();
     }
 
@@ -42,13 +42,13 @@ public class TeamScrollCard extends javax.swing.JPanel {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imge_1.jpg"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        jLabel2.setText("James Gosling");
+        jLabel2.setText("Ben Deirover");
 
         jLabel3.setFont(new java.awt.Font("Ubuntu", 3, 16)); // NOI18N
-        jLabel3.setText("Black Hawks");
+        jLabel3.setText("Detroit Blasters");
 
         jLabel4.setFont(new java.awt.Font("Ubuntu", 2, 15)); // NOI18N
-        jLabel4.setText("Defender");
+        jLabel4.setText("Attacker");
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -83,11 +83,11 @@ public class TeamScrollCard extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

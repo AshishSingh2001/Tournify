@@ -6,37 +6,22 @@
 package GUI;
 import java.awt.*;
 import javax.swing.*;    
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.EventQueue;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JScrollPane;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.SystemColor;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import javax.swing.BoxLayout;
+
 /**
  *
- * @author lancelot
+ * @author Ashish Kumar Singh
  */
-public class ScrollPanel extends javax.swing.JPanel {
+public class PlayerScrollPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form HomePanel
      */
-    public ScrollPanel() {
+    public PlayerScrollPanel() {
         ctr += 3;
         System.out.print("constructor called");
         initComponents();
-        initScrollPanel();
+        initPlayerScrollPanel();
     }
 
     /**
@@ -63,7 +48,7 @@ public class ScrollPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    void initScrollPanel() {
+    void initPlayerScrollPanel() {
 
 //        setBounds(0, 300, 778, 426); //******* first two terms set the location of the window to initialise
 
@@ -72,17 +57,20 @@ public class ScrollPanel extends javax.swing.JPanel {
         // scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         this.add(scrollPane);
         scrollPane.setBackground(Color.white);
+        
         JPanel borderlaoutpanel = new JPanel();
         scrollPane.setViewportView(borderlaoutpanel);
         borderlaoutpanel.setBorder(new EmptyBorder(20, 20, 20, 20));
         borderlaoutpanel.setBackground(Color.white);
+        
         JPanel columnpanel = new JPanel();
         borderlaoutpanel.add(columnpanel, BorderLayout.NORTH);
         columnpanel.setLayout(new GridLayout(0, 2, 60, 15)); //******setting the overall grid layout
         columnpanel.setBackground(Color.white);
-        TeamScrollCard[] rowPanel = new TeamScrollCard[ctr];
+        
+        PlayerScrollCard[] rowPanel = new PlayerScrollCard[ctr];
         for (int i = 0; i < ctr; i++) {
-            rowPanel[i] = new TeamScrollCard();
+            rowPanel[i] = new PlayerScrollCard();
 //            rowPanel[i].setPreferredSize(new Dimension(450, 250)); //*****size of the each card
             columnpanel.add(rowPanel[i]); 
             
