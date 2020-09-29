@@ -16,12 +16,11 @@ import Code.*;
  * @author Ashish Kumar Singh
  */
 public class PlayerScrollPanel extends javax.swing.JPanel {
- static TournamentManagementSystem tms;
     /**
      * Creates new form HomePanel
      */
     public PlayerScrollPanel() {
-        ctr += 3;
+        tms = new TournamentManagementSystem();
         System.out.print("constructor called");
         initComponents();
         initPlayerScrollPanel();
@@ -71,9 +70,9 @@ public class PlayerScrollPanel extends javax.swing.JPanel {
         columnpanel.setLayout(new GridLayout(0, 2, 60, 15)); //******setting the overall grid layout
         columnpanel.setBackground(Color.white);
         
-       ArrayList<Player> allPlayer =  tms.getAllPlayers();
-        PlayerScrollCard[] rowPanel = new PlayerScrollCard[ctr];
-        for (int i = 0; i < ctr; i++) {
+       ArrayList<Player> allPlayer = new ArrayList<>(tms.getAllDummyPlayers());
+        PlayerScrollCard[] rowPanel = new PlayerScrollCard[allPlayer.size()];
+        for (int i = 0; i < allPlayer.size(); i++) {
             rowPanel[i] = new PlayerScrollCard(allPlayer.get(i).getName(),allPlayer.get(i).getTeamName(),allPlayer.get(i).getPosition());
 //            rowPanel[i].setPreferredSize(new Dimension(450, 250)); //*****size of the each card
             columnpanel.add(rowPanel[i]); 
@@ -86,6 +85,7 @@ public class PlayerScrollPanel extends javax.swing.JPanel {
     
     private static int ctr = 0;
     private JScrollPane scrollPane;
+    private TournamentManagementSystem tms;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
