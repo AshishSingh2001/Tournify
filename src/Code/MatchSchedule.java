@@ -7,7 +7,7 @@ package Code;
 import java.util.ArrayList;
 /**
  *
- * @author lancelot
+ * @author Ashish Kumar Singh
  */
 public class MatchSchedule {
     private ArrayList<Match> matches = new ArrayList<>();
@@ -18,7 +18,15 @@ public class MatchSchedule {
     MatchSchedule(ArrayList<Team> allTeams) {
         this.allTeams = allTeams;
     }
-
+    
+    ArrayList<Match> getMatches() {
+        return matches;
+    }
+    
+    void addMatch(Match m) {
+        matches.add(m);
+    }
+    
     void addMatch(Team team1, Team team2, int team1Points, int team2Points) {
         
         matches.add(new Match(team1, team2, team1Points, team2Points));

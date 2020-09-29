@@ -77,13 +77,9 @@ public class PlayerCollection {
     public int addPlayer(Player p) {
         Team t;
         String name = p.getTeamName();
-        int index = -1;
         int result = NO_ERROR;
 
-        for (int i = 0; i < teams.size(); i++) {
-            if (teams.get(i).getTeamName().equalsIgnoreCase(name))
-                index = i;
-        }
+        int index = getTeamIndex(name);
 
         if (index == -1) {
             if (teams.size() < maxTeams) {
@@ -149,7 +145,7 @@ public class PlayerCollection {
     }
 
     /**
-     * load entire collectoin of Players into the manufacturer object from a data
+     * load entire collection of Players into the manufacturer object from a data
      * file
      *
      * @param file filename of binary file to load Player data from
@@ -191,12 +187,12 @@ public class PlayerCollection {
     }
 
     /**
-     * Serches the Teams for a given name and return its index
+     * Searches the Teams for a given name and return its index
      * 
      * @param teamName Name of the team to be searched
      * @return index of the team found else -1
      */
-    public int Team(String teamName) {
+    public int getTeamIndex(String teamName) {
         for (int i = 0; i < teams.size(); i++) {
             if (teams.get(i).getTeamName().equalsIgnoreCase(teamName)) {
                 return i;
@@ -208,15 +204,16 @@ public class PlayerCollection {
     /**
      * return a sorted list of teams
      */
-    public final ArrayList<Team> leaderboards() {
-
-        Collections.sort(teams, new sortLeaderboard());
-        return teams;
+    public final ArrayList<Team> getLeaderboards() {
+        
+        ArrayList<Team> sorted = new ArrayList<>(teams);
+        Collections.sort(sorted, new sortLeaderboard());
+        return sorted;
     }
 
     /**
      * Compares the teams first by points and then matches won,matches draw and
-     * matches lost as tie breakers to decide the leaderboard
+     * matches lost as tie breakers to decide the leader board
      */
     class sortLeaderboard implements Comparator<Team> {
 
@@ -281,7 +278,7 @@ public class PlayerCollection {
 
         t1.updatePoints(-1);
         t2.updatePoints(2);
-        ArrayList<Team> leader = pc.leaderboards();
+        ArrayList<Team> leader = pc.getLeaderboards();
         for (Team titer : leader) {
         System.out.println(titer);
         }

@@ -10,7 +10,7 @@ import keeptoo.Drag;
 
 /**
  *
- * @author lancelot
+ * @author Ashish Kumar Singh
  */
 public class Login extends javax.swing.JFrame {
 
