@@ -24,6 +24,7 @@ public class Home extends javax.swing.JFrame {
         initTeamScrollPanel();
         initPlayerScrollPanel();
         initLeaderboardScrollPanel();
+        initMatchesScrollPanel();
         this.setLocationRelativeTo(null);
        cd = (CardLayout)(CardHolder.getLayout());
     }
@@ -45,6 +46,7 @@ public class Home extends javax.swing.JFrame {
         PlayersBtn = new keeptoo.KButton();
         AdminBtn = new keeptoo.KButton();
         Leaderboardbtn = new keeptoo.KButton();
+        MatchesBtn = new keeptoo.KButton();
         TopBar = new javax.swing.JPanel();
         SearchBar = new javax.swing.JTextField();
         SearchIcon = new javax.swing.JLabel();
@@ -143,7 +145,7 @@ public class Home extends javax.swing.JFrame {
                 AdminBtnActionPerformed(evt);
             }
         });
-        NavBar.add(AdminBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, -1, 60));
+        NavBar.add(AdminBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, -1, 60));
 
         Leaderboardbtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Leaderboardbtn.setText("Leaderboard");
@@ -161,6 +163,23 @@ public class Home extends javax.swing.JFrame {
             }
         });
         NavBar.add(Leaderboardbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, 60));
+
+        MatchesBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        MatchesBtn.setText("Matches");
+        MatchesBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        MatchesBtn.setkAllowGradient(false);
+        MatchesBtn.setkAllowTab(true);
+        MatchesBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
+        MatchesBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
+        MatchesBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        MatchesBtn.setkSelectedColor(new java.awt.Color(55, 76, 106));
+        MatchesBtn.setPreferredSize(new java.awt.Dimension(230, 60));
+        MatchesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MatchesBtnActionPerformed(evt);
+            }
+        });
+        NavBar.add(MatchesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, -1, 60));
 
         getContentPane().add(NavBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 680));
 
@@ -258,7 +277,22 @@ public class Home extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
+    void initMatchesScrollPanel() {
+        MatchesScrPanel = new MatchesScrollPanel();
+//        TeamScrollPanel.setBackground(new Color(255,255,255));
+//        javax.swing.GroupLayout TeamsLayout = new javax.swing.GroupLayout(TeamScrollPanel);
+//        TeamScrollPanel.setLayout(TeamsLayout);
+//        TeamsLayout.setHorizontalGroup(
+//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGap(0, 980, Short.MAX_VALUE)
+//        );
+//        TeamsLayout.setVerticalGroup(
+//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGap(0, 600, Short.MAX_VALUE)
+//        );
+
+        CardHolder.add(MatchesScrPanel, "card3");
+    }
     void initLeaderboardScrollPanel() {
         LeaderboardScrPanel = new LeaderboardScrollPanel();
 //        TeamScrollPanel.setBackground(new Color(255,255,255));
@@ -404,6 +438,21 @@ public class Home extends javax.swing.JFrame {
         CardHolder.add(LeaderboardScrPanel);
     }//GEN-LAST:event_LeaderboardbtnActionPerformed
 
+    private void MatchesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MatchesBtnActionPerformed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        CardHolder.removeAll();
+//      CardHolder.add(Teams);
+        
+        CardHolder.repaint();
+        CardHolder.revalidate();
+        MatchesScrPanel.removeAll();
+        initMatchesScrollPanel();
+//        TeamScrollPanel.repaint();
+//        TeamScrollPanel.revalidate();
+        CardHolder.add(MatchesScrPanel);
+    }//GEN-LAST:event_MatchesBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -456,6 +505,7 @@ public class Home extends javax.swing.JFrame {
         }
         
     }
+    private MatchesScrollPanel MatchesScrPanel;
     private LeaderboardScrollPanel LeaderboardScrPanel;
     private TeamScrollPanel TeamScrPanel;
     private PlayerScrollPanel PlayerScrPanel;
@@ -468,6 +518,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel HomePanel;
     private keeptoo.KButton Leaderboardbtn;
     private javax.swing.JLabel LogoTournify;
+    private keeptoo.KButton MatchesBtn;
     private javax.swing.JPanel NavBar;
     private keeptoo.KButton PlayersBtn;
     private javax.swing.JTextField SearchBar;
