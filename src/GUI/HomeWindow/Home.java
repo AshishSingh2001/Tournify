@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package GUI.HomeWindow;
+
 import java.awt.*;
 import javax.swing.*;
-import Code.*;
+import GUI.Login;
 
 /**
  *
@@ -17,8 +18,8 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
-    CardLayout cd;
     JTabbedPane t = new JTabbedPane();
+
     public Home() {
         initComponents();
         initTeamScrollPanel();
@@ -26,7 +27,7 @@ public class Home extends javax.swing.JFrame {
         initLeaderboardScrollPanel();
         initMatchesScrollPanel();
         this.setLocationRelativeTo(null);
-       cd = (CardLayout)(CardHolder.getLayout());
+        cd = (CardLayout) (CardHolder.getLayout());
     }
 
     /**
@@ -51,6 +52,7 @@ public class Home extends javax.swing.JFrame {
         SearchBar = new javax.swing.JTextField();
         SearchIcon = new javax.swing.JLabel();
         ExitIcon = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         CardHolder = new javax.swing.JPanel();
         HomePanel = new javax.swing.JPanel();
         Admin = new javax.swing.JPanel();
@@ -212,16 +214,25 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/left-arrow-black-circular-button.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout TopBarLayout = new javax.swing.GroupLayout(TopBar);
         TopBar.setLayout(TopBarLayout);
         TopBarLayout.setHorizontalGroup(
             TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopBarLayout.createSequentialGroup()
-                .addContainerGap(719, Short.MAX_VALUE)
+                .addContainerGap(699, Short.MAX_VALUE)
                 .addComponent(SearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SearchIcon)
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
                 .addComponent(ExitIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
@@ -229,10 +240,12 @@ public class Home extends javax.swing.JFrame {
             TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopBarLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ExitIcon)
-                    .addComponent(SearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(SearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -293,6 +306,7 @@ public class Home extends javax.swing.JFrame {
 
         CardHolder.add(MatchesScrPanel, "card3");
     }
+
     void initLeaderboardScrollPanel() {
         LeaderboardScrPanel = new LeaderboardScrollPanel();
 //        TeamScrollPanel.setBackground(new Color(255,255,255));
@@ -309,6 +323,7 @@ public class Home extends javax.swing.JFrame {
 
         CardHolder.add(LeaderboardScrPanel, "card3");
     }
+
     void initTeamScrollPanel() {
         TeamScrPanel = new TeamScrollPanel();
 //        TeamScrollPanel.setBackground(new Color(255,255,255));
@@ -325,7 +340,7 @@ public class Home extends javax.swing.JFrame {
 
         CardHolder.add(TeamScrPanel, "card3");
     }
-    
+
     void initPlayerScrollPanel() {
         PlayerScrPanel = new PlayerScrollPanel();
 //        TeamScrollPanel.setBackground(new Color(255,255,255));
@@ -342,8 +357,8 @@ public class Home extends javax.swing.JFrame {
 
         CardHolder.add(PlayerScrPanel, "card3");
     }
-    
-    int xx,xy;
+
+    int xx, xy;
     private void TopBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TopBarMousePressed
         // TODO add your handling code here:
         //drag this pane
@@ -353,11 +368,11 @@ public class Home extends javax.swing.JFrame {
 
     private void TopBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TopBarMouseDragged
         // TODO add your handling code here:
-        
+
         //source to drag
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-xx,y-xy);
+        this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_TopBarMouseDragged
 
     private void ExitIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitIconMouseClicked
@@ -372,7 +387,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         CardHolder.removeAll();
 //      CardHolder.add(Teams);
-        
+
         CardHolder.repaint();
         CardHolder.revalidate();
         TeamScrPanel.removeAll();
@@ -380,16 +395,16 @@ public class Home extends javax.swing.JFrame {
 //        TeamScrollPanel.repaint();
 //        TeamScrollPanel.revalidate();
         CardHolder.add(TeamScrPanel);
-        
+
 
     }//GEN-LAST:event_TeamsBtnActionPerformed
 
     private void HomeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBtnActionPerformed
         // TODO add your handling code here:
         CardHolder.removeAll();
-   CardHolder.add(HomePanel);
-   CardHolder.repaint();
-   CardHolder.revalidate();
+        CardHolder.add(HomePanel);
+        CardHolder.repaint();
+        CardHolder.revalidate();
 
     }//GEN-LAST:event_HomeBtnActionPerformed
 
@@ -399,10 +414,10 @@ public class Home extends javax.swing.JFrame {
 //   CardHolder.add(Players);
 //   CardHolder.repaint();
 //   CardHolder.revalidate();
-   
-   CardHolder.removeAll();
+
+        CardHolder.removeAll();
 //      CardHolder.add(Teams);
-        
+
         CardHolder.repaint();
         CardHolder.revalidate();
         PlayerScrPanel.removeAll();
@@ -416,11 +431,11 @@ public class Home extends javax.swing.JFrame {
 
     private void AdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminBtnActionPerformed
         // TODO add your handling code here:
-       
-   CardHolder.removeAll();
-   CardHolder.add(Admin);
-   CardHolder.repaint();
-   CardHolder.revalidate();
+
+        CardHolder.removeAll();
+        CardHolder.add(Admin);
+        CardHolder.repaint();
+        CardHolder.revalidate();
 
     }//GEN-LAST:event_AdminBtnActionPerformed
 
@@ -428,7 +443,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         CardHolder.removeAll();
 //      CardHolder.add(Teams);
-        
+
         CardHolder.repaint();
         CardHolder.revalidate();
         LeaderboardScrPanel.removeAll();
@@ -443,7 +458,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         CardHolder.removeAll();
 //      CardHolder.add(Teams);
-        
+
         CardHolder.repaint();
         CardHolder.revalidate();
         MatchesScrPanel.removeAll();
@@ -452,6 +467,12 @@ public class Home extends javax.swing.JFrame {
 //        TeamScrollPanel.revalidate();
         CardHolder.add(MatchesScrPanel);
     }//GEN-LAST:event_MatchesBtnActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -488,23 +509,23 @@ public class Home extends javax.swing.JFrame {
             }
         });
     }
-   
-    
-    private void setColor(JPanel pane)
-    {
-        pane.setBackground(new Color(41,57,80));
+
+    private void setColor(JPanel pane) {
+        pane.setBackground(new Color(41, 57, 80));
     }
-    
-    private void resetColor(JPanel [] pane, JPanel [] indicators)
-    {
-        for(int i=0;i<pane.length;i++){
-           pane[i].setBackground(new Color(23,35,51));
-           
-        } for(int i=0;i<indicators.length;i++){
-           indicators[i].setOpaque(false);           
+
+    private void resetColor(JPanel[] pane, JPanel[] indicators) {
+        for (int i = 0; i < pane.length; i++) {
+            pane[i].setBackground(new Color(23, 35, 51));
+
         }
-        
+        for (int i = 0; i < indicators.length; i++) {
+            indicators[i].setOpaque(false);
+        }
+
     }
+
+    CardLayout cd;
     private MatchesScrollPanel MatchesScrPanel;
     private LeaderboardScrollPanel LeaderboardScrPanel;
     private TeamScrollPanel TeamScrPanel;
@@ -525,6 +546,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel SearchIcon;
     private keeptoo.KButton TeamsBtn;
     private javax.swing.JPanel TopBar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

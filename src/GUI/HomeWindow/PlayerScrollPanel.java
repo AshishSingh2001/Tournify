@@ -3,25 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package GUI.HomeWindow;
 import java.awt.*;
 import javax.swing.*;    
 import javax.swing.border.EmptyBorder;
+import java.util.*;
+import java.io.*;
 import Code.*;
+
 /**
  *
- * @author Nikhil Rana
+ * @author Ashish Kumar Singh
  */
-public class LeaderboardScrollPanel extends javax.swing.JPanel {
-
+public class PlayerScrollPanel extends javax.swing.JPanel {
     /**
      * Creates new form HomePanel
      */
-    public LeaderboardScrollPanel() {
-        ctr += 3;
+    public PlayerScrollPanel() {
+        tms = new TournamentManagementSystem();
         System.out.print("constructor called");
         initComponents();
-        initLeaderboardScrollPanel();
+        initPlayerScrollPanel();
     }
 
     /**
@@ -48,7 +50,7 @@ public class LeaderboardScrollPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    void initLeaderboardScrollPanel() {
+    void initPlayerScrollPanel() {
 
 //        setBounds(0, 300, 778, 426); //******* first two terms set the location of the window to initialise
 
@@ -65,12 +67,13 @@ public class LeaderboardScrollPanel extends javax.swing.JPanel {
         
         JPanel columnpanel = new JPanel();
         borderlaoutpanel.add(columnpanel, BorderLayout.NORTH);
-        columnpanel.setLayout(new GridLayout(0, 1, 60, 15)); //******setting the overall grid layout
+        columnpanel.setLayout(new GridLayout(0, 2, 60, 15)); //******setting the overall grid layout
         columnpanel.setBackground(Color.white);
         
-        LeaderboardScrollCard[] rowPanel = new LeaderboardScrollCard[ctr];
-        for (int i = 0; i < ctr; i++) {
-            rowPanel[i] = new LeaderboardScrollCard();
+       ArrayList<Player> allPlayer = new ArrayList<>(tms.getAllDummyPlayers());
+        PlayerScrollCard[] rowPanel = new PlayerScrollCard[allPlayer.size()];
+        for (int i = 0; i < allPlayer.size(); i++) {
+            rowPanel[i] = new PlayerScrollCard(allPlayer.get(i).getName(),allPlayer.get(i).getTeamName(),allPlayer.get(i).getPosition());
 //            rowPanel[i].setPreferredSize(new Dimension(450, 250)); //*****size of the each card
             columnpanel.add(rowPanel[i]); 
             
@@ -82,6 +85,7 @@ public class LeaderboardScrollPanel extends javax.swing.JPanel {
     
     private static int ctr = 0;
     private JScrollPane scrollPane;
+    private TournamentManagementSystem tms;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

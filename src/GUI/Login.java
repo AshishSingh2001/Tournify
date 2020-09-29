@@ -5,6 +5,11 @@
  */
 package GUI;
 
+import GUI.AdminWindow.Admin;
+import GUI.HomeWindow.Home;
+import java.awt.*;
+import javax.swing.*;
+import java.util.*;
 import keeptoo.Drag;
 
 
@@ -170,13 +175,14 @@ public class Login extends javax.swing.JFrame {
 
     private void BtnGuestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuestActionPerformed
         // TODO add your handling code here:
-        Home GuestHome = new Home();
-        GuestHome.setVisible(true);
-        LoginPage.setVisible(false);
+        new Home().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BtnGuestActionPerformed
 
     private void BtnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAdminActionPerformed
         // TODO add your handling code here:
+        new Admin().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BtnAdminActionPerformed
 
     private void ExitIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitIconMouseClicked
@@ -211,7 +217,6 @@ public class Login extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-           
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

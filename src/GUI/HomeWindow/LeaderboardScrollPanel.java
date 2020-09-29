@@ -3,25 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package GUI.HomeWindow;
 import java.awt.*;
 import javax.swing.*;    
 import javax.swing.border.EmptyBorder;
-
+import Code.*;
 /**
  *
  * @author Nikhil Rana
  */
-public class MatchesScrollPanel extends javax.swing.JPanel {
+public class LeaderboardScrollPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form HomePanel
      */
-    public MatchesScrollPanel() {
+    public LeaderboardScrollPanel() {
         ctr += 3;
         System.out.print("constructor called");
         initComponents();
-        initMatchesScrollPanel();
+        initLeaderboardScrollPanel();
     }
 
     /**
@@ -48,7 +48,7 @@ public class MatchesScrollPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    void initMatchesScrollPanel() {
+    void initLeaderboardScrollPanel() {
 
 //        setBounds(0, 300, 778, 426); //******* first two terms set the location of the window to initialise
 
@@ -65,12 +65,12 @@ public class MatchesScrollPanel extends javax.swing.JPanel {
         
         JPanel columnpanel = new JPanel();
         borderlaoutpanel.add(columnpanel, BorderLayout.NORTH);
-        columnpanel.setLayout(new GridLayout(0, 2, 60, 15)); //******setting the overall grid layout
+        columnpanel.setLayout(new GridLayout(0, 1, 60, 15)); //******setting the overall grid layout
         columnpanel.setBackground(Color.white);
         
-        MatchesScrollCard[] rowPanel = new MatchesScrollCard[ctr];
+        LeaderboardScrollCard[] rowPanel = new LeaderboardScrollCard[ctr];
         for (int i = 0; i < ctr; i++) {
-            rowPanel[i] = new MatchesScrollCard();
+            rowPanel[i] = new LeaderboardScrollCard();
 //            rowPanel[i].setPreferredSize(new Dimension(450, 250)); //*****size of the each card
             columnpanel.add(rowPanel[i]); 
             
