@@ -80,9 +80,11 @@ public class Home extends javax.swing.JFrame {
         HomeBtn.setText("Home");
         HomeBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         HomeBtn.setkAllowGradient(false);
+        HomeBtn.setkAllowTab(true);
         HomeBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
         HomeBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
         HomeBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        HomeBtn.setkSelectedColor(new java.awt.Color(55, 76, 106));
         HomeBtn.setPreferredSize(new java.awt.Dimension(230, 60));
         HomeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,9 +96,11 @@ public class Home extends javax.swing.JFrame {
         TeamsBtn.setText("Teams");
         TeamsBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         TeamsBtn.setkAllowGradient(false);
+        TeamsBtn.setkAllowTab(true);
         TeamsBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
         TeamsBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
         TeamsBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        TeamsBtn.setkSelectedColor(new java.awt.Color(55, 76, 106));
         TeamsBtn.setPreferredSize(new java.awt.Dimension(230, 60));
         TeamsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,9 +113,11 @@ public class Home extends javax.swing.JFrame {
         PlayersBtn.setText("Players");
         PlayersBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         PlayersBtn.setkAllowGradient(false);
+        PlayersBtn.setkAllowTab(true);
         PlayersBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
         PlayersBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
         PlayersBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        PlayersBtn.setkSelectedColor(new java.awt.Color(55, 76, 106));
         PlayersBtn.setPreferredSize(new java.awt.Dimension(230, 60));
         PlayersBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,9 +130,11 @@ public class Home extends javax.swing.JFrame {
         AdminBtn.setText("Admin");
         AdminBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         AdminBtn.setkAllowGradient(false);
+        AdminBtn.setkAllowTab(true);
         AdminBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
         AdminBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
         AdminBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        AdminBtn.setkSelectedColor(new java.awt.Color(55, 76, 106));
         AdminBtn.setPreferredSize(new java.awt.Dimension(230, 60));
         AdminBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
