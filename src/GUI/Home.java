@@ -23,6 +23,7 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         initTeamScrollPanel();
         initPlayerScrollPanel();
+        initLeaderboardScrollPanel();
         this.setLocationRelativeTo(null);
        cd = (CardLayout)(CardHolder.getLayout());
     }
@@ -43,6 +44,7 @@ public class Home extends javax.swing.JFrame {
         TeamsBtn = new keeptoo.KButton();
         PlayersBtn = new keeptoo.KButton();
         AdminBtn = new keeptoo.KButton();
+        Leaderboardbtn = new keeptoo.KButton();
         TopBar = new javax.swing.JPanel();
         SearchBar = new javax.swing.JTextField();
         SearchIcon = new javax.swing.JLabel();
@@ -141,7 +143,24 @@ public class Home extends javax.swing.JFrame {
                 AdminBtnActionPerformed(evt);
             }
         });
-        NavBar.add(AdminBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, 60));
+        NavBar.add(AdminBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, -1, 60));
+
+        Leaderboardbtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Leaderboardbtn.setText("Leaderboard");
+        Leaderboardbtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Leaderboardbtn.setkAllowGradient(false);
+        Leaderboardbtn.setkAllowTab(true);
+        Leaderboardbtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
+        Leaderboardbtn.setkHoverColor(new java.awt.Color(57, 62, 70));
+        Leaderboardbtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        Leaderboardbtn.setkSelectedColor(new java.awt.Color(55, 76, 106));
+        Leaderboardbtn.setPreferredSize(new java.awt.Dimension(230, 60));
+        Leaderboardbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeaderboardbtnActionPerformed(evt);
+            }
+        });
+        NavBar.add(Leaderboardbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, 60));
 
         getContentPane().add(NavBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 680));
 
@@ -240,7 +259,22 @@ public class Home extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
-    
+    void initLeaderboardScrollPanel() {
+        LeaderboardScrPanel = new LeaderboardScrollPanel();
+//        TeamScrollPanel.setBackground(new Color(255,255,255));
+//        javax.swing.GroupLayout TeamsLayout = new javax.swing.GroupLayout(TeamScrollPanel);
+//        TeamScrollPanel.setLayout(TeamsLayout);
+//        TeamsLayout.setHorizontalGroup(
+//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGap(0, 980, Short.MAX_VALUE)
+//        );
+//        TeamsLayout.setVerticalGroup(
+//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGap(0, 600, Short.MAX_VALUE)
+//        );
+
+        CardHolder.add(LeaderboardScrPanel, "card3");
+    }
     void initTeamScrollPanel() {
         TeamScrPanel = new TeamScrollPanel();
 //        TeamScrollPanel.setBackground(new Color(255,255,255));
@@ -356,6 +390,20 @@ public class Home extends javax.swing.JFrame {
 
     }//GEN-LAST:event_AdminBtnActionPerformed
 
+    private void LeaderboardbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaderboardbtnActionPerformed
+        // TODO add your handling code here:
+        CardHolder.removeAll();
+//      CardHolder.add(Teams);
+        
+        CardHolder.repaint();
+        CardHolder.revalidate();
+        LeaderboardScrPanel.removeAll();
+        initLeaderboardScrollPanel();
+//        TeamScrollPanel.repaint();
+//        TeamScrollPanel.revalidate();
+        CardHolder.add(LeaderboardScrPanel);
+    }//GEN-LAST:event_LeaderboardbtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -408,7 +456,7 @@ public class Home extends javax.swing.JFrame {
         }
         
     }
-    
+    private LeaderboardScrollPanel LeaderboardScrPanel;
     private TeamScrollPanel TeamScrPanel;
     private PlayerScrollPanel PlayerScrPanel;
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -418,6 +466,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel ExitIcon;
     private keeptoo.KButton HomeBtn;
     private javax.swing.JPanel HomePanel;
+    private keeptoo.KButton Leaderboardbtn;
     private javax.swing.JLabel LogoTournify;
     private javax.swing.JPanel NavBar;
     private keeptoo.KButton PlayersBtn;
