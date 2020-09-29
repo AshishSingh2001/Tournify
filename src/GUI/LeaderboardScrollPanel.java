@@ -65,7 +65,7 @@ public class LeaderboardScrollPanel extends javax.swing.JPanel {
         
         JPanel columnpanel = new JPanel();
         borderlaoutpanel.add(columnpanel, BorderLayout.NORTH);
-        columnpanel.setLayout(new GridLayout(0, 2, 60, 15)); //******setting the overall grid layout
+        columnpanel.setLayout(new GridLayout(0, 1, 60, 15)); //******setting the overall grid layout
         columnpanel.setBackground(Color.white);
         
         LeaderboardScrollCard[] rowPanel = new LeaderboardScrollCard[ctr];
