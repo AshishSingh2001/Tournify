@@ -55,9 +55,9 @@ public class Login extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        HomePanel.setkEndColor(new java.awt.Color(15, 76, 117));
-        HomePanel.setkGradientFocus(800);
-        HomePanel.setkStartColor(new java.awt.Color(252, 218, 183));
+        HomePanel.setkEndColor(new java.awt.Color(0, 0, 153));
+        HomePanel.setkGradientFocus(1000);
+        HomePanel.setkStartColor(new java.awt.Color(51, 255, 255));
         HomePanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 HomePanelMouseDragged(evt);
@@ -106,9 +106,9 @@ public class Login extends javax.swing.JFrame {
 
         BtnGuest.setText("View as Guest");
         BtnGuest.setkBorderRadius(30);
-        BtnGuest.setkEndColor(new java.awt.Color(252, 218, 183));
+        BtnGuest.setkEndColor(new java.awt.Color(51, 255, 255));
         BtnGuest.setkHoverEndColor(new java.awt.Color(50, 130, 184));
-        BtnGuest.setkHoverForeGround(new java.awt.Color(227, 223, 200));
+        BtnGuest.setkHoverForeGround(new java.awt.Color(51, 255, 255));
         BtnGuest.setkHoverStartColor(new java.awt.Color(26, 166, 183));
         BtnGuest.setkStartColor(new java.awt.Color(50, 130, 184));
         BtnGuest.addActionListener(new java.awt.event.ActionListener() {
