@@ -70,7 +70,7 @@ public class PlayerScrollPanel extends javax.swing.JPanel {
         columnpanel.setLayout(new GridLayout(0, 2, 60, 15)); //******setting the overall grid layout
         columnpanel.setBackground(Color.white);
         
-       ArrayList<Player> allPlayer = new ArrayList<>(tms.getAllDummyPlayers());
+       ArrayList<Player> allPlayer = new ArrayList<>(tms.getAllPlayers());
         PlayerScrollCard[] rowPanel = new PlayerScrollCard[allPlayer.size()];
         for (int i = 0; i < allPlayer.size(); i++) {
             rowPanel[i] = new PlayerScrollCard(allPlayer.get(i).getName(),allPlayer.get(i).getTeamName(),allPlayer.get(i).getPosition());

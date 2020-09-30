@@ -27,22 +27,80 @@ public class AddMatchPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(229, 103, 73));
+        Team1Label = new javax.swing.JLabel();
+        Team2Label = new javax.swing.JLabel();
+        Points1Label = new javax.swing.JLabel();
+        Points2Label = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+
+        setBackground(new java.awt.Color(254, 254, 254));
+        setForeground(new java.awt.Color(254, 254, 254));
         setPreferredSize(new java.awt.Dimension(980, 600));
+
+        Team1Label.setBackground(new java.awt.Color(223, 98, 98));
+        Team1Label.setForeground(new java.awt.Color(1, 1, 1));
+        Team1Label.setText("Team Name 1");
+
+        Team2Label.setBackground(new java.awt.Color(223, 98, 98));
+        Team2Label.setForeground(new java.awt.Color(1, 1, 1));
+        Team2Label.setText("Points of Team 1");
+
+        Points1Label.setBackground(new java.awt.Color(223, 98, 98));
+        Points1Label.setForeground(new java.awt.Color(1, 1, 1));
+        Points1Label.setText("Team Name 2");
+
+        Points2Label.setBackground(new java.awt.Color(223, 98, 98));
+        Points2Label.setForeground(new java.awt.Color(1, 1, 1));
+        Points2Label.setText("Points of Team 2");
+
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(432, 432, 432)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Team1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Team2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Points1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Points2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(298, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(153, 153, 153)
+                .addComponent(Team1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(Points1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(Team2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(Points2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(179, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Points1Label;
+    private javax.swing.JLabel Points2Label;
+    private javax.swing.JLabel Team1Label;
+    private javax.swing.JLabel Team2Label;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

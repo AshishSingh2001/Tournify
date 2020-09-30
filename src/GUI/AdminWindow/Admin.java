@@ -50,6 +50,7 @@ public class Admin extends javax.swing.JFrame {
         SearchBar = new javax.swing.JTextField();
         SearchIcon = new javax.swing.JLabel();
         ExitIcon = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         CardHolder = new javax.swing.JPanel();
         HomePanel = new javax.swing.JPanel();
         Admin = new javax.swing.JPanel();
@@ -177,6 +178,13 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/left-arrow-black-circular-button.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout TopBarLayout = new javax.swing.GroupLayout(TopBar);
         TopBar.setLayout(TopBarLayout);
         TopBarLayout.setHorizontalGroup(
@@ -186,7 +194,9 @@ public class Admin extends javax.swing.JFrame {
                 .addComponent(SearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SearchIcon)
-                .addGap(39, 39, 39)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ExitIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
@@ -195,6 +205,7 @@ public class Admin extends javax.swing.JFrame {
             .addGroup(TopBarLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ExitIcon)
                     .addComponent(SearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -314,6 +325,12 @@ public class Admin extends javax.swing.JFrame {
         CardHolder.add(AddMatch);
     }//GEN-LAST:event_AddMatchesBtnActionPerformed
 
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -383,6 +400,7 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JTextField SearchBar;
     private javax.swing.JLabel SearchIcon;
     private javax.swing.JPanel TopBar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

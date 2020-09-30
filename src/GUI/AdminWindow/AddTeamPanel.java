@@ -5,6 +5,9 @@
  */
 package GUI.AdminWindow;
 
+import Code.Team;
+import Code.TournamentManagementSystem;
+
 /**
  *
  * @author lancelot
@@ -15,6 +18,7 @@ public class AddTeamPanel extends javax.swing.JPanel {
      * Creates new form AddTeam
      */
     public AddTeamPanel() {
+        tms = new TournamentManagementSystem();
         initComponents();
     }
 
@@ -27,22 +31,154 @@ public class AddTeamPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(254, 254, 254));
+        TeamLabel = new javax.swing.JLabel();
+        TeamField = new javax.swing.JTextField();
+        DescriptionLabel = new javax.swing.JLabel();
+        DescriptionField = new javax.swing.JTextField();
+        AddTeamBtn = new keeptoo.KButton();
+        ResetBtn = new keeptoo.KButton();
+
+        setBackground(new java.awt.Color(222, 128, 118));
         setPreferredSize(new java.awt.Dimension(980, 600));
+
+        TeamLabel.setForeground(new java.awt.Color(254, 254, 254));
+        TeamLabel.setText("Team Name");
+
+        TeamField.setBackground(new java.awt.Color(0,0,0,1));
+        TeamField.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        TeamField.setForeground(new java.awt.Color(254, 254, 254));
+        TeamField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
+        TeamField.setOpaque(false);
+        TeamField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TeamFieldActionPerformed(evt);
+            }
+        });
+
+        DescriptionLabel.setForeground(new java.awt.Color(254, 254, 254));
+        DescriptionLabel.setText("Description");
+
+        DescriptionField.setBackground(new java.awt.Color(0,0,0,1));
+        DescriptionField.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        DescriptionField.setForeground(new java.awt.Color(254, 254, 254));
+        DescriptionField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
+        DescriptionField.setOpaque(false);
+        DescriptionField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DescriptionFieldActionPerformed(evt);
+            }
+        });
+
+        AddTeamBtn.setText("Add Team");
+        AddTeamBtn.setkAllowTab(true);
+        AddTeamBtn.setkBorderRadius(30);
+        AddTeamBtn.setkEndColor(new java.awt.Color(0, 204, 204));
+        AddTeamBtn.setkFillButton(false);
+        AddTeamBtn.setkHoverEndColor(new java.awt.Color(217, 236, 242));
+        AddTeamBtn.setkHoverForeGround(new java.awt.Color(227, 223, 200));
+        AddTeamBtn.setkHoverStartColor(new java.awt.Color(30, 95, 116));
+        AddTeamBtn.setkStartColor(new java.awt.Color(254, 254, 254));
+        AddTeamBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddTeamBtnActionPerformed(evt);
+            }
+        });
+
+        ResetBtn.setText("Reset");
+        ResetBtn.setkBorderRadius(30);
+        ResetBtn.setkEndColor(new java.awt.Color(252, 218, 183));
+        ResetBtn.setkHoverEndColor(new java.awt.Color(50, 130, 184));
+        ResetBtn.setkHoverForeGround(new java.awt.Color(227, 223, 200));
+        ResetBtn.setkHoverStartColor(new java.awt.Color(26, 166, 183));
+        ResetBtn.setkStartColor(new java.awt.Color(50, 130, 184));
+        ResetBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 980, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(TeamField, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TeamLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DescriptionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DescriptionField, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(AddTeamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(60, 60, 60)
+                            .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(TeamField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(TeamLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(30, 30, 30)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(DescriptionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(DescriptionField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(50, 50, 50)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(AddTeamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
+    
+    
+    private void reset() {
+        TeamField.setText("");
+        DescriptionField.setText("");
+    }
+    
+    
+    private void TeamFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TeamFieldActionPerformed
 
+    private void DescriptionFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescriptionFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DescriptionFieldActionPerformed
 
+    private void AddTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTeamBtnActionPerformed
+        // TODO add your handling code here:
+        String team, description;
+        team = TeamField.getText();
+        description = DescriptionField.getText();
+        Team t = new Team(team, description);
+        tms.addNewTeam(t);
+        reset();
+    }//GEN-LAST:event_AddTeamBtnActionPerformed
+
+    private void ResetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetBtnActionPerformed
+        // TODO add your handling code here:
+        reset();
+    }//GEN-LAST:event_ResetBtnActionPerformed
+
+    private TournamentManagementSystem tms;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private keeptoo.KButton AddTeamBtn;
+    private javax.swing.JTextField DescriptionField;
+    private javax.swing.JLabel DescriptionLabel;
+    private keeptoo.KButton ResetBtn;
+    private javax.swing.JTextField TeamField;
+    private javax.swing.JLabel TeamLabel;
     // End of variables declaration//GEN-END:variables
 }
