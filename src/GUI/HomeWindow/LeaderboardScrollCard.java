@@ -16,6 +16,37 @@ public class LeaderboardScrollCard extends javax.swing.JPanel {
      */
     public LeaderboardScrollCard() {
         initComponents();
+        displayHeading();
+    }
+
+    public LeaderboardScrollCard(int rank, String name, int points, int won, int draw, int lost) {
+        initComponents();
+        this.teamRank = rank;
+        this.teamName = name;
+        this.teamPoints = points;
+        this.matchWon = won;
+        this.matchDraw = draw;
+        this.matchLost = lost;
+        display();
+    }
+
+    private void displayHeading() {
+        Serial.setText("Rank");
+        name.setText("Team Name");
+        points.setText("Points");
+        won.setText("Won");
+        draw.setText("Draw");
+        lost.setText("Lost");
+    }
+
+    private void display() {
+        Serial.setText(String.valueOf(teamRank));
+        name.setText(teamName);
+        points.setText(String.valueOf(teamPoints));
+        won.setText(String.valueOf(matchWon));
+        draw.setText(String.valueOf(matchDraw));
+        lost.setText(String.valueOf(matchLost));
+
     }
 
     /**
@@ -28,9 +59,12 @@ public class LeaderboardScrollCard extends javax.swing.JPanel {
     private void initComponents() {
 
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        Serial = new javax.swing.JLabel();
+        points = new javax.swing.JLabel();
+        name = new javax.swing.JLabel();
+        won = new javax.swing.JLabel();
+        draw = new javax.swing.JLabel();
+        lost = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(907, 62));
 
@@ -40,36 +74,42 @@ public class LeaderboardScrollCard extends javax.swing.JPanel {
         kGradientPanel1.setkStartColor(new java.awt.Color(204, 204, 255));
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(380, 150));
 
-        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        jLabel2.setText("1");
+        Serial.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        jLabel3.setText("SCORE");
+        points.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        jLabel4.setText("Team NAME");
+        name.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 324, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(225, 225, 225)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addGap(18, 18, 18)
+                .addComponent(Serial, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(191, 191, 191)
+                .addComponent(points, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78)
+                .addComponent(won, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(draw, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(lost)
+                .addContainerGap(128, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Serial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(points, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(won, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(draw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lost))
                 .addContainerGap())
         );
 
@@ -85,11 +125,19 @@ public class LeaderboardScrollCard extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
+    private String teamName;
+    private int teamPoints;
+    private int teamRank;
+    private int matchWon;
+    private int matchDraw;
+    private int matchLost;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel Serial;
+    private javax.swing.JLabel draw;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JLabel lost;
+    private javax.swing.JLabel name;
+    private javax.swing.JLabel points;
+    private javax.swing.JLabel won;
     // End of variables declaration//GEN-END:variables
 }

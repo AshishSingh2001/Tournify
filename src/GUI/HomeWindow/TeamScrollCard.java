@@ -20,6 +20,7 @@ public class TeamScrollCard extends javax.swing.JPanel {
         initComponents();
         this.name= name;
         this.description = description;
+        display();
     }
 private void display()
 {

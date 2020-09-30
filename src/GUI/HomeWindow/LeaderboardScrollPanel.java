@@ -8,6 +8,7 @@ import java.awt.*;
 import javax.swing.*;    
 import javax.swing.border.EmptyBorder;
 import Code.*;
+import java.util.ArrayList;
 /**
  *
  * @author Nikhil Rana
@@ -18,10 +19,12 @@ public class LeaderboardScrollPanel extends javax.swing.JPanel {
      * Creates new form HomePanel
      */
     public LeaderboardScrollPanel() {
+       tmc = new TournamentManagementSystem();
         ctr += 3;
         System.out.print("constructor called");
         initComponents();
         initLeaderboardScrollPanel();
+        
     }
 
     /**
@@ -67,10 +70,12 @@ public class LeaderboardScrollPanel extends javax.swing.JPanel {
         borderlaoutpanel.add(columnpanel, BorderLayout.NORTH);
         columnpanel.setLayout(new GridLayout(0, 1, 60, 15)); //******setting the overall grid layout
         columnpanel.setBackground(Color.white);
-        
-        LeaderboardScrollCard[] rowPanel = new LeaderboardScrollCard[ctr];
-        for (int i = 0; i < ctr; i++) {
-            rowPanel[i] = new LeaderboardScrollCard();
+        ArrayList<Team> leaderboard = tmc.getDummyLeaderboards();
+        LeaderboardScrollCard[] rowPanel = new LeaderboardScrollCard[(leaderboard.size())+1];
+        rowPanel[0] = new LeaderboardScrollCard();
+         columnpanel.add(rowPanel[0]);
+        for (int i = 0; i < leaderboard.size(); i++) {
+            rowPanel[i] = new LeaderboardScrollCard(i+1,leaderboard.get(i).getTeamName(),leaderboard.get(i).getPoints(),leaderboard.get(i).getMatchesWon(),leaderboard.get(i).getMatchesDraw(),leaderboard.get(i).getMatchesLost());
 //            rowPanel[i].setPreferredSize(new Dimension(450, 250)); //*****size of the each card
             columnpanel.add(rowPanel[i]); 
             
@@ -82,6 +87,7 @@ public class LeaderboardScrollPanel extends javax.swing.JPanel {
     
     private static int ctr = 0;
     private JScrollPane scrollPane;
+    private TournamentManagementSystem tmc;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

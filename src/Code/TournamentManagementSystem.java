@@ -1,5 +1,6 @@
 package Code;
 
+import Code.*;
 import java.io.IOException;
 import java.util.*;
 
@@ -76,7 +77,46 @@ public class TournamentManagementSystem {
     public ArrayList<Team> getAllTeams() {
         return pc.getAllTeams();
     }
-    
+    public ArrayList<Team> getDummyLeaderboards()
+    {System.out.println("Test Of Player Collection ");
+
+        Player p1 = new Player("name1", "height", "experience", "position", 1, 1, 1,
+        "team", 1);
+        Player p2 = new Player("name2", "height", "experience", "position", 2, 1, 1,
+        "team", 1);
+        Player p3 = new Player("name3", "height", "experience", "position", 3, 1, 1,
+        "team", 1);
+
+        Team t1 = new Team("TeamName1", p1);
+        t1.addPlayer(p2);
+        t1.addPlayer(p3);
+
+        Player p4 = new Player("name4", "height", "experience", "position", 4, 4, 4,
+        "team", 4);
+        Player p5 = new Player("name5", "height", "experience", "position", 5, 5, 5,
+        "team", 5);
+        Player p6 = new Player("name6", "height", "experience", "position", 6, 6, 6,
+        "team", 6);
+
+        Team t2 = new Team("TeamName2", p4);
+        t2.addPlayer(p5);
+        t2.addPlayer(p6);
+        t1.updatePoints(2);
+        t1.updatePoints(2);
+        t1.updatePoints(1);
+        t2.updatePoints(2);
+        t2.updatePoints(2);
+        t2.updatePoints(2);
+        t2.updatePoints(2);
+        
+        PlayerCollection dummy = new PlayerCollection(t1);
+        
+        dummy.addTeam(t2);
+        return dummy.getLeaderboards();
+        
+        
+        
+    }
     public ArrayList<Team> getAllDummyTeams() {
         System.out.println("Test Of Player Collection ");
 
