@@ -76,21 +76,35 @@ public class MatchesScrollCard extends javax.swing.JPanel {
         Vs.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         Vs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Vs.setText("Vs");
-        kGradientPanel1.add(Vs, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 19, 48, 26));
+        kGradientPanel1.add(Vs, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 48, 30));
 
         Points.setFont(new java.awt.Font("Ubuntu", 3, 16)); // NOI18N
         Points.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Points.setText("Points");
-        kGradientPanel1.add(Points, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 62, 81, 19));
+        kGradientPanel1.add(Points, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 90, 19));
 
         Result.setFont(new java.awt.Font("Ubuntu", 2, 15)); // NOI18N
         Result.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Result.setPreferredSize(new java.awt.Dimension(210, 19));
-        kGradientPanel1.add(Result, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 102, 243, -1));
-        kGradientPanel1.add(Team2, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 12, 94, 33));
-        kGradientPanel1.add(Team1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 21, 94, 33));
-        kGradientPanel1.add(team1points, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 62, 52, 29));
-        kGradientPanel1.add(team2points, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 62, 52, 29));
+        kGradientPanel1.add(Result, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 260, 30));
+
+        Team2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        Team2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kGradientPanel1.add(Team2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 140, 30));
+
+        Team1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        Team1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        kGradientPanel1.add(Team1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 140, 30));
+
+        team1points.setFont(new java.awt.Font("Lucida Grande", 1, 15)); // NOI18N
+        team1points.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        team1points.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        kGradientPanel1.add(team1points, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 130, 29));
+
+        team2points.setFont(new java.awt.Font("Lucida Grande", 1, 15)); // NOI18N
+        team2points.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        team2points.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        kGradientPanel1.add(team2points, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 130, 29));
 
         add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents

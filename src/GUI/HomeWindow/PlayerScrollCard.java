@@ -54,6 +54,8 @@ public class PlayerScrollCard extends javax.swing.JPanel {
 
         kGradientPanel1.setBackground(new java.awt.Color(254, 254, 254));
         kGradientPanel1.setkBorderRadius(30);
+        kGradientPanel1.setkEndColor(new java.awt.Color(0, 204, 204));
+        kGradientPanel1.setkStartColor(new java.awt.Color(204, 255, 204));
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(380, 150));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imge_1.jpg"))); // NOI18N
