@@ -41,12 +41,13 @@ public class AddMatchPanel extends javax.swing.JPanel {
         PointsLabel1 = new javax.swing.JLabel();
         PointsField1 = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(170, 102, 235));
+        setBackground(new java.awt.Color(153, 153, 255));
         setForeground(new java.awt.Color(254, 254, 254));
         setPreferredSize(new java.awt.Dimension(980, 600));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         AddMatchBtn.setText("Add Match");
+        AddMatchBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         AddMatchBtn.setkBackGroundColor(new java.awt.Color(198, 171, 229));
         AddMatchBtn.setkBorderRadius(30);
         AddMatchBtn.setkEndColor(new java.awt.Color(0, 204, 204));
@@ -63,12 +64,13 @@ public class AddMatchPanel extends javax.swing.JPanel {
         add(AddMatchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 160, -1));
 
         ResetBtn.setText("Reset");
+        ResetBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         ResetBtn.setkBorderRadius(30);
-        ResetBtn.setkEndColor(new java.awt.Color(252, 218, 183));
+        ResetBtn.setkEndColor(new java.awt.Color(153, 153, 255));
         ResetBtn.setkHoverEndColor(new java.awt.Color(50, 130, 184));
         ResetBtn.setkHoverForeGround(new java.awt.Color(227, 223, 200));
         ResetBtn.setkHoverStartColor(new java.awt.Color(26, 166, 183));
-        ResetBtn.setkStartColor(new java.awt.Color(50, 130, 184));
+        ResetBtn.setkStartColor(new java.awt.Color(102, 51, 255));
         ResetBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ResetBtnActionPerformed(evt);
@@ -76,15 +78,15 @@ public class AddMatchPanel extends javax.swing.JPanel {
         });
         add(ResetBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 160, -1));
 
+        TeamLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         TeamLabel2.setForeground(new java.awt.Color(254, 254, 254));
         TeamLabel2.setText("Team 2 Name");
         add(TeamLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 250, 40));
 
         TeamField2.setBackground(new java.awt.Color(0,0,0,1));
-        TeamField2.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        TeamField2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         TeamField2.setForeground(new java.awt.Color(254, 254, 254));
         TeamField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
-        TeamField2.setOpaque(false);
         TeamField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TeamField2ActionPerformed(evt);
@@ -92,15 +94,15 @@ public class AddMatchPanel extends javax.swing.JPanel {
         });
         add(TeamField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 390, 40));
 
+        PointsLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         PointsLabel2.setForeground(new java.awt.Color(254, 254, 254));
         PointsLabel2.setText("Team 2 Points");
         add(PointsLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 250, 40));
 
         PointsField2.setBackground(new java.awt.Color(0,0,0,1));
-        PointsField2.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        PointsField2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         PointsField2.setForeground(new java.awt.Color(254, 254, 254));
         PointsField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
-        PointsField2.setOpaque(false);
         PointsField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PointsField2ActionPerformed(evt);
@@ -108,15 +110,15 @@ public class AddMatchPanel extends javax.swing.JPanel {
         });
         add(PointsField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 390, 40));
 
+        TeamLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         TeamLabel1.setForeground(new java.awt.Color(254, 254, 254));
         TeamLabel1.setText("Team 1 Name");
         add(TeamLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 250, 40));
 
         TeamField1.setBackground(new java.awt.Color(0,0,0,1));
-        TeamField1.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        TeamField1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         TeamField1.setForeground(new java.awt.Color(254, 254, 254));
         TeamField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
-        TeamField1.setOpaque(false);
         TeamField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TeamField1ActionPerformed(evt);
@@ -124,15 +126,15 @@ public class AddMatchPanel extends javax.swing.JPanel {
         });
         add(TeamField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 390, 40));
 
+        PointsLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         PointsLabel1.setForeground(new java.awt.Color(254, 254, 254));
         PointsLabel1.setText("Team 1 Points");
         add(PointsLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 250, 40));
 
         PointsField1.setBackground(new java.awt.Color(0,0,0,1));
-        PointsField1.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        PointsField1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         PointsField1.setForeground(new java.awt.Color(254, 254, 254));
         PointsField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
-        PointsField1.setOpaque(false);
         PointsField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PointsField1ActionPerformed(evt);

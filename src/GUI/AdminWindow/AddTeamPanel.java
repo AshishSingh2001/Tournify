@@ -38,19 +38,19 @@ public class AddTeamPanel extends javax.swing.JPanel {
         AddTeamBtn = new keeptoo.KButton();
         ResetBtn = new keeptoo.KButton();
 
-        setBackground(new java.awt.Color(222, 128, 118));
+        setBackground(new java.awt.Color(0, 204, 255));
         setPreferredSize(new java.awt.Dimension(980, 600));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        TeamLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         TeamLabel.setForeground(new java.awt.Color(254, 254, 254));
         TeamLabel.setText("Team Name");
         add(TeamLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 250, 40));
 
         TeamField.setBackground(new java.awt.Color(0,0,0,1));
-        TeamField.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        TeamField.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         TeamField.setForeground(new java.awt.Color(254, 254, 254));
         TeamField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
-        TeamField.setOpaque(false);
         TeamField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TeamFieldActionPerformed(evt);
@@ -58,15 +58,15 @@ public class AddTeamPanel extends javax.swing.JPanel {
         });
         add(TeamField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 390, 40));
 
+        DescriptionLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         DescriptionLabel.setForeground(new java.awt.Color(254, 254, 254));
         DescriptionLabel.setText("Description");
         add(DescriptionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 250, 40));
 
         DescriptionField.setBackground(new java.awt.Color(0,0,0,1));
-        DescriptionField.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        DescriptionField.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         DescriptionField.setForeground(new java.awt.Color(254, 254, 254));
         DescriptionField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
-        DescriptionField.setOpaque(false);
         DescriptionField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DescriptionFieldActionPerformed(evt);
@@ -75,6 +75,7 @@ public class AddTeamPanel extends javax.swing.JPanel {
         add(DescriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 390, 40));
 
         AddTeamBtn.setText("Add Team");
+        AddTeamBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         AddTeamBtn.setkBackGroundColor(new java.awt.Color(198, 171, 229));
         AddTeamBtn.setkBorderRadius(30);
         AddTeamBtn.setkEndColor(new java.awt.Color(0, 204, 204));
@@ -91,12 +92,13 @@ public class AddTeamPanel extends javax.swing.JPanel {
         add(AddTeamBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 160, -1));
 
         ResetBtn.setText("Reset");
+        ResetBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         ResetBtn.setkBorderRadius(30);
-        ResetBtn.setkEndColor(new java.awt.Color(252, 218, 183));
+        ResetBtn.setkEndColor(new java.awt.Color(0, 255, 204));
         ResetBtn.setkHoverEndColor(new java.awt.Color(50, 130, 184));
         ResetBtn.setkHoverForeGround(new java.awt.Color(227, 223, 200));
         ResetBtn.setkHoverStartColor(new java.awt.Color(26, 166, 183));
-        ResetBtn.setkStartColor(new java.awt.Color(50, 130, 184));
+        ResetBtn.setkStartColor(new java.awt.Color(0, 51, 255));
         ResetBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ResetBtnActionPerformed(evt);
