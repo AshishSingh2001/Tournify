@@ -200,7 +200,7 @@ public class Home extends javax.swing.JFrame {
         });
         TopBar.add(ExitIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(929, 29, 31, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/left-arrow-black-circular-button.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8-back-30.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
