@@ -186,7 +186,9 @@
         <Component class="keeptoo.KButton" name="BtnAdmin">
           <Properties>
             <Property name="text" type="java.lang.String" value="Login as Admin"/>
-            <Property name="kAllowTab" type="boolean" value="true"/>
+            <Property name="kBackGroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e5" green="ab" red="c6" type="rgb"/>
+            </Property>
             <Property name="kBorderRadius" type="int" value="30"/>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="0" type="rgb"/>

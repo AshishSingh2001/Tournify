@@ -53,7 +53,6 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(360, 110));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1210, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HomePanel.setkEndColor(new java.awt.Color(15, 76, 117));
@@ -123,7 +122,7 @@ public class Login extends javax.swing.JFrame {
         HomePanel.add(BtnOr, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, -1, -1));
 
         BtnAdmin.setText("Login as Admin");
-        BtnAdmin.setkAllowTab(true);
+        BtnAdmin.setkBackGroundColor(new java.awt.Color(198, 171, 229));
         BtnAdmin.setkBorderRadius(30);
         BtnAdmin.setkEndColor(new java.awt.Color(0, 204, 204));
         BtnAdmin.setkFillButton(false);

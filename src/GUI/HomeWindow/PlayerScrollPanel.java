@@ -21,7 +21,6 @@ public class PlayerScrollPanel extends javax.swing.JPanel {
      */
     public PlayerScrollPanel() {
         tms = new TournamentManagementSystem();
-        System.out.print("constructor called");
         initComponents();
         initPlayerScrollPanel();
     }
@@ -51,9 +50,6 @@ public class PlayerScrollPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     void initPlayerScrollPanel() {
-
-//        setBounds(0, 300, 778, 426); //******* first two terms set the location of the window to initialise
-
         scrollPane = new JScrollPane();
         scrollPane.setBounds(0, 0, 980, 600);
         // scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -74,7 +70,6 @@ public class PlayerScrollPanel extends javax.swing.JPanel {
         PlayerScrollCard[] rowPanel = new PlayerScrollCard[allPlayer.size()];
         for (int i = 0; i < allPlayer.size(); i++) {
             rowPanel[i] = new PlayerScrollCard(allPlayer.get(i).getName(),allPlayer.get(i).getTeamName(),allPlayer.get(i).getPosition());
-//            rowPanel[i].setPreferredSize(new Dimension(450, 250)); //*****size of the each card
             columnpanel.add(rowPanel[i]); 
             
             // if (i % 4 == 0 || (i + 1) % 4 == 0)

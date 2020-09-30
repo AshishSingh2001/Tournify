@@ -20,8 +20,6 @@ public class LeaderboardScrollPanel extends javax.swing.JPanel {
      */
     public LeaderboardScrollPanel() {
        tmc = new TournamentManagementSystem();
-        ctr += 3;
-        System.out.print("constructor called");
         initComponents();
         initLeaderboardScrollPanel();
         
@@ -52,9 +50,6 @@ public class LeaderboardScrollPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     void initLeaderboardScrollPanel() {
-
-//        setBounds(0, 300, 778, 426); //******* first two terms set the location of the window to initialise
-
         scrollPane = new JScrollPane();
         scrollPane.setBounds(0, 0, 980, 600);
         // scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -76,7 +71,6 @@ public class LeaderboardScrollPanel extends javax.swing.JPanel {
          columnpanel.add(rowPanel[0]);
         for (int i = 0; i < leaderboard.size(); i++) {
             rowPanel[i] = new LeaderboardScrollCard(i+1,leaderboard.get(i).getTeamName(),leaderboard.get(i).getPoints(),leaderboard.get(i).getMatchesWon(),leaderboard.get(i).getMatchesDraw(),leaderboard.get(i).getMatchesLost());
-//            rowPanel[i].setPreferredSize(new Dimension(450, 250)); //*****size of the each card
             columnpanel.add(rowPanel[i]); 
             
             // if (i % 4 == 0 || (i + 1) % 4 == 0)

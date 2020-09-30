@@ -10,7 +10,7 @@ import Code.TournamentManagementSystem;
 
 /**
  *
- * @author lancelot
+ * @author Ashish Kumar Singh
  */
 public class AddPlayerPanel extends javax.swing.JPanel {
 
@@ -93,7 +93,7 @@ public class AddPlayerPanel extends javax.swing.JPanel {
         add(PositionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 390, 40));
 
         AddPlayerBtn.setText("Add Player");
-        AddPlayerBtn.setkAllowTab(true);
+        AddPlayerBtn.setkBackGroundColor(new java.awt.Color(198, 171, 229));
         AddPlayerBtn.setkBorderRadius(30);
         AddPlayerBtn.setkEndColor(new java.awt.Color(0, 204, 204));
         AddPlayerBtn.setkFillButton(false);

@@ -11,7 +11,7 @@ import javax.swing.*;
 
 /**
  *
- * @author Vishal Singh Rajput
+ * @author Ashish Kumar Singh
  */
 public class Admin extends javax.swing.JFrame {
 
@@ -42,9 +42,9 @@ public class Admin extends javax.swing.JFrame {
         NavBar = new javax.swing.JPanel();
         LogoTournify = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        AddTeamsBtn = new keeptoo.KButton();
+        AdminBtn = new keeptoo.KButton();
         AddPlayersBtn = new keeptoo.KButton();
-        HomeBtn = new keeptoo.KButton();
+        AddTeamsBtn = new keeptoo.KButton();
         AddMatchesBtn = new keeptoo.KButton();
         TopBar = new javax.swing.JPanel();
         SearchBar = new javax.swing.JTextField();
@@ -52,8 +52,7 @@ public class Admin extends javax.swing.JFrame {
         ExitIcon = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         CardHolder = new javax.swing.JPanel();
-        HomePanel = new javax.swing.JPanel();
-        Admin = new javax.swing.JPanel();
+        AdminPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -80,21 +79,22 @@ public class Admin extends javax.swing.JFrame {
         });
         NavBar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 170, 10));
 
-        AddTeamsBtn.setText("Add Teams");
-        AddTeamsBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        AddTeamsBtn.setkAllowGradient(false);
-        AddTeamsBtn.setkAllowTab(true);
-        AddTeamsBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
-        AddTeamsBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
-        AddTeamsBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
-        AddTeamsBtn.setkSelectedColor(new java.awt.Color(55, 76, 106));
-        AddTeamsBtn.setPreferredSize(new java.awt.Dimension(230, 60));
-        AddTeamsBtn.addActionListener(new java.awt.event.ActionListener() {
+        AdminBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        AdminBtn.setText("Admin");
+        AdminBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AdminBtn.setkAllowGradient(false);
+        AdminBtn.setkAllowTab(true);
+        AdminBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
+        AdminBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
+        AdminBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        AdminBtn.setkSelectedColor(new java.awt.Color(55, 76, 106));
+        AdminBtn.setPreferredSize(new java.awt.Dimension(230, 60));
+        AdminBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddTeamsBtnActionPerformed(evt);
+                AdminBtnActionPerformed(evt);
             }
         });
-        NavBar.add(AddTeamsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, 60));
+        NavBar.add(AdminBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, 60));
 
         AddPlayersBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         AddPlayersBtn.setText("Add Players");
@@ -111,24 +111,23 @@ public class Admin extends javax.swing.JFrame {
                 AddPlayersBtnActionPerformed(evt);
             }
         });
-        NavBar.add(AddPlayersBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, 60));
+        NavBar.add(AddPlayersBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, 60));
 
-        HomeBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        HomeBtn.setText("Home");
-        HomeBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        HomeBtn.setkAllowGradient(false);
-        HomeBtn.setkAllowTab(true);
-        HomeBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
-        HomeBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
-        HomeBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
-        HomeBtn.setkSelectedColor(new java.awt.Color(55, 76, 106));
-        HomeBtn.setPreferredSize(new java.awt.Dimension(230, 60));
-        HomeBtn.addActionListener(new java.awt.event.ActionListener() {
+        AddTeamsBtn.setText("Add Teams");
+        AddTeamsBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AddTeamsBtn.setkAllowGradient(false);
+        AddTeamsBtn.setkAllowTab(true);
+        AddTeamsBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
+        AddTeamsBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
+        AddTeamsBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
+        AddTeamsBtn.setkSelectedColor(new java.awt.Color(55, 76, 106));
+        AddTeamsBtn.setPreferredSize(new java.awt.Dimension(230, 60));
+        AddTeamsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HomeBtnActionPerformed(evt);
+                AddTeamsBtnActionPerformed(evt);
             }
         });
-        NavBar.add(HomeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, 60));
+        NavBar.add(AddTeamsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, 60));
 
         AddMatchesBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         AddMatchesBtn.setText("Add Matches");
@@ -145,7 +144,7 @@ public class Admin extends javax.swing.JFrame {
                 AddMatchesBtnActionPerformed(evt);
             }
         });
-        NavBar.add(AddMatchesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, 60));
+        NavBar.add(AddMatchesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, 60));
 
         getContentPane().add(NavBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 680));
 
@@ -217,36 +216,21 @@ public class Admin extends javax.swing.JFrame {
         CardHolder.setPreferredSize(new java.awt.Dimension(830, 750));
         CardHolder.setLayout(new java.awt.CardLayout());
 
-        HomePanel.setBackground(new java.awt.Color(102, 102, 0));
-        HomePanel.setForeground(new java.awt.Color(255, 255, 255));
+        AdminPanel.setBackground(new java.awt.Color(102, 102, 0));
+        AdminPanel.setForeground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout HomePanelLayout = new javax.swing.GroupLayout(HomePanel);
-        HomePanel.setLayout(HomePanelLayout);
-        HomePanelLayout.setHorizontalGroup(
-            HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout AdminPanelLayout = new javax.swing.GroupLayout(AdminPanel);
+        AdminPanel.setLayout(AdminPanelLayout);
+        AdminPanelLayout.setHorizontalGroup(
+            AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 980, Short.MAX_VALUE)
         );
-        HomePanelLayout.setVerticalGroup(
-            HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        AdminPanelLayout.setVerticalGroup(
+            AdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        CardHolder.add(HomePanel, "card2");
-
-        Admin.setBackground(new java.awt.Color(0, 153, 255));
-
-        javax.swing.GroupLayout AdminLayout = new javax.swing.GroupLayout(Admin);
-        Admin.setLayout(AdminLayout);
-        AdminLayout.setHorizontalGroup(
-            AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
-        );
-        AdminLayout.setVerticalGroup(
-            AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        CardHolder.add(Admin, "card5");
+        CardHolder.add(AdminPanel, "card2");
 
         getContentPane().add(CardHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 980, 600));
 
@@ -310,13 +294,6 @@ public class Admin extends javax.swing.JFrame {
         CardHolder.add(AddPlayer);
     }//GEN-LAST:event_AddPlayersBtnActionPerformed
 
-    private void HomeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBtnActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-        this.setVisible(false);
-//        GuestHome.setVisible(true);
-    }//GEN-LAST:event_HomeBtnActionPerformed
-
     private void AddMatchesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddMatchesBtnActionPerformed
         // TODO add your handling code here:
         CardHolder.removeAll();
@@ -330,6 +307,14 @@ public class Admin extends javax.swing.JFrame {
         new Login().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void AdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminBtnActionPerformed
+        // TODO add your handling code here:
+        CardHolder.removeAll();
+        CardHolder.add(AdminPanel);
+        CardHolder.repaint();
+        CardHolder.revalidate();
+    }//GEN-LAST:event_AdminBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -390,11 +375,10 @@ public class Admin extends javax.swing.JFrame {
     private keeptoo.KButton AddMatchesBtn;
     private keeptoo.KButton AddPlayersBtn;
     private keeptoo.KButton AddTeamsBtn;
-    private javax.swing.JPanel Admin;
+    private keeptoo.KButton AdminBtn;
+    private javax.swing.JPanel AdminPanel;
     private javax.swing.JPanel CardHolder;
     private javax.swing.JLabel ExitIcon;
-    private keeptoo.KButton HomeBtn;
-    private javax.swing.JPanel HomePanel;
     private javax.swing.JLabel LogoTournify;
     private javax.swing.JPanel NavBar;
     private javax.swing.JTextField SearchBar;

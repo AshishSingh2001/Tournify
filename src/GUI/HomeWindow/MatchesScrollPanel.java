@@ -18,8 +18,6 @@ public class MatchesScrollPanel extends javax.swing.JPanel {
      * Creates new form HomePanel
      */
     public MatchesScrollPanel() {
-        ctr += 3;
-        System.out.print("constructor called");
         initComponents();
         initMatchesScrollPanel();
     }
@@ -49,9 +47,6 @@ public class MatchesScrollPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     void initMatchesScrollPanel() {
-
-//        setBounds(0, 300, 778, 426); //******* first two terms set the location of the window to initialise
-
         scrollPane = new JScrollPane();
         scrollPane.setBounds(0, 0, 980, 600);
         // scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -71,7 +66,6 @@ public class MatchesScrollPanel extends javax.swing.JPanel {
         MatchesScrollCard[] rowPanel = new MatchesScrollCard[ctr];
         for (int i = 0; i < ctr; i++) {
             rowPanel[i] = new MatchesScrollCard();
-//            rowPanel[i].setPreferredSize(new Dimension(450, 250)); //*****size of the each card
             columnpanel.add(rowPanel[i]); 
             
             // if (i % 4 == 0 || (i + 1) % 4 == 0)

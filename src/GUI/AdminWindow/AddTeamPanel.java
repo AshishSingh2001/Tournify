@@ -10,7 +10,7 @@ import Code.TournamentManagementSystem;
 
 /**
  *
- * @author lancelot
+ * @author Ashish Kumar Singh
  */
 public class AddTeamPanel extends javax.swing.JPanel {
 
@@ -40,9 +40,11 @@ public class AddTeamPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(222, 128, 118));
         setPreferredSize(new java.awt.Dimension(980, 600));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TeamLabel.setForeground(new java.awt.Color(254, 254, 254));
         TeamLabel.setText("Team Name");
+        add(TeamLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 250, 40));
 
         TeamField.setBackground(new java.awt.Color(0,0,0,1));
         TeamField.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
@@ -54,9 +56,11 @@ public class AddTeamPanel extends javax.swing.JPanel {
                 TeamFieldActionPerformed(evt);
             }
         });
+        add(TeamField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 390, 40));
 
         DescriptionLabel.setForeground(new java.awt.Color(254, 254, 254));
         DescriptionLabel.setText("Description");
+        add(DescriptionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 250, 40));
 
         DescriptionField.setBackground(new java.awt.Color(0,0,0,1));
         DescriptionField.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
@@ -68,9 +72,10 @@ public class AddTeamPanel extends javax.swing.JPanel {
                 DescriptionFieldActionPerformed(evt);
             }
         });
+        add(DescriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 390, 40));
 
         AddTeamBtn.setText("Add Team");
-        AddTeamBtn.setkAllowTab(true);
+        AddTeamBtn.setkBackGroundColor(new java.awt.Color(198, 171, 229));
         AddTeamBtn.setkBorderRadius(30);
         AddTeamBtn.setkEndColor(new java.awt.Color(0, 204, 204));
         AddTeamBtn.setkFillButton(false);
@@ -83,6 +88,7 @@ public class AddTeamPanel extends javax.swing.JPanel {
                 AddTeamBtnActionPerformed(evt);
             }
         });
+        add(AddTeamBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 160, -1));
 
         ResetBtn.setText("Reset");
         ResetBtn.setkBorderRadius(30);
@@ -96,50 +102,7 @@ public class AddTeamPanel extends javax.swing.JPanel {
                 ResetBtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(TeamField, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TeamLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(DescriptionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(DescriptionField, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(AddTeamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(60, 60, 60)
-                            .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(30, 30, 30)
-                            .addComponent(TeamField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(TeamLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(30, 30, 30)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(DescriptionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(30, 30, 30)
-                            .addComponent(DescriptionField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(50, 50, 50)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(AddTeamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(ResetBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 160, -1));
     }// </editor-fold>//GEN-END:initComponents
     
     

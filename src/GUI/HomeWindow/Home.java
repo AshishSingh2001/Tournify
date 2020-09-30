@@ -45,7 +45,6 @@ public class Home extends javax.swing.JFrame {
         HomeBtn = new keeptoo.KButton();
         TeamsBtn = new keeptoo.KButton();
         PlayersBtn = new keeptoo.KButton();
-        AdminBtn = new keeptoo.KButton();
         Leaderboardbtn = new keeptoo.KButton();
         MatchesBtn = new keeptoo.KButton();
         TopBar = new javax.swing.JPanel();
@@ -55,7 +54,6 @@ public class Home extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         CardHolder = new javax.swing.JPanel();
         HomePanel = new javax.swing.JPanel();
-        Admin = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -131,23 +129,6 @@ public class Home extends javax.swing.JFrame {
             }
         });
         NavBar.add(PlayersBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, 60));
-
-        AdminBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        AdminBtn.setText("Admin");
-        AdminBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        AdminBtn.setkAllowGradient(false);
-        AdminBtn.setkAllowTab(true);
-        AdminBtn.setkBackGroundColor(new java.awt.Color(23, 35, 51));
-        AdminBtn.setkHoverColor(new java.awt.Color(57, 62, 70));
-        AdminBtn.setkHoverForeGround(java.awt.SystemColor.controlHighlight);
-        AdminBtn.setkSelectedColor(new java.awt.Color(55, 76, 106));
-        AdminBtn.setPreferredSize(new java.awt.Dimension(230, 60));
-        AdminBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdminBtnActionPerformed(evt);
-            }
-        });
-        NavBar.add(AdminBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, -1, 60));
 
         Leaderboardbtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Leaderboardbtn.setText("Leaderboard");
@@ -270,21 +251,6 @@ public class Home extends javax.swing.JFrame {
 
         CardHolder.add(HomePanel, "card2");
 
-        Admin.setBackground(new java.awt.Color(0, 153, 255));
-
-        javax.swing.GroupLayout AdminLayout = new javax.swing.GroupLayout(Admin);
-        Admin.setLayout(AdminLayout);
-        AdminLayout.setHorizontalGroup(
-            AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
-        );
-        AdminLayout.setVerticalGroup(
-            AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        CardHolder.add(Admin, "card5");
-
         getContentPane().add(CardHolder, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 980, 600));
 
         pack();
@@ -292,69 +258,21 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     void initMatchesScrollPanel() {
         MatchesScrPanel = new MatchesScrollPanel();
-//        TeamScrollPanel.setBackground(new Color(255,255,255));
-//        javax.swing.GroupLayout TeamsLayout = new javax.swing.GroupLayout(TeamScrollPanel);
-//        TeamScrollPanel.setLayout(TeamsLayout);
-//        TeamsLayout.setHorizontalGroup(
-//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-//            .addGap(0, 980, Short.MAX_VALUE)
-//        );
-//        TeamsLayout.setVerticalGroup(
-//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-//            .addGap(0, 600, Short.MAX_VALUE)
-//        );
-
         CardHolder.add(MatchesScrPanel, "card3");
     }
 
     void initLeaderboardScrollPanel() {
         LeaderboardScrPanel = new LeaderboardScrollPanel();
-//        TeamScrollPanel.setBackground(new Color(255,255,255));
-//        javax.swing.GroupLayout TeamsLayout = new javax.swing.GroupLayout(TeamScrollPanel);
-//        TeamScrollPanel.setLayout(TeamsLayout);
-//        TeamsLayout.setHorizontalGroup(
-//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-//            .addGap(0, 980, Short.MAX_VALUE)
-//        );
-//        TeamsLayout.setVerticalGroup(
-//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-//            .addGap(0, 600, Short.MAX_VALUE)
-//        );
-
         CardHolder.add(LeaderboardScrPanel, "card3");
     }
 
     void initTeamScrollPanel() {
         TeamScrPanel = new TeamScrollPanel();
-//        TeamScrollPanel.setBackground(new Color(255,255,255));
-//        javax.swing.GroupLayout TeamsLayout = new javax.swing.GroupLayout(TeamScrollPanel);
-//        TeamScrollPanel.setLayout(TeamsLayout);
-//        TeamsLayout.setHorizontalGroup(
-//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-//            .addGap(0, 980, Short.MAX_VALUE)
-//        );
-//        TeamsLayout.setVerticalGroup(
-//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-//            .addGap(0, 600, Short.MAX_VALUE)
-//        );
-
         CardHolder.add(TeamScrPanel, "card3");
     }
 
     void initPlayerScrollPanel() {
         PlayerScrPanel = new PlayerScrollPanel();
-//        TeamScrollPanel.setBackground(new Color(255,255,255));
-//        javax.swing.GroupLayout TeamsLayout = new javax.swing.GroupLayout(TeamScrollPanel);
-//        TeamScrollPanel.setLayout(TeamsLayout);
-//        TeamsLayout.setHorizontalGroup(
-//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-//            .addGap(0, 980, Short.MAX_VALUE)
-//        );
-//        TeamsLayout.setVerticalGroup(
-//            TeamsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-//            .addGap(0, 600, Short.MAX_VALUE)
-//        );
-
         CardHolder.add(PlayerScrPanel, "card3");
     }
 
@@ -368,7 +286,6 @@ public class Home extends javax.swing.JFrame {
 
     private void TopBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TopBarMouseDragged
         // TODO add your handling code here:
-
         //source to drag
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
@@ -386,14 +303,10 @@ public class Home extends javax.swing.JFrame {
     private void TeamsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamsBtnActionPerformed
         // TODO add your handling code here:
         CardHolder.removeAll();
-//      CardHolder.add(Teams);
-
         CardHolder.repaint();
         CardHolder.revalidate();
         TeamScrPanel.removeAll();
         initTeamScrollPanel();
-//        TeamScrollPanel.repaint();
-//        TeamScrollPanel.revalidate();
         CardHolder.add(TeamScrPanel);
 
 
@@ -410,61 +323,31 @@ public class Home extends javax.swing.JFrame {
 
     private void PlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayersBtnActionPerformed
         // TODO add your handling code here:
-//        CardHolder.removeAll();
-//   CardHolder.add(Players);
-//   CardHolder.repaint();
-//   CardHolder.revalidate();
-
         CardHolder.removeAll();
-//      CardHolder.add(Teams);
-
         CardHolder.repaint();
         CardHolder.revalidate();
         PlayerScrPanel.removeAll();
         initPlayerScrollPanel();
-//        TeamScrollPanel.repaint();
-//        TeamScrollPanel.revalidate();
         CardHolder.add(PlayerScrPanel);
-
-
     }//GEN-LAST:event_PlayersBtnActionPerformed
-
-    private void AdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminBtnActionPerformed
-        // TODO add your handling code here:
-
-        CardHolder.removeAll();
-        CardHolder.add(Admin);
-        CardHolder.repaint();
-        CardHolder.revalidate();
-
-    }//GEN-LAST:event_AdminBtnActionPerformed
 
     private void LeaderboardbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaderboardbtnActionPerformed
         // TODO add your handling code here:
         CardHolder.removeAll();
-//      CardHolder.add(Teams);
-
         CardHolder.repaint();
         CardHolder.revalidate();
         LeaderboardScrPanel.removeAll();
         initLeaderboardScrollPanel();
-//        TeamScrollPanel.repaint();
-//        TeamScrollPanel.revalidate();
         CardHolder.add(LeaderboardScrPanel);
     }//GEN-LAST:event_LeaderboardbtnActionPerformed
 
     private void MatchesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MatchesBtnActionPerformed
         // TODO add your handling code here:
-        // TODO add your handling code here:
         CardHolder.removeAll();
-//      CardHolder.add(Teams);
-
         CardHolder.repaint();
         CardHolder.revalidate();
         MatchesScrPanel.removeAll();
         initMatchesScrollPanel();
-//        TeamScrollPanel.repaint();
-//        TeamScrollPanel.revalidate();
         CardHolder.add(MatchesScrPanel);
     }//GEN-LAST:event_MatchesBtnActionPerformed
 
@@ -531,8 +414,6 @@ public class Home extends javax.swing.JFrame {
     private TeamScrollPanel TeamScrPanel;
     private PlayerScrollPanel PlayerScrPanel;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Admin;
-    private keeptoo.KButton AdminBtn;
     private javax.swing.JPanel CardHolder;
     private javax.swing.JLabel ExitIcon;
     private keeptoo.KButton HomeBtn;
