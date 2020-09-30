@@ -32,11 +32,11 @@
     <Container class="keeptoo.KGradientPanel" name="HomePanel">
       <Properties>
         <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="75" green="4c" red="f" type="rgb"/>
+          <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="kGradientFocus" type="int" value="800"/>
+        <Property name="kGradientFocus" type="int" value="1000"/>
         <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="b7" green="da" red="fc" type="rgb"/>
+          <Color blue="ff" green="ff" red="33" type="rgb"/>
         </Property>
       </Properties>
       <Events>
@@ -149,13 +149,13 @@
             <Property name="text" type="java.lang.String" value="View as Guest"/>
             <Property name="kBorderRadius" type="int" value="30"/>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="b7" green="da" red="fc" type="rgb"/>
+              <Color blue="ff" green="ff" red="33" type="rgb"/>
             </Property>
             <Property name="kHoverEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="b8" green="82" red="32" type="rgb"/>
             </Property>
             <Property name="kHoverForeGround" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c8" green="df" red="e3" type="rgb"/>
+              <Color blue="ff" green="ff" red="33" type="rgb"/>
             </Property>
             <Property name="kHoverStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="b7" green="a6" red="1a" type="rgb"/>

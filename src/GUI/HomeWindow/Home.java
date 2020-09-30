@@ -54,6 +54,7 @@ public class Home extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         CardHolder = new javax.swing.JPanel();
         HomePanel = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -177,13 +178,16 @@ public class Home extends javax.swing.JFrame {
                 TopBarMousePressed(evt);
             }
         });
+        TopBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         SearchBar.setBackground(new java.awt.Color(123, 156, 225));
         SearchBar.setForeground(new java.awt.Color(255, 255, 255));
         SearchBar.setCaretColor(new java.awt.Color(255, 255, 255));
         SearchBar.setPreferredSize(new java.awt.Dimension(2, 20));
+        TopBar.add(SearchBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(701, 29, 141, -1));
 
         SearchIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Search_18px.png"))); // NOI18N
+        TopBar.add(SearchIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(852, 29, -1, 20));
 
         ExitIcon.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ExitIcon.setForeground(new java.awt.Color(255, 255, 255));
@@ -194,6 +198,7 @@ public class Home extends javax.swing.JFrame {
                 ExitIconMouseClicked(evt);
             }
         });
+        TopBar.add(ExitIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(929, 29, 31, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8-back-30.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -201,52 +206,27 @@ public class Home extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout TopBarLayout = new javax.swing.GroupLayout(TopBar);
-        TopBar.setLayout(TopBarLayout);
-        TopBarLayout.setHorizontalGroup(
-            TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopBarLayout.createSequentialGroup()
-                .addContainerGap(699, Short.MAX_VALUE)
-                .addComponent(SearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SearchIcon)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addComponent(ExitIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-        );
-        TopBarLayout.setVerticalGroup(
-            TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TopBarLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ExitIcon)
-                    .addGroup(TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(SearchIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(SearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
+        TopBar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(888, 29, 25, 25));
 
         getContentPane().add(TopBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 980, 80));
 
         CardHolder.setPreferredSize(new java.awt.Dimension(830, 750));
         CardHolder.setLayout(new java.awt.CardLayout());
 
-        HomePanel.setBackground(new java.awt.Color(102, 102, 0));
+        HomePanel.setBackground(new java.awt.Color(187, 225, 250));
         HomePanel.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/stadium1.jpg"))); // NOI18N
 
         javax.swing.GroupLayout HomePanelLayout = new javax.swing.GroupLayout(HomePanel);
         HomePanel.setLayout(HomePanelLayout);
         HomePanelLayout.setHorizontalGroup(
             HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         HomePanelLayout.setVerticalGroup(
             HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         CardHolder.add(HomePanel, "card2");
@@ -428,6 +408,7 @@ public class Home extends javax.swing.JFrame {
     private keeptoo.KButton TeamsBtn;
     private javax.swing.JPanel TopBar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
