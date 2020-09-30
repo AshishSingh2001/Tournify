@@ -17,6 +17,7 @@ public class AddMatchPanel extends javax.swing.JPanel {
      * Creates new form AddTeam
      */
     public AddMatchPanel() {
+        tms = new TournamentManagementSystem();
         initComponents();
     }
 

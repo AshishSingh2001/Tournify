@@ -4,9 +4,12 @@
  * and open the template in the editor.
  */
 package GUI.HomeWindow;
+
 import java.awt.*;
-import javax.swing.*;    
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import Code.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,6 +21,7 @@ public class MatchesScrollPanel extends javax.swing.JPanel {
      * Creates new form HomePanel
      */
     public MatchesScrollPanel() {
+        tms = new TournamentManagementSystem();
         initComponents();
         initMatchesScrollPanel();
     }
@@ -52,30 +56,30 @@ public class MatchesScrollPanel extends javax.swing.JPanel {
         // scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         this.add(scrollPane);
         scrollPane.setBackground(Color.white);
-        
+
         JPanel borderlaoutpanel = new JPanel();
         scrollPane.setViewportView(borderlaoutpanel);
         borderlaoutpanel.setBorder(new EmptyBorder(20, 20, 20, 20));
         borderlaoutpanel.setBackground(Color.white);
-        
+
         JPanel columnpanel = new JPanel();
         borderlaoutpanel.add(columnpanel, BorderLayout.NORTH);
         columnpanel.setLayout(new GridLayout(0, 2, 60, 15)); //******setting the overall grid layout
         columnpanel.setBackground(Color.white);
-        
-        MatchesScrollCard[] rowPanel = new MatchesScrollCard[ctr];
-        for (int i = 0; i < ctr; i++) {
-            rowPanel[i] = new MatchesScrollCard();
-            columnpanel.add(rowPanel[i]); 
-            
+        ArrayList<Match> match = tms.getMatchSchedule();
+        MatchesScrollCard[] rowPanel = new MatchesScrollCard[match.size()];
+        for (int i = 0; i < match.size(); i++) {
+            rowPanel[i] = new MatchesScrollCard(match.get(i).getTeam1().getTeamName(), match.get(i).getTeam2().getTeamName(), match.get(i).getTeam1Points(), match.get(i).getTeam2Points(), match.get(i).getDiff());
+            columnpanel.add(rowPanel[i]);
+
             // if (i % 4 == 0 || (i + 1) % 4 == 0)
             //     rowPanel.setBackground(SystemColor.inactiveCaptionBorder);
         }
     }
-        
-    
+
     private static int ctr = 0;
     private JScrollPane scrollPane;
+    private TournamentManagementSystem tms;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
