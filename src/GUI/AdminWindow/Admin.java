@@ -177,7 +177,7 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/left-arrow-black-circular-button.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/nikhilrana/Downloads/icons8-back-30.png")); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -216,7 +216,7 @@ public class Admin extends javax.swing.JFrame {
         CardHolder.setPreferredSize(new java.awt.Dimension(830, 750));
         CardHolder.setLayout(new java.awt.CardLayout());
 
-        AdminPanel.setBackground(new java.awt.Color(102, 102, 0));
+        AdminPanel.setBackground(new java.awt.Color(204, 255, 255));
         AdminPanel.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout AdminPanelLayout = new javax.swing.GroupLayout(AdminPanel);
