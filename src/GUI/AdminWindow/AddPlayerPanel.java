@@ -5,6 +5,9 @@
  */
 package GUI.AdminWindow;
 
+import Code.Player;
+import Code.TournamentManagementSystem;
+
 /**
  *
  * @author lancelot
@@ -15,6 +18,7 @@ public class AddPlayerPanel extends javax.swing.JPanel {
      * Creates new form AddTeam
      */
     public AddPlayerPanel() {
+        tms = new TournamentManagementSystem();
         initComponents();
     }
 
@@ -27,22 +31,142 @@ public class AddPlayerPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        NameLabel = new javax.swing.JLabel();
+        NameField = new javax.swing.JTextField();
+        TeamLabel = new javax.swing.JLabel();
+        TeamField = new javax.swing.JTextField();
+        PositionLabel = new javax.swing.JLabel();
+        PositionField = new javax.swing.JTextField();
+        AddPlayerBtn = new keeptoo.KButton();
+        ResetBtn = new keeptoo.KButton();
+
         setBackground(new java.awt.Color(122, 207, 131));
         setPreferredSize(new java.awt.Dimension(980, 600));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 980, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
+        NameLabel.setForeground(new java.awt.Color(254, 254, 254));
+        NameLabel.setText("Name");
+        add(NameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 250, 40));
+
+        NameField.setBackground(new java.awt.Color(0,0,0,1));
+        NameField.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        NameField.setForeground(new java.awt.Color(254, 254, 254));
+        NameField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
+        NameField.setOpaque(false);
+        NameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NameFieldActionPerformed(evt);
+            }
+        });
+        add(NameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 390, 40));
+
+        TeamLabel.setForeground(new java.awt.Color(254, 254, 254));
+        TeamLabel.setText("Team Name");
+        add(TeamLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 250, 40));
+
+        TeamField.setBackground(new java.awt.Color(0,0,0,1));
+        TeamField.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        TeamField.setForeground(new java.awt.Color(254, 254, 254));
+        TeamField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
+        TeamField.setOpaque(false);
+        TeamField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TeamFieldActionPerformed(evt);
+            }
+        });
+        add(TeamField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 390, 40));
+
+        PositionLabel.setForeground(new java.awt.Color(254, 254, 254));
+        PositionLabel.setText("Position");
+        add(PositionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 250, 40));
+
+        PositionField.setBackground(new java.awt.Color(0,0,0,1));
+        PositionField.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        PositionField.setForeground(new java.awt.Color(254, 254, 254));
+        PositionField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
+        PositionField.setOpaque(false);
+        PositionField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PositionFieldActionPerformed(evt);
+            }
+        });
+        add(PositionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 390, 40));
+
+        AddPlayerBtn.setText("Add Player");
+        AddPlayerBtn.setkAllowTab(true);
+        AddPlayerBtn.setkBorderRadius(30);
+        AddPlayerBtn.setkEndColor(new java.awt.Color(0, 204, 204));
+        AddPlayerBtn.setkFillButton(false);
+        AddPlayerBtn.setkHoverEndColor(new java.awt.Color(217, 236, 242));
+        AddPlayerBtn.setkHoverForeGround(new java.awt.Color(227, 223, 200));
+        AddPlayerBtn.setkHoverStartColor(new java.awt.Color(30, 95, 116));
+        AddPlayerBtn.setkStartColor(new java.awt.Color(254, 254, 254));
+        AddPlayerBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddPlayerBtnActionPerformed(evt);
+            }
+        });
+        add(AddPlayerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, 160, -1));
+
+        ResetBtn.setText("Reset");
+        ResetBtn.setkBorderRadius(30);
+        ResetBtn.setkEndColor(new java.awt.Color(252, 218, 183));
+        ResetBtn.setkHoverEndColor(new java.awt.Color(50, 130, 184));
+        ResetBtn.setkHoverForeGround(new java.awt.Color(227, 223, 200));
+        ResetBtn.setkHoverStartColor(new java.awt.Color(26, 166, 183));
+        ResetBtn.setkStartColor(new java.awt.Color(50, 130, 184));
+        ResetBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetBtnActionPerformed(evt);
+            }
+        });
+        add(ResetBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 160, -1));
     }// </editor-fold>//GEN-END:initComponents
+    
+    
+    private void reset() {
+        NameField.setText("");
+        TeamField.setText("");
+        PositionField.setText("");
+    }
+    
+    private void TeamFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TeamFieldActionPerformed
 
+    private void AddPlayerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPlayerBtnActionPerformed
+        // TODO add your handling code here:
+        String name, team, position;
+        name = NameField.getText();
+        team = TeamField.getText();
+        position = PositionField.getText();
+        Player p = new Player(name,position,team);
+        tms.addNewPlayer(p);
+        reset();
+    }//GEN-LAST:event_AddPlayerBtnActionPerformed
 
+    private void ResetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetBtnActionPerformed
+        // TODO add your handling code here:
+        reset();
+    }//GEN-LAST:event_ResetBtnActionPerformed
+
+    private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NameFieldActionPerformed
+
+    private void PositionFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PositionFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PositionFieldActionPerformed
+
+    private TournamentManagementSystem tms;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private keeptoo.KButton AddPlayerBtn;
+    private javax.swing.JTextField NameField;
+    private javax.swing.JLabel NameLabel;
+    private javax.swing.JTextField PositionField;
+    private javax.swing.JLabel PositionLabel;
+    private keeptoo.KButton ResetBtn;
+    private javax.swing.JTextField TeamField;
+    private javax.swing.JLabel TeamLabel;
     // End of variables declaration//GEN-END:variables
 }

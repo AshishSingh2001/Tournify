@@ -20,10 +20,10 @@ public class TeamScrollPanel extends javax.swing.JPanel {
      * Creates new form HomePanel
      */ 
     public TeamScrollPanel() {
-        tmc = new TournamentManagementSystem();
-        System.out.print("constructor called");
-        initComponents();
+        tms = new TournamentManagementSystem();
+//        System.out.print("constructor called");
         initScrollPanel();
+        initComponents();
     }
 
     /**
@@ -69,7 +69,13 @@ public class TeamScrollPanel extends javax.swing.JPanel {
         borderlaoutpanel.add(columnpanel, BorderLayout.NORTH);
         columnpanel.setLayout(new GridLayout(0, 2, 60, 15)); //******setting the overall grid layout
         columnpanel.setBackground(Color.white);
-        ArrayList<Team> team =  new ArrayList<Team>(tmc.getAllDummyTeams());
+        
+        ArrayList<Team> temp;
+        temp = new ArrayList<>(tms.getAllTeams());
+        for (Team titer : temp) {
+            System.out.println(titer);
+        }
+        ArrayList<Team> team =  new ArrayList<Team>(tms.getAllTeams());
         TeamScrollCard[] rowPanel = new TeamScrollCard[team.size()];
         for (int i = 0; i < team.size(); i++) {
             rowPanel[i] = new TeamScrollCard(team.get(i).getTeamName(),team.get(i).getDescription());
@@ -84,7 +90,7 @@ public class TeamScrollPanel extends javax.swing.JPanel {
     
     private static int ctr = 0;
     private JScrollPane scrollPane;
-    private TournamentManagementSystem tmc;
+    private TournamentManagementSystem tms;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

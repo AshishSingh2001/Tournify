@@ -19,9 +19,12 @@ public class TournamentManagementSystem {
     static MatchSchedule ms;
     private static String file;
     
-    public TournamentManagementSystem() {
+    public TournamentManagementSystem(int flag) {
         pc = new PlayerCollection();
         ms = new MatchSchedule();
+    }
+    
+    public TournamentManagementSystem() {
     }
     
     TournamentManagementSystem(String f) {
@@ -75,7 +78,10 @@ public class TournamentManagementSystem {
     }
 
     public ArrayList<Team> getAllTeams() {
-        return pc.getAllTeams();
+        
+        ArrayList<Team> temp;
+        temp = new ArrayList<>(pc.getAllTeams());
+        return temp;
     }
     public ArrayList<Team> getDummyLeaderboards()
     {System.out.println("Test Of Player Collection ");

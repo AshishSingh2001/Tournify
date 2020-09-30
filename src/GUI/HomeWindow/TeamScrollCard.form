@@ -94,7 +94,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Ubuntu" size="16" style="3"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Black Hawks"/>
           </Properties>
         </Component>
       </SubComponents>
