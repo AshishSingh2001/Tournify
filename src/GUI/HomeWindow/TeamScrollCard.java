@@ -25,9 +25,9 @@ public class TeamScrollCard extends javax.swing.JPanel {
     }
 
     private void display() {
-        jLabel2.setText(name);
+        TeamName.setText(name);
 
-        jLabel3.setText(description);
+        TeamDescription.setText(description);
 
     }
 
@@ -41,21 +41,23 @@ public class TeamScrollCard extends javax.swing.JPanel {
     private void initComponents() {
 
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        TeamIcon = new javax.swing.JLabel();
+        TeamName = new javax.swing.JLabel();
+        TeamDescription = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(380, 150));
 
         kGradientPanel1.setBackground(new java.awt.Color(254, 254, 254));
         kGradientPanel1.setkBorderRadius(30);
+        kGradientPanel1.setkEndColor(new java.awt.Color(204, 0, 51));
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 153, 153));
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(380, 150));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imge_1.jpg"))); // NOI18N
+        TeamIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imge_1.jpg"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        TeamName.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Ubuntu", 3, 16)); // NOI18N
+        TeamDescription.setFont(new java.awt.Font("Ubuntu", 3, 16)); // NOI18N
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -63,23 +65,23 @@ public class TeamScrollCard extends javax.swing.JPanel {
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jLabel1)
+                .addComponent(TeamIcon)
                 .addGap(50, 50, 50)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TeamName, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                    .addComponent(TeamDescription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(80, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TeamName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1))
+                        .addComponent(TeamDescription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(TeamIcon))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -97,9 +99,9 @@ public class TeamScrollCard extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel TeamDescription;
+    private javax.swing.JLabel TeamIcon;
+    private javax.swing.JLabel TeamName;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }
