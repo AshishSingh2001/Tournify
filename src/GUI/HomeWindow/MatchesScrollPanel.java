@@ -68,12 +68,17 @@ public class MatchesScrollPanel extends javax.swing.JPanel {
         columnpanel.setBackground(Color.white);
         ArrayList<Match> match = tms.getMatchSchedule();
         MatchesScrollCard[] rowPanel = new MatchesScrollCard[match.size()];
-        for (int i = 0; i < match.size(); i++) {
-            rowPanel[i] = new MatchesScrollCard(match.get(i).getTeam1().getTeamName(), match.get(i).getTeam2().getTeamName(), match.get(i).getTeam1Points(), match.get(i).getTeam2Points(), match.get(i).getDiff());
-            columnpanel.add(rowPanel[i]);
+        if (match.size() == 0) {
+            MatchesScrollCard m = new MatchesScrollCard("Dummy1", "Dummy2", 0, 0, 0);
+            columnpanel.add(m);
+        } else {
+            for (int i = 0; i < match.size(); i++) {
+                rowPanel[i] = new MatchesScrollCard(match.get(i).getTeam1().getTeamName(), match.get(i).getTeam2().getTeamName(), match.get(i).getTeam1Points(), match.get(i).getTeam2Points(), match.get(i).getDiff());
+                columnpanel.add(rowPanel[i]);
 
-            // if (i % 4 == 0 || (i + 1) % 4 == 0)
-            //     rowPanel.setBackground(SystemColor.inactiveCaptionBorder);
+                // if (i % 4 == 0 || (i + 1) % 4 == 0)
+                //     rowPanel.setBackground(SystemColor.inactiveCaptionBorder);
+            }
         }
     }
 
