@@ -7,9 +7,9 @@ Java swing
 Java AWT
 
 TO-DO
-Add a different class for a team owner which can manage the teams profile .
-Make it available for players to register and the admin to verify the registrations.
-Manage multiple tournaments.
-Make the system handle exceptions for input.
-Add a loading screen till the program loads.
-Add auto draw fixtures.
+1.Add a different class for a team owner which can manage the teams profile .
+2.Make it available for players to register and the admin to verify the registrations.
+3.Manage multiple tournaments.
+4.Make the system handle exceptions for input.
+5.Add a loading screen till the program loads.
+6.Add auto draw fixtures.
