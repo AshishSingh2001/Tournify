@@ -1,4 +1,15 @@
-# Tournify
-A Desktop Based Tournament Management System
+TOURNIFY
+It is a desktop based application. Which  will be very useful for various sport organisations and sport clubs. It will also help schools and colleges to manage their tournaments .It provides a single platform for all the details and management of tournaments and will allow multiple tournament registration, automatic or manual match scheduling and keep the data of all the players and teams together.
 
-With regards to the group project given to us we cordially propose to develop a sports management and analysis system Tournify . According to the specifications which have been provided to us the major portion of the project will be formulated using the concepts of OOPs (Object Oriented Programming).
+BUILT WITH
+JDK 14
+Java swing
+Java AWT
+
+TO-DO
+Add a different class for a team owner which can manage the teams profile .
+Make it available for players to register and the admin to verify the registrations.
+Manage multiple tournaments.
+Make the system handle exceptions for input.
+Add a loading screen till the program loads.
+Add auto draw fixtures.
