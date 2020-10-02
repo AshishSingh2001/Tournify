@@ -87,7 +87,6 @@ public class Login extends javax.swing.JFrame {
         TextUser.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
         TextUser.setForeground(new java.awt.Color(254, 254, 254));
         TextUser.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
-        TextUser.setOpaque(false);
         TextUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextUserActionPerformed(evt);
@@ -102,14 +101,13 @@ public class Login extends javax.swing.JFrame {
         TextPass.setBackground(new java.awt.Color(0,0,0,1));
         TextPass.setForeground(new java.awt.Color(254, 254, 254));
         TextPass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
-        TextPass.setOpaque(false);
         HomePanel.add(TextPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, 390, 40));
 
         BtnGuest.setText("View as Guest");
         BtnGuest.setkBorderRadius(30);
         BtnGuest.setkEndColor(new java.awt.Color(51, 255, 255));
         BtnGuest.setkHoverEndColor(new java.awt.Color(50, 130, 184));
-        BtnGuest.setkHoverForeGround(new java.awt.Color(51, 255, 255));
+        BtnGuest.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         BtnGuest.setkHoverStartColor(new java.awt.Color(26, 166, 183));
         BtnGuest.setkStartColor(new java.awt.Color(50, 130, 184));
         BtnGuest.addActionListener(new java.awt.event.ActionListener() {
