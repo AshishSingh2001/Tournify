@@ -9,7 +9,7 @@ import java.beans.PropertyChangeSupport;
 import java.beans.VetoableChangeSupport;
 
 /**
- *
+ * Class that holds references to teams and their points to keep track of them
  * @author Nikhil Rana
  */
 public class Match {
@@ -18,6 +18,13 @@ public class Match {
     private int team1Points;
     private int team2Points;
     private int diff;
+    /**
+     * Makes a Match object with the parameters
+     * @param team1 Object Reference to the team 1
+     * @param team2 Object Reference to the team 2
+     * @param team1Points Points gained by Team 1
+     * @param team2Points Points gained by Team 2
+     */
     Match(Team team1, Team team2, int team1Points, int team2Points) {  
         this.team1 = team1;
         this.team2 = team2;
@@ -35,34 +42,39 @@ public class Match {
             this.team1.updatePoints(0);
         }  
     } 
+    
+    /**
+     * utility function that give the difference of points
+     * @return difference in points of the two teams
+     */
     public final int getDiff()
     {
         return diff;
     }
 
     /**
-     * @return the team1
+     * @return returns the reference to Team 1
      */
     public final Team getTeam1() {
         return team1;
     }
 
     /**
-     * @return the team2
+     * @return returns the reference to Team 2
      */
     public final Team getTeam2() {
         return team2;
     }
 
     /**
-     * @return the team1Points
+     * @return returns the points of Team 1
      */
     public final int getTeam1Points() {
         return team1Points;
     }
 
     /**
-     * @return the team2Points
+     * @return returns the points of Team 2
      */
     public final int getTeam2Points() {
         return team2Points;

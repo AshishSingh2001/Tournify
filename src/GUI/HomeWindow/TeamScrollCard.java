@@ -53,7 +53,7 @@ public class TeamScrollCard extends javax.swing.JPanel {
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 153, 153));
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(380, 150));
 
-        TeamIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imge_1.jpg"))); // NOI18N
+        TeamIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/wolfteam_90.png"))); // NOI18N
 
         TeamName.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
@@ -70,7 +70,7 @@ public class TeamScrollCard extends javax.swing.JPanel {
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(TeamName, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                     .addComponent(TeamDescription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

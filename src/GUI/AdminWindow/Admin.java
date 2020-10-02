@@ -22,6 +22,7 @@ public class Admin extends javax.swing.JFrame {
     JTabbedPane t = new JTabbedPane();
 
     public Admin() {
+        setIcon();
         initComponents();
         initAddMatchPanel();
         initAddTeamPanel();
@@ -237,7 +238,11 @@ public class Admin extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/logo_50.png")));
+    }
+    
     void initAddTeamPanel() {
         AddTeam = new AddTeamPanel();
         CardHolder.add(AddTeam, "card3");

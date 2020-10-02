@@ -24,6 +24,7 @@ public class Login extends javax.swing.JFrame {
      * Creates new form SIgnUpForm
      */
     public Login() {
+        setIcon();
         initComponents();
         this.setLocationRelativeTo(null);
 //        LogUser.setBackground(new java.awt.Color(0,0,0,1));
@@ -152,7 +153,11 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/logo_50.png")));
+    }
+    
     private void TextUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextUserActionPerformed

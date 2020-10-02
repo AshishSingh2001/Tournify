@@ -21,6 +21,7 @@ public class Home extends javax.swing.JFrame {
     JTabbedPane t = new JTabbedPane();
 
     public Home() {
+        setIcon();
         initComponents();
         initTeamScrollPanel();
         initPlayerScrollPanel();
@@ -236,6 +237,11 @@ public class Home extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/logo_50.png")));
+    }
+    
     void initMatchesScrollPanel() {
         MatchesScrPanel = new MatchesScrollPanel();
         CardHolder.add(MatchesScrPanel, "card3");

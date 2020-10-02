@@ -7,6 +7,7 @@ package Code;
 import java.util.ArrayList;
 /**
  *
+ * Holds the list of Match objects to keep track of the matches completed
  * @author Ashish Kumar Singh
  */
 public class MatchSchedule {
@@ -19,10 +20,18 @@ public class MatchSchedule {
         this.allTeams = allTeams;
     }
     
+    /**
+     * Gives a reference to a constant Array of Match Objects
+     * @return 
+     */
     ArrayList<Match> getMatches() {
         return matches;
     }
     
+    /**
+     * adds Match to the schedule array
+     * @param m Match object passed
+     */
     void addMatch(Match m) {
         matches.add(m);
     }

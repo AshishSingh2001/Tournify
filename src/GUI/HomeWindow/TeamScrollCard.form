@@ -59,7 +59,7 @@
                       <Component id="TeamName" pref="136" max="32767" attributes="0"/>
                       <Component id="TeamDescription" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="80" max="32767" attributes="0"/>
+                  <EmptySpace pref="74" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -84,7 +84,7 @@
         <Component class="javax.swing.JLabel" name="TeamIcon">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/imge_1.jpg"/>
+              <Image iconType="3" name="/resources/wolfteam_90.png"/>
             </Property>
           </Properties>
         </Component>
