@@ -75,10 +75,13 @@ public class LeaderboardScrollCard extends javax.swing.JPanel {
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(380, 150));
 
         Serial.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        Serial.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         points.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        points.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         name.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        name.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
