@@ -91,6 +91,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Ubuntu" size="18" style="1"/>
             </Property>
+            <Property name="verticalAlignment" type="int" value="3"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="points">
@@ -98,6 +99,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Ubuntu" size="18" style="1"/>
             </Property>
+            <Property name="verticalAlignment" type="int" value="3"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="name">
@@ -105,6 +107,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Ubuntu" size="18" style="1"/>
             </Property>
+            <Property name="verticalAlignment" type="int" value="3"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="won">
