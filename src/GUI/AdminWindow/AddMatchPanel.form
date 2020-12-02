@@ -222,9 +222,6 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="new java.awt.Color(153, 153, 255, 1)" type="code"/>
         </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new DefaultComboBoxModel&lt;&gt;(&#xa;                AllTeamString.toArray(&#xa;                        new String[AllTeamString.size()]&#xa;                )&#xa;)" type="code"/>
-        </Property>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Events>
@@ -244,9 +241,6 @@
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="new java.awt.Color(153, 153, 255, 1)" type="code"/>
-        </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new DefaultComboBoxModel&lt;&gt;(&#xa;                AllTeamString.toArray(&#xa;                        new String[AllTeamString.size()]&#xa;                )&#xa;)" type="code"/>
         </Property>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>

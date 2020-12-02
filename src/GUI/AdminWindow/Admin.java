@@ -22,11 +22,15 @@ public class Admin extends javax.swing.JFrame {
     JTabbedPane t = new JTabbedPane();
 
     public Admin() {
-        setIcon();
-        initComponents();
-        initAddMatchPanel();
-        initAddTeamPanel();
-        initAddPlayerPanel();
+        try {
+            setIcon();
+            initComponents();
+            initAddMatchPanel();
+            initAddTeamPanel();
+            initAddPlayerPanel();
+        } catch (NullPointerException e) {
+
+        }
         this.setLocationRelativeTo(null);
         cd = (CardLayout) (CardHolder.getLayout());
     }
@@ -296,11 +300,11 @@ public class Admin extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/logo_50.png")));
     }
-    
+
     void initAddTeamPanel() {
         AddTeam = new AddTeamPanel();
         CardHolder.add(AddTeam, "card3");

@@ -11,8 +11,6 @@ import Code.Team;
 import Code.TournamentManagementSystem;
 import java.util.ArrayList;
 import java.util.ListIterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 
 /**
@@ -203,7 +201,7 @@ public class AddPlayerPanel extends javax.swing.JPanel {
         ListIterator iter = allTeams.listIterator();
         AllTeamString = new ArrayList<>();
         allTeams.forEach(Team -> AllTeamString.add(Team.getTeamName()));
-        allTeams.forEach(Team -> System.out.print(Team.getTeamName()));
+//        allTeams.forEach(Team -> System.out.print(Team.getTeamName()));
         try {
             TeamNameDropDown.setModel(new DefaultComboBoxModel<>(
             AllTeamString.toArray(

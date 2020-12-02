@@ -17,31 +17,35 @@ public class TournamentManagementSystem {
 
     static PlayerCollection pc;
     static MatchSchedule ms;
-    private static String file;
-    
+    private static String file = "History.dat";
+
     public TournamentManagementSystem(int flag) {
         pc = new PlayerCollection();
         ms = new MatchSchedule();
     }
-    
+
     public TournamentManagementSystem() {
     }
-    
-    TournamentManagementSystem(String f) {
-        file = f;
+
+    public TournamentManagementSystem(String f) {
+//        file = f;
+        pc = new PlayerCollection();
         try {
             pc.loadPlayers(file);
         } catch (java.io.FileNotFoundException exp) {
-            System.out.println("The data file, 'Paleyrs.dat' doesn't exist. Plase create an empty file named 'Players.dat'");
+            System.out.println("The data file, 'History.dat' doesn't exist. Plase create an empty file named 'History.dat'");
             System.exit(0);
         } catch (java.io.EOFException exp) {
             // empty cars.dat file, this error should be ignored
         } catch (java.io.IOException exp) {
-            System.out.println("The data file, 'Players.dat' is possibly corrupted. Please delete it and create a new empty data file named Players.dat");
+            System.out.println("The data file, 'History.dat' is possibly corrupted. Please delete it and create a new empty data file named History.dat");
             System.exit(0);
         } catch (Exception exp) {
-            System.out.println("There was an error loading 'Players.dat'. Try deleting and creating a new empty file named 'Players.dat'");
-            System.exit(0);
+            System.out.println("There was an error loading 'History.dat'. Try deleting and creating a new empty file named 'History.dat'");
+            exp.printStackTrace();
+            ms = new MatchSchedule();
+//            System.exit(0);
+            return;
         }
 
         ms = new MatchSchedule(pc.getAllTeams());
@@ -54,7 +58,7 @@ public class TournamentManagementSystem {
         pc.addPlayer(p);
     }
 
-    public void addNewTeam(Team t) throws SameTeamException  {
+    public void addNewTeam(Team t) throws SameTeamException {
         pc.addTeam(t);
     }
 
@@ -78,31 +82,32 @@ public class TournamentManagementSystem {
     }
 
     public ArrayList<Team> getAllTeams() {
-        
+
         ArrayList<Team> temp;
         temp = new ArrayList<>(pc.getAllTeams());
         return temp;
     }
-    public ArrayList<Team> getDummyLeaderboards() throws SameTeamException
-    {System.out.println("Test Of Player Collection ");
+
+    public ArrayList<Team> getDummyLeaderboards() throws SameTeamException {
+        System.out.println("Test Of Player Collection ");
 
         Player p1 = new Player("name1", "height", "experience", "position", 1, 1, 1,
-        "team", 1);
+                "team", 1);
         Player p2 = new Player("name2", "height", "experience", "position", 2, 1, 1,
-        "team", 1);
+                "team", 1);
         Player p3 = new Player("name3", "height", "experience", "position", 3, 1, 1,
-        "team", 1);
+                "team", 1);
 
         Team t1 = new Team("TeamName1", p1);
         t1.addPlayer(p2);
         t1.addPlayer(p3);
 
         Player p4 = new Player("name4", "height", "experience", "position", 4, 4, 4,
-        "team", 4);
+                "team", 4);
         Player p5 = new Player("name5", "height", "experience", "position", 5, 5, 5,
-        "team", 5);
+                "team", 5);
         Player p6 = new Player("name6", "height", "experience", "position", 6, 6, 6,
-        "team", 6);
+                "team", 6);
 
         Team t2 = new Team("TeamName2", p4);
         t2.addPlayer(p5);
@@ -114,42 +119,41 @@ public class TournamentManagementSystem {
         t2.updatePoints(2);
         t2.updatePoints(2);
         t2.updatePoints(2);
-        
+
         PlayerCollection dummy = new PlayerCollection(t1);
-        
+
         dummy.addTeam(t2);
         return dummy.getLeaderboards();
-        
-        
-        
+
     }
+
     public ArrayList<Team> getAllDummyTeams() throws SameTeamException {
         System.out.println("Test Of Player Collection ");
 
         Player p1 = new Player("name1", "height", "experience", "position", 1, 1, 1,
-        "team", 1);
+                "team", 1);
         Player p2 = new Player("name2", "height", "experience", "position", 2, 1, 1,
-        "team", 1);
+                "team", 1);
         Player p3 = new Player("name3", "height", "experience", "position", 3, 1, 1,
-        "team", 1);
+                "team", 1);
 
         Team t1 = new Team("TeamName1", p1);
         t1.addPlayer(p2);
         t1.addPlayer(p3);
 
         Player p4 = new Player("name4", "height", "experience", "position", 4, 4, 4,
-        "team", 4);
+                "team", 4);
         Player p5 = new Player("name5", "height", "experience", "position", 5, 5, 5,
-        "team", 5);
+                "team", 5);
         Player p6 = new Player("name6", "height", "experience", "position", 6, 6, 6,
-        "team", 6);
+                "team", 6);
 
         Team t2 = new Team("TeamName2", p4);
         t2.addPlayer(p5);
         t2.addPlayer(p6);
-        
+
         PlayerCollection dummy = new PlayerCollection(t1);
-        
+
         dummy.addTeam(t2);
 
         return dummy.getAllTeams();
@@ -158,32 +162,32 @@ public class TournamentManagementSystem {
     public ArrayList<Player> getAllPlayers() {
         return pc.getAllPlayers();
     }
-    
+
     public ArrayList<Player> getAllDummyPlayers() throws SameTeamException {
         System.out.println("Test Of Player Collection ");
 
         Player p1 = new Player("name1", "height", "experience", "position", 1, 1, 1,
-        "team", 1);
+                "team", 1);
         Player p2 = new Player("name2", "height", "experience", "position", 2, 1, 1,
-        "team", 1);
+                "team", 1);
         Player p3 = new Player("name3", "height", "experience", "position", 3, 1, 1,
-        "team", 1);
+                "team", 1);
 
         Team t1 = new Team("TeamName1", p1);
         t1.addPlayer(p2);
         t1.addPlayer(p3);
 
         Player p4 = new Player("name4", "height", "experience", "position", 4, 4, 4,
-        "team", 4);
+                "team", 4);
         Player p5 = new Player("name5", "height", "experience", "position", 5, 5, 5,
-        "team", 5);
+                "team", 5);
         Player p6 = new Player("name6", "height", "experience", "position", 6, 6, 6,
-        "team", 6);
+                "team", 6);
 
         Team t2 = new Team("TeamName2", p4);
         t2.addPlayer(p5);
         t2.addPlayer(p6);
-        
+
         PlayerCollection dummy = new PlayerCollection(t1);
 
         dummy.addTeam(t2);
@@ -202,12 +206,12 @@ public class TournamentManagementSystem {
     }
 
     public boolean savePlayers() throws IOException {
-            try {
-                pc.savePlayers(file);
-                return true;
-            } catch (java.io.IOException exp) {
-                return false;
-            }
+        try {
+            pc.savePlayers(file);
+            return true;
+        } catch (java.io.IOException exp) {
+            return false;
+        }
     }
 
     public void saveAndClose() throws IOException {

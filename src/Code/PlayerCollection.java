@@ -62,6 +62,7 @@ public class PlayerCollection {
      * add a Team object to the PlayerCollection
      *
      * @param t Team object to add
+     * @throws Code.SameTeamException
      */
     public void addTeam(Team t) throws SameTeamException {
         if(getTeamIndex(t.getName()) != -1) {
@@ -166,6 +167,7 @@ public class PlayerCollection {
      * @param file of the binary file
      */
     public void savePlayers(String file) throws IOException {
+        System.out.println("saving ..." + file);
         int flag = 0;
         int items = teams.size();
 
@@ -220,6 +222,7 @@ public class PlayerCollection {
      */
     class sortLeaderboard implements Comparator<Team> {
 
+        @Override
         public int compare(Team a, Team b) {
             if (b.getPoints() != a.getPoints()) {
                 return b.getPoints() - a.getPoints();
@@ -259,53 +262,53 @@ public class PlayerCollection {
         t2.addPlayer(p5);
         t2.addPlayer(p6);
 
-        PlayerCollection pc = new PlayerCollection(t1);
-
-        pc.addTeam(t2);
-
-        ArrayList<Team> pcl = pc.getAllTeams();
-
-        for (Team titer : pcl) {
-        System.out.println(titer);
-        }
-
-        Player pTemp = new Player("name10", "height", "experience", "position", 10,
-        10, 10, "teamSpecial", 10);
-        pc.addPlayer(pTemp);
-
-        ArrayList<Player> pl = pc.getAllPlayers();
-
-        for (Player piter : pl) {
-        System.out.println(piter);
-        }
-
-        t1.updatePoints(-1);
-        t2.updatePoints(2);
-        ArrayList<Team> leader = pc.getLeaderboards();
-        for (Team titer : leader) {
-        System.out.println(titer);
-        }
-
-        final String file = "cars.dat";
-        pc.savePlayers(file);
+//        PlayerCollection pc = new PlayerCollection(t1);
+//
+//        pc.addTeam(t2);
+//
+//        ArrayList<Team> pcl = pc.getAllTeams();
+//
+//        for (Team titer : pcl) {
+//        System.out.println(titer);
+//        }
+//
+//        Player pTemp = new Player("name10", "height", "experience", "position", 10,
+//        10, 10, "teamSpecial", 10);
+//        pc.addPlayer(pTemp);
+//
+//        ArrayList<Player> pl = pc.getAllPlayers();
+//
+//        for (Player piter : pl) {
+//        System.out.println(piter);
+//        }
+//
+//        t1.updatePoints(-1);
+//        t2.updatePoints(2);
+//        ArrayList<Team> leader = pc.getLeaderboards();
+//        for (Team titer : leader) {
+//        System.out.println(titer);
+//        }
+//
+//        final String file = "lmaoooo.dat";
+//        pc.savePlayers(file);
 
         // Test the saved file is loading or not
 
-        // final String file = "cars.dat";
-        // PlayerCollection ld = new PlayerCollection();
-        // ld.loadPlayers(file);
+         final String file = "lmaoooo.dat";
+         PlayerCollection ld = new PlayerCollection();
+         ld.loadPlayers(file);
 
-        // ArrayList<Player> pl = ld.getAllPlayers();
+         ArrayList<Player> pl = ld.getAllPlayers();
 
-        // for (Player piter : pl) {
-        //     System.out.println(piter);
-        // }
+         for (Player piter : pl) {
+             System.out.println(piter);
+         }
 
-        // ArrayList<Team> pcl = ld.getAllTeams();
+         ArrayList<Team> pcl = ld.getAllTeams();
 
-        // for (Team titer : pcl) {
-        //     System.out.println(titer);
-        // }
+         for (Team titer : pcl) {
+             System.out.println(titer);
+         }
     }
 
 }

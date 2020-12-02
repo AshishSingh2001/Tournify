@@ -9,10 +9,12 @@ import Code.TournamentManagementSystem;
 import GUI.AdminWindow.Admin;
 import GUI.HomeWindow.Home;
 import java.awt.*;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
-import java.util.*;
 import keeptoo.Drag;
-
 
 /**
  *
@@ -151,11 +153,11 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/logo_50.png")));
     }
-    
+
     private void TextUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextUserActionPerformed
@@ -190,14 +192,34 @@ public class Login extends javax.swing.JFrame {
 
     private void ExitIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitIconMouseClicked
         // TODO add your handling code here:
-        System.exit(0);
+        int n = JOptionPane.showConfirmDialog(new JFrame(),
+        "Would you like to save this sessions data?",
+        "An Inane Question",
+        JOptionPane.YES_NO_OPTION);
+        
+        if(n == 0) {
+            try {
+                System.out.println("check saveclose");
+                tms.saveAndClose();
+            } catch (IOException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            try {
+                new FileWriter("History.dat", false).close();
+            } catch (IOException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            System.exit(0);
+        }
+        
     }//GEN-LAST:event_ExitIconMouseClicked
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        tms = new TournamentManagementSystem(1);
+        tms = new TournamentManagementSystem("lmaoooo.dat");
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -223,13 +245,14 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 LoginPage = new Login();
                 LoginPage.setVisible(true);
             }
         });
     }
-    
+
     private static TournamentManagementSystem tms;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private keeptoo.KButton BtnAdmin;

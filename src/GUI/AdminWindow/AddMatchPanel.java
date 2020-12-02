@@ -22,14 +22,18 @@ public class AddMatchPanel extends javax.swing.JPanel {
     /**
      * Creates new form AddTeam
      */
-    
     ArrayList<String> AllTeamString;
-    
+
     public AddMatchPanel() {
-        tms = new TournamentManagementSystem();
-        refreshTeamString();
+        try {
+            tms = new TournamentManagementSystem();
 //        allTeams.forEach(Team -> System.out.print(Team.getTeamName()));
-        initComponents();
+            initComponents();
+            refreshTeamString();
+        } catch (NullPointerException e) {
+
+        }
+
     }
 
     /**
@@ -133,11 +137,6 @@ public class AddMatchPanel extends javax.swing.JPanel {
         add(PointsField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 390, 40));
 
         Team1DropDown.setBackground(new java.awt.Color(153, 153, 255, 1));
-        Team1DropDown.setModel(new DefaultComboBoxModel<>(
-            AllTeamString.toArray(
-                new String[AllTeamString.size()]
-            )
-        ));
         Team1DropDown.setOpaque(false);
         Team1DropDown.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -152,11 +151,6 @@ public class AddMatchPanel extends javax.swing.JPanel {
         add(Team1DropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 390, 40));
 
         Team2DropDown.setBackground(new java.awt.Color(153, 153, 255, 1));
-        Team2DropDown.setModel(new DefaultComboBoxModel<>(
-            AllTeamString.toArray(
-                new String[AllTeamString.size()]
-            )
-        ));
         Team2DropDown.setOpaque(false);
         Team2DropDown.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -189,31 +183,30 @@ public class AddMatchPanel extends javax.swing.JPanel {
         });
         add(Team2DropDown2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 390, 40));
     }// </editor-fold>//GEN-END:initComponents
-    
-    
+
     private void reset() {
         PointsField1.setText("");
         PointsField2.setText("");
-        
+
 //        TeamField1.setText("");
 //        TeamField2.setText("");
     }
-    
+
     private void AddMatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddMatchBtnActionPerformed
         // TODO add your handling code here:
         String team1, team2;
         int team1Points, team2Points;
         team1 = (String) Team1DropDown.getSelectedItem();
         team2 = (String) Team2DropDown.getSelectedItem();
-        if(team1.equals(team2)) {
+        if (team1.equals(team2)) {
             JOptionPane.showMessageDialog(new JFrame(),
-            "You cant create the match with the same team.",
-            "Inane warning",
-            JOptionPane.WARNING_MESSAGE);
+                    "You cant create the match with the same team.",
+                    "Inane warning",
+                    JOptionPane.WARNING_MESSAGE);
         } else {
             team1Points = Integer.parseInt(PointsField1.getText());
             team2Points = Integer.parseInt(PointsField2.getText());
-            tms.addNewMatch(team1, team2, team1Points,team2Points);
+            tms.addNewMatch(team1, team2, team1Points, team2Points);
             reset();
         }
     }//GEN-LAST:event_AddMatchBtnActionPerformed
@@ -272,24 +265,24 @@ public class AddMatchPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     void refreshTeamString() {
-        ArrayList<Team> allTeams = tms.getAllTeams();
-        ListIterator iter = allTeams.listIterator();
-        AllTeamString = new ArrayList<>();
-        allTeams.forEach(Team -> AllTeamString.add(Team.getTeamName())); 
         try {
+            ArrayList<Team> allTeams = tms.getAllTeams();
+            ListIterator iter = allTeams.listIterator();
+            AllTeamString = new ArrayList<>();
+            allTeams.forEach(Team -> AllTeamString.add(Team.getTeamName()));
             Team1DropDown.setModel(new DefaultComboBoxModel<>(
-            AllTeamString.toArray(
-                new String[AllTeamString.size()]
-            )
-        ));
-        Team2DropDown.setModel(new DefaultComboBoxModel<>(
-            AllTeamString.toArray(
-                new String[AllTeamString.size()]
-            )
-        ));
-        } catch(NullPointerException e) {
-            
+                    AllTeamString.toArray(
+                            new String[AllTeamString.size()]
+                    )
+            ));
+            Team2DropDown.setModel(new DefaultComboBoxModel<>(
+                    AllTeamString.toArray(
+                            new String[AllTeamString.size()]
+                    )
+            ));
+        } catch (NullPointerException e) {
+
         }
-        
+
     }
 }
