@@ -5,8 +5,13 @@
  */
 package GUI.AdminWindow;
 
+import Code.TournamentManagementSystem;
 import GUI.*;
 import java.awt.*;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 /**
@@ -338,7 +343,27 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_TopBarMouseDragged
 
     private void ExitIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitIconMouseClicked
-        System.exit(0);
+        int n = JOptionPane.showConfirmDialog(new JFrame(),
+        "Would you like to save this sessions data?",
+        "An Inane Question",
+        JOptionPane.YES_NO_OPTION);
+        
+        if(n == 0) {
+            System.out.println("check saveclose");
+            TournamentManagementSystem tms = new TournamentManagementSystem("History.dat");
+            try {
+                tms.saveAndClose();
+            } catch (IOException ex) {
+                Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            try {
+                new FileWriter("History.dat", false).close();
+            } catch (IOException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            System.exit(0);
+        }
     }//GEN-LAST:event_ExitIconMouseClicked
 
     private void jSeparator1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSeparator1MouseClicked
