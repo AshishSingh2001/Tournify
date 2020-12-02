@@ -17,6 +17,8 @@ A desktop based java application aimed at small tournament organizers and clubs 
 * Automatically Update Leader boards
 * Keep track of previous Matches
 * Simple to use Dash Board
+* Stores previous log history
+* Use custom icons for teams
 
 ## Gallery
 
@@ -29,10 +31,4 @@ A desktop based java application aimed at small tournament organizers and clubs 
 * JDK 14
 * [KControls.jar](https://github.com/k33ptoo/KControls)
 
-## TO-DO
-1. Add a different class for a team owner which can manage the teams profile .
-2. Make it available for players to register and the admin to verify the registrations.
-3. Manage multiple tournaments.
-4. Make the system handle exceptions for input.
-5. Add a loading screen till the program loads.
-6. Add auto draw fixtures.
+
