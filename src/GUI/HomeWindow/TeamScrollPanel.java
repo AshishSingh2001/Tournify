@@ -80,7 +80,12 @@ public class TeamScrollPanel extends javax.swing.JPanel {
 
         } else {
             for (int i = 0; i < team.size(); i++) {
-                rowPanel[i] = new TeamScrollCard(team.get(i).getTeamName(), team.get(i).getDescription());
+                if(team.get(i).getTeamImg().isEmpty()) {
+                    rowPanel[i] = new TeamScrollCard(team.get(i).getTeamName(), team.get(i).getDescription());
+                } else {
+                    System.out.println(team.get(i).getTeamImg());
+                    rowPanel[i] = new TeamScrollCard(team.get(i).getTeamName(), team.get(i).getDescription(), team.get(i).getTeamImg());
+                }
                 columnpanel.add(rowPanel[i]);
 
                 // if (i % 4 == 0 || (i + 1) % 4 == 0)

@@ -355,6 +355,7 @@ public class Admin extends javax.swing.JFrame {
         CardHolder.repaint();
         CardHolder.revalidate();
         CardHolder.add(AddPlayer);
+        AddPlayer.refreshTeamString();
     }//GEN-LAST:event_AddPlayersBtnActionPerformed
 
     private void AddMatchesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddMatchesBtnActionPerformed
@@ -363,6 +364,7 @@ public class Admin extends javax.swing.JFrame {
         CardHolder.repaint();
         CardHolder.revalidate();
         CardHolder.add(AddMatch);
+        AddMatch.refreshTeamString();
     }//GEN-LAST:event_AddMatchesBtnActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked

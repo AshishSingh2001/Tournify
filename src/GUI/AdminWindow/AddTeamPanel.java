@@ -5,8 +5,14 @@
  */
 package GUI.AdminWindow;
 
+import Code.SameTeamException;
 import Code.Team;
 import Code.TournamentManagementSystem;
+import java.io.File;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -31,37 +37,36 @@ public class AddTeamPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TeamLabel = new javax.swing.JLabel();
-        TeamField = new javax.swing.JTextField();
+        imgPath = new javax.swing.JTextField();
         DescriptionLabel = new javax.swing.JLabel();
         DescriptionField = new javax.swing.JTextField();
         AddTeamBtn = new keeptoo.KButton();
         ResetBtn = new keeptoo.KButton();
+        TeamLabel1 = new javax.swing.JLabel();
+        TeamField = new javax.swing.JTextField();
+        imgPick = new keeptoo.KButton();
 
         setBackground(new java.awt.Color(0, 204, 255));
         setPreferredSize(new java.awt.Dimension(980, 600));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TeamLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        TeamLabel.setForeground(new java.awt.Color(254, 254, 254));
-        TeamLabel.setText("Team Name");
-        add(TeamLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 250, 40));
-
-        TeamField.setBackground(new java.awt.Color(0,0,0,1));
-        TeamField.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        TeamField.setForeground(new java.awt.Color(254, 254, 254));
-        TeamField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
-        TeamField.addActionListener(new java.awt.event.ActionListener() {
+        imgPath.setBackground(new java.awt.Color(0,0,0,1));
+        imgPath.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        imgPath.setForeground(new java.awt.Color(254, 254, 254));
+        imgPath.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        imgPath.setText("Default");
+        imgPath.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
+        imgPath.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TeamFieldActionPerformed(evt);
+                imgPathActionPerformed(evt);
             }
         });
-        add(TeamField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 390, 40));
+        add(imgPath, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 540, 40));
 
         DescriptionLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         DescriptionLabel.setForeground(new java.awt.Color(254, 254, 254));
         DescriptionLabel.setText("Description");
-        add(DescriptionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 250, 40));
+        add(DescriptionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 250, 40));
 
         DescriptionField.setBackground(new java.awt.Color(0,0,0,1));
         DescriptionField.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
@@ -72,7 +77,7 @@ public class AddTeamPanel extends javax.swing.JPanel {
                 DescriptionFieldActionPerformed(evt);
             }
         });
-        add(DescriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 390, 40));
+        add(DescriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 390, 40));
 
         AddTeamBtn.setText("Add Team");
         AddTeamBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
@@ -89,7 +94,7 @@ public class AddTeamPanel extends javax.swing.JPanel {
                 AddTeamBtnActionPerformed(evt);
             }
         });
-        add(AddTeamBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 160, -1));
+        add(AddTeamBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 160, -1));
 
         ResetBtn.setText("Reset");
         ResetBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
@@ -104,38 +109,118 @@ public class AddTeamPanel extends javax.swing.JPanel {
                 ResetBtnActionPerformed(evt);
             }
         });
-        add(ResetBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 160, -1));
+        add(ResetBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, 160, -1));
+
+        TeamLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        TeamLabel1.setForeground(new java.awt.Color(254, 254, 254));
+        TeamLabel1.setText("Team Name");
+        add(TeamLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 250, 40));
+
+        TeamField.setBackground(new java.awt.Color(0,0,0,1));
+        TeamField.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        TeamField.setForeground(new java.awt.Color(254, 254, 254));
+        TeamField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
+        TeamField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TeamFieldActionPerformed(evt);
+            }
+        });
+        add(TeamField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 390, 40));
+
+        imgPick.setText("Select Image");
+        imgPick.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        imgPick.setkBorderRadius(30);
+        imgPick.setkEndColor(new java.awt.Color(0, 255, 204));
+        imgPick.setkHoverEndColor(new java.awt.Color(50, 130, 184));
+        imgPick.setkHoverForeGround(new java.awt.Color(227, 223, 200));
+        imgPick.setkHoverStartColor(new java.awt.Color(26, 166, 183));
+        imgPick.setkStartColor(new java.awt.Color(0, 51, 255));
+        imgPick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imgPickActionPerformed(evt);
+            }
+        });
+        add(imgPick, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 360, 140, 40));
     }// </editor-fold>//GEN-END:initComponents
     
     
     private void reset() {
         TeamField.setText("");
         DescriptionField.setText("");
+        imgPath.setText("Default");
     }
     
     
-    private void TeamFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TeamFieldActionPerformed
-
     private void DescriptionFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescriptionFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DescriptionFieldActionPerformed
 
     private void AddTeamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTeamBtnActionPerformed
         // TODO add your handling code here:
-        String team, description;
+        String team, description, TeamImg;
+        TeamImg = "";
+        
         team = TeamField.getText();
         description = DescriptionField.getText();
-        Team t = new Team(team, description);
-        tms.addNewTeam(t);
-        reset();
+        if(description.length() > 22) {
+            JOptionPane.showMessageDialog(new JFrame(),
+            "Description should be under 22 characters.");
+        } else if (team.isBlank() || team.isEmpty() || description.isBlank() || description.isEmpty()){
+            JOptionPane.showMessageDialog(new JFrame(),
+            "Cannot submit empty fields.",
+            "Inane warning",
+            JOptionPane.WARNING_MESSAGE);
+        } else {
+            Team t;
+            if(!imgPath.getText().equalsIgnoreCase("Default")){
+                TeamImg = imgPath.getText();
+                t = new Team(team, description, TeamImg);
+            } else {
+                t = new Team(team, description);
+            }
+            try {
+                tms.addNewTeam(t);
+            } catch(SameTeamException e) {
+                 JOptionPane.showMessageDialog(new JFrame(),
+                "Cannot Add two teams with same name.",
+                "Inane warning",
+                JOptionPane.WARNING_MESSAGE);
+            }
+            
+            reset();
+        }
     }//GEN-LAST:event_AddTeamBtnActionPerformed
 
     private void ResetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetBtnActionPerformed
         // TODO add your handling code here:
         reset();
     }//GEN-LAST:event_ResetBtnActionPerformed
+
+    private void TeamFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TeamFieldActionPerformed
+
+    private void imgPickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imgPickActionPerformed
+        // TODO add your handling code here:
+        JFileChooser file = new JFileChooser();
+          file.setCurrentDirectory(new File(System.getProperty("user.home")));
+          //filter the files
+          FileNameExtensionFilter filter = new FileNameExtensionFilter("*.Images", "jpg","gif","png","jpeg");
+          file.setFileFilter(filter);
+          int result = file.showSaveDialog(null);
+           //if the user click on save in Jfilechooser
+          if(result == JFileChooser.APPROVE_OPTION){
+            File selectedFile = file.getSelectedFile();
+            String path = selectedFile.getAbsolutePath();
+            imgPath.setText(path);
+          } else if(result == JFileChooser.CANCEL_OPTION){
+            System.out.println("No File Selected");
+          }
+    }//GEN-LAST:event_imgPickActionPerformed
+
+    private void imgPathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imgPathActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_imgPathActionPerformed
 
     private TournamentManagementSystem tms;
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -144,6 +229,8 @@ public class AddTeamPanel extends javax.swing.JPanel {
     private javax.swing.JLabel DescriptionLabel;
     private keeptoo.KButton ResetBtn;
     private javax.swing.JTextField TeamField;
-    private javax.swing.JLabel TeamLabel;
+    private javax.swing.JLabel TeamLabel1;
+    private javax.swing.JTextField imgPath;
+    private keeptoo.KButton imgPick;
     // End of variables declaration//GEN-END:variables
 }

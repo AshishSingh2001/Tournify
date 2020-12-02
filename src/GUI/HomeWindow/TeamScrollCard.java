@@ -5,6 +5,9 @@
  */
 package GUI.HomeWindow;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Ashish Kumar Singh
@@ -16,21 +19,43 @@ public class TeamScrollCard extends javax.swing.JPanel {
      */
     private String name;
     private String description;
-
+    private String TeamImg;
+    
     public TeamScrollCard(String name, String description) {
         initComponents();
         this.name = name;
         this.description = description;
+        this.TeamImg = "/resources/wolfteam_90.png";
         display();
+    }
+    
+    public TeamScrollCard(String name, String description, String TeamImg) {
+        initComponents();
+        this.name = name;
+        this.description = description;
+        this.TeamImg = TeamImg;
+        display();
+        displayImg();
     }
 
     private void display() {
         TeamName.setText(name);
-
         TeamDescription.setText(description);
-
     }
-
+    
+    private void displayImg() {
+        TeamIcon.setIcon(ResizeImage(TeamImg));
+    }
+    
+    public ImageIcon ResizeImage(String ImagePath)
+    {
+        ImageIcon MyImage = new ImageIcon(ImagePath);
+        Image img = MyImage.getImage();
+        Image newImg = img.getScaledInstance(96, 90, Image.SCALE_SMOOTH);
+        ImageIcon image = new ImageIcon(newImg);
+        return image;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

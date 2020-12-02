@@ -13,6 +13,7 @@ import java.util.*;
  * Parameters
  * <ul>
  *  <li> String <b> name </b> -Team name
+ *  <li> String <b> TeamImg </b> - Path to the image of team
  *  <li> String <b> description< /b> - Team description
  *  <li> int <b> matchesWon </b> - Matches won by team
  *  <li> int <b> matchesDraw </b> - Matches draw by team
@@ -48,6 +49,7 @@ import java.util.*;
 public class Team implements java.io.Serializable {
     private String name;
     private String description;
+    private String TeamImg = "";
     private int matchesWon = 0;
     private int matchesDraw = 0;
     private int matchesLost = 0;
@@ -64,6 +66,12 @@ public class Team implements java.io.Serializable {
         this.name = name.toUpperCase();
         this.description = description;
     }
+    
+    public Team(String name, String description, String TeamImg) {
+        this.name = name.toUpperCase();
+        this.description = description;
+        this.TeamImg = TeamImg;
+    }
 
     /**
      * Construct a team object and add a player to it
@@ -79,7 +87,7 @@ public class Team implements java.io.Serializable {
      */
     public void addPlayer(Player p)
     {
-        p.setTeamName(this.name);
+        p.setTeamName(this.getName());
         player.add(p);
     }
 
@@ -100,7 +108,7 @@ public class Team implements java.io.Serializable {
     }
 
     public final String getTeamName() {
-        return name;
+        return getName();
     }
 
     /**
@@ -155,7 +163,7 @@ public class Team implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return (name + " ");
+        return (getName() + " ");
     }
 
     public static void main(String[] args) {
@@ -174,6 +182,34 @@ public class Team implements java.io.Serializable {
             System.out.println(piter);
         }
 
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return the TeamImg
+     */
+    public String getTeamImg() {
+        return TeamImg;
+    }
+
+    /**
+     * @param TeamImg the TeamImg to set
+     */
+    public void setTeamImg(String TeamImg) {
+        this.TeamImg = TeamImg;
     }
 
 }

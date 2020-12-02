@@ -5,7 +5,13 @@
  */
 package GUI.AdminWindow;
 
+import Code.Team;
 import Code.TournamentManagementSystem;
+import java.util.ArrayList;
+import java.util.ListIterator;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,8 +22,13 @@ public class AddMatchPanel extends javax.swing.JPanel {
     /**
      * Creates new form AddTeam
      */
+    
+    ArrayList<String> AllTeamString;
+    
     public AddMatchPanel() {
         tms = new TournamentManagementSystem();
+        refreshTeamString();
+//        allTeams.forEach(Team -> System.out.print(Team.getTeamName()));
         initComponents();
     }
 
@@ -33,13 +44,14 @@ public class AddMatchPanel extends javax.swing.JPanel {
         AddMatchBtn = new keeptoo.KButton();
         ResetBtn = new keeptoo.KButton();
         TeamLabel2 = new javax.swing.JLabel();
-        TeamField2 = new javax.swing.JTextField();
         PointsLabel2 = new javax.swing.JLabel();
         PointsField2 = new javax.swing.JTextField();
         TeamLabel1 = new javax.swing.JLabel();
-        TeamField1 = new javax.swing.JTextField();
         PointsLabel1 = new javax.swing.JLabel();
         PointsField1 = new javax.swing.JTextField();
+        Team1DropDown = new javax.swing.JComboBox<>();
+        Team2DropDown = new javax.swing.JComboBox<>();
+        Team2DropDown2 = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(153, 153, 255));
         setForeground(new java.awt.Color(254, 254, 254));
@@ -83,17 +95,6 @@ public class AddMatchPanel extends javax.swing.JPanel {
         TeamLabel2.setText("Team 2 Name");
         add(TeamLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 250, 40));
 
-        TeamField2.setBackground(new java.awt.Color(0,0,0,1));
-        TeamField2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        TeamField2.setForeground(new java.awt.Color(254, 254, 254));
-        TeamField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
-        TeamField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TeamField2ActionPerformed(evt);
-            }
-        });
-        add(TeamField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 390, 40));
-
         PointsLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         PointsLabel2.setForeground(new java.awt.Color(254, 254, 254));
         PointsLabel2.setText("Team 2 Points");
@@ -115,17 +116,6 @@ public class AddMatchPanel extends javax.swing.JPanel {
         TeamLabel1.setText("Team 1 Name");
         add(TeamLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 250, 40));
 
-        TeamField1.setBackground(new java.awt.Color(0,0,0,1));
-        TeamField1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        TeamField1.setForeground(new java.awt.Color(254, 254, 254));
-        TeamField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
-        TeamField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TeamField1ActionPerformed(evt);
-            }
-        });
-        add(TeamField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 390, 40));
-
         PointsLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         PointsLabel1.setForeground(new java.awt.Color(254, 254, 254));
         PointsLabel1.setText("Team 1 Points");
@@ -141,26 +131,91 @@ public class AddMatchPanel extends javax.swing.JPanel {
             }
         });
         add(PointsField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 390, 40));
+
+        Team1DropDown.setBackground(new java.awt.Color(153, 153, 255, 1));
+        Team1DropDown.setModel(new DefaultComboBoxModel<>(
+            AllTeamString.toArray(
+                new String[AllTeamString.size()]
+            )
+        ));
+        Team1DropDown.setOpaque(false);
+        Team1DropDown.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Team1DropDownItemStateChanged(evt);
+            }
+        });
+        Team1DropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Team1DropDownActionPerformed(evt);
+            }
+        });
+        add(Team1DropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 390, 40));
+
+        Team2DropDown.setBackground(new java.awt.Color(153, 153, 255, 1));
+        Team2DropDown.setModel(new DefaultComboBoxModel<>(
+            AllTeamString.toArray(
+                new String[AllTeamString.size()]
+            )
+        ));
+        Team2DropDown.setOpaque(false);
+        Team2DropDown.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Team2DropDownItemStateChanged(evt);
+            }
+        });
+        Team2DropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Team2DropDownActionPerformed(evt);
+            }
+        });
+        add(Team2DropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 390, 40));
+
+        Team2DropDown2.setBackground(new java.awt.Color(153, 153, 255, 1));
+        Team2DropDown2.setModel(new DefaultComboBoxModel<>(
+            AllTeamString.toArray(
+                new String[AllTeamString.size()]
+            )
+        ));
+        Team2DropDown2.setOpaque(false);
+        Team2DropDown2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Team2DropDown2ItemStateChanged(evt);
+            }
+        });
+        Team2DropDown2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Team2DropDown2ActionPerformed(evt);
+            }
+        });
+        add(Team2DropDown2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 390, 40));
     }// </editor-fold>//GEN-END:initComponents
     
     
     private void reset() {
         PointsField1.setText("");
         PointsField2.setText("");
-        TeamField1.setText("");
-        TeamField2.setText("");
+        
+//        TeamField1.setText("");
+//        TeamField2.setText("");
     }
     
     private void AddMatchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddMatchBtnActionPerformed
         // TODO add your handling code here:
         String team1, team2;
         int team1Points, team2Points;
-        team1 = TeamField1.getText();
-        team2 = TeamField2.getText();
-        team1Points = Integer.parseInt(PointsField1.getText());
-        team2Points = Integer.parseInt(PointsField2.getText());
-        tms.addNewMatch(team1, team2, team1Points,team2Points);
-        reset();
+        team1 = (String) Team1DropDown.getSelectedItem();
+        team2 = (String) Team2DropDown.getSelectedItem();
+        if(team1.equals(team2)) {
+            JOptionPane.showMessageDialog(new JFrame(),
+            "You cant create the match with the same team.",
+            "Inane warning",
+            JOptionPane.WARNING_MESSAGE);
+        } else {
+            team1Points = Integer.parseInt(PointsField1.getText());
+            team2Points = Integer.parseInt(PointsField2.getText());
+            tms.addNewMatch(team1, team2, team1Points,team2Points);
+            reset();
+        }
     }//GEN-LAST:event_AddMatchBtnActionPerformed
 
     private void ResetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetBtnActionPerformed
@@ -168,21 +223,38 @@ public class AddMatchPanel extends javax.swing.JPanel {
         reset();
     }//GEN-LAST:event_ResetBtnActionPerformed
 
-    private void TeamField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TeamField2ActionPerformed
-
     private void PointsField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PointsField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PointsField2ActionPerformed
 
-    private void TeamField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TeamField1ActionPerformed
-
     private void PointsField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PointsField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PointsField1ActionPerformed
+
+    private void Team2DropDownItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Team2DropDownItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Team2DropDownItemStateChanged
+
+    private void Team2DropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Team2DropDownActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Team2DropDownActionPerformed
+
+    private void Team1DropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Team1DropDownActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Team1DropDownActionPerformed
+
+    private void Team1DropDownItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Team1DropDownItemStateChanged
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_Team1DropDownItemStateChanged
+
+    private void Team2DropDown2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Team2DropDown2ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Team2DropDown2ItemStateChanged
+
+    private void Team2DropDown2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Team2DropDown2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Team2DropDown2ActionPerformed
 
     private TournamentManagementSystem tms;
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -192,9 +264,32 @@ public class AddMatchPanel extends javax.swing.JPanel {
     private javax.swing.JLabel PointsLabel1;
     private javax.swing.JLabel PointsLabel2;
     private keeptoo.KButton ResetBtn;
-    private javax.swing.JTextField TeamField1;
-    private javax.swing.JTextField TeamField2;
+    private javax.swing.JComboBox<String> Team1DropDown;
+    private javax.swing.JComboBox<String> Team2DropDown;
+    private javax.swing.JComboBox<String> Team2DropDown2;
     private javax.swing.JLabel TeamLabel1;
     private javax.swing.JLabel TeamLabel2;
     // End of variables declaration//GEN-END:variables
+
+    void refreshTeamString() {
+        ArrayList<Team> allTeams = tms.getAllTeams();
+        ListIterator iter = allTeams.listIterator();
+        AllTeamString = new ArrayList<>();
+        allTeams.forEach(Team -> AllTeamString.add(Team.getTeamName())); 
+        try {
+            Team1DropDown.setModel(new DefaultComboBoxModel<>(
+            AllTeamString.toArray(
+                new String[AllTeamString.size()]
+            )
+        ));
+        Team2DropDown.setModel(new DefaultComboBoxModel<>(
+            AllTeamString.toArray(
+                new String[AllTeamString.size()]
+            )
+        ));
+        } catch(NullPointerException e) {
+            
+        }
+        
+    }
 }

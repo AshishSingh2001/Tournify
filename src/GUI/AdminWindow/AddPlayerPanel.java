@@ -6,7 +6,14 @@
 package GUI.AdminWindow;
 
 import Code.Player;
+import Code.SameTeamException;
+import Code.Team;
 import Code.TournamentManagementSystem;
+import java.util.ArrayList;
+import java.util.ListIterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -14,11 +21,14 @@ import Code.TournamentManagementSystem;
  */
 public class AddPlayerPanel extends javax.swing.JPanel {
 
+    
+    ArrayList<String> AllTeamString;
     /**
      * Creates new form AddTeam
      */
     public AddPlayerPanel() {
         tms = new TournamentManagementSystem();
+        refreshTeamString();
         initComponents();
     }
 
@@ -34,11 +44,11 @@ public class AddPlayerPanel extends javax.swing.JPanel {
         NameLabel = new javax.swing.JLabel();
         NameField = new javax.swing.JTextField();
         TeamLabel = new javax.swing.JLabel();
-        TeamField = new javax.swing.JTextField();
         PositionLabel = new javax.swing.JLabel();
         PositionField = new javax.swing.JTextField();
         AddPlayerBtn = new keeptoo.KButton();
         ResetBtn = new keeptoo.KButton();
+        TeamNameDropDown = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(122, 207, 131));
         setPreferredSize(new java.awt.Dimension(980, 600));
@@ -64,17 +74,6 @@ public class AddPlayerPanel extends javax.swing.JPanel {
         TeamLabel.setForeground(new java.awt.Color(254, 254, 254));
         TeamLabel.setText("Team Name");
         add(TeamLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 250, 40));
-
-        TeamField.setBackground(new java.awt.Color(0,0,0,1));
-        TeamField.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        TeamField.setForeground(new java.awt.Color(254, 254, 254));
-        TeamField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(254, 254, 254)));
-        TeamField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TeamFieldActionPerformed(evt);
-            }
-        });
-        add(TeamField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 390, 40));
 
         PositionLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         PositionLabel.setForeground(new java.awt.Color(254, 254, 254));
@@ -124,27 +123,45 @@ public class AddPlayerPanel extends javax.swing.JPanel {
             }
         });
         add(ResetBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 160, -1));
+
+        TeamNameDropDown.setBackground(new java.awt.Color(153, 153, 255, 1));
+        TeamNameDropDown.setModel(new DefaultComboBoxModel<>(
+            AllTeamString.toArray(
+                new String[AllTeamString.size()]
+            )
+        ));
+        TeamNameDropDown.setOpaque(false);
+        TeamNameDropDown.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                TeamNameDropDownItemStateChanged(evt);
+            }
+        });
+        TeamNameDropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TeamNameDropDownActionPerformed(evt);
+            }
+        });
+        add(TeamNameDropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 390, 40));
     }// </editor-fold>//GEN-END:initComponents
     
     
     private void reset() {
         NameField.setText("");
-        TeamField.setText("");
         PositionField.setText("");
     }
     
-    private void TeamFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TeamFieldActionPerformed
-
     private void AddPlayerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPlayerBtnActionPerformed
         // TODO add your handling code here:
         String name, team, position;
         name = NameField.getText();
-        team = TeamField.getText();
+        team = (String) TeamNameDropDown.getSelectedItem();
         position = PositionField.getText();
         Player p = new Player(name,position,team);
-        tms.addNewPlayer(p);
+        try {
+            tms.addNewPlayer(p);
+        } catch (SameTeamException ex) {
+            
+        }
         reset();
     }//GEN-LAST:event_AddPlayerBtnActionPerformed
 
@@ -161,6 +178,14 @@ public class AddPlayerPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_PositionFieldActionPerformed
 
+    private void TeamNameDropDownItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TeamNameDropDownItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TeamNameDropDownItemStateChanged
+
+    private void TeamNameDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamNameDropDownActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TeamNameDropDownActionPerformed
+
     private TournamentManagementSystem tms;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private keeptoo.KButton AddPlayerBtn;
@@ -169,7 +194,24 @@ public class AddPlayerPanel extends javax.swing.JPanel {
     private javax.swing.JTextField PositionField;
     private javax.swing.JLabel PositionLabel;
     private keeptoo.KButton ResetBtn;
-    private javax.swing.JTextField TeamField;
     private javax.swing.JLabel TeamLabel;
+    private javax.swing.JComboBox<String> TeamNameDropDown;
     // End of variables declaration//GEN-END:variables
+
+    void refreshTeamString() {
+        ArrayList<Team> allTeams = tms.getAllTeams();
+        ListIterator iter = allTeams.listIterator();
+        AllTeamString = new ArrayList<>();
+        allTeams.forEach(Team -> AllTeamString.add(Team.getTeamName()));
+        allTeams.forEach(Team -> System.out.print(Team.getTeamName()));
+        try {
+            TeamNameDropDown.setModel(new DefaultComboBoxModel<>(
+            AllTeamString.toArray(
+                new String[AllTeamString.size()]
+            )
+        ));
+        } catch(NullPointerException e) {
+            
+        }
+    }
 }

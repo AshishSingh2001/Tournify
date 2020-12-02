@@ -47,14 +47,14 @@ public class TournamentManagementSystem {
         ms = new MatchSchedule(pc.getAllTeams());
     }
 
-    public void addNewPlayer(Player p) {
+    public void addNewPlayer(Player p) throws SameTeamException {
         if (pc.getTeamIndex(p.getTeamName()) == -1) {
             System.out.println("There is no team with the name " + p.getTeamName());
         }
         pc.addPlayer(p);
     }
 
-    public void addNewTeam(Team t) {
+    public void addNewTeam(Team t) throws SameTeamException  {
         pc.addTeam(t);
     }
 
@@ -83,7 +83,7 @@ public class TournamentManagementSystem {
         temp = new ArrayList<>(pc.getAllTeams());
         return temp;
     }
-    public ArrayList<Team> getDummyLeaderboards()
+    public ArrayList<Team> getDummyLeaderboards() throws SameTeamException
     {System.out.println("Test Of Player Collection ");
 
         Player p1 = new Player("name1", "height", "experience", "position", 1, 1, 1,
@@ -123,7 +123,7 @@ public class TournamentManagementSystem {
         
         
     }
-    public ArrayList<Team> getAllDummyTeams() {
+    public ArrayList<Team> getAllDummyTeams() throws SameTeamException {
         System.out.println("Test Of Player Collection ");
 
         Player p1 = new Player("name1", "height", "experience", "position", 1, 1, 1,
@@ -159,7 +159,7 @@ public class TournamentManagementSystem {
         return pc.getAllPlayers();
     }
     
-    public ArrayList<Player> getAllDummyPlayers() {
+    public ArrayList<Player> getAllDummyPlayers() throws SameTeamException {
         System.out.println("Test Of Player Collection ");
 
         Player p1 = new Player("name1", "height", "experience", "position", 1, 1, 1,

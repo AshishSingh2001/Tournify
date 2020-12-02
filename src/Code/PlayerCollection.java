@@ -63,7 +63,10 @@ public class PlayerCollection {
      *
      * @param t Team object to add
      */
-    public void addTeam(Team t) {
+    public void addTeam(Team t) throws SameTeamException {
+        if(getTeamIndex(t.getName()) != -1) {
+            throw new SameTeamException("");
+        }
         teams.add(t);
     }
 
@@ -74,7 +77,7 @@ public class PlayerCollection {
      * @param p player to add to collection
      * @return either one of NO_ERROR, MAX_TEAM_REACHED, or MAX_PALYERS_REACHED
      */
-    public int addPlayer(Player p) {
+    public int addPlayer(Player p) throws SameTeamException {
         Team t;
         String name = p.getTeamName();
         int result = NO_ERROR;
@@ -230,7 +233,7 @@ public class PlayerCollection {
         }
     }
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, SameTeamException {
 
         System.out.println("Test Of Player Collection ");
 
