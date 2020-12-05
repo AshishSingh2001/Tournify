@@ -291,7 +291,7 @@ public class Home extends javax.swing.JFrame {
         
         if(n == 0) {
             System.out.println("check saveclose");
-            TournamentManagementSystem tms = new TournamentManagementSystem("History.dat");
+            TournamentManagementSystem tms = new TournamentManagementSystem();
             try {
                 tms.saveAndClose();
             } catch (IOException ex) {
@@ -404,20 +404,6 @@ public class Home extends javax.swing.JFrame {
         });
     }
 
-    private void setColor(JPanel pane) {
-        pane.setBackground(new Color(41, 57, 80));
-    }
-
-    private void resetColor(JPanel[] pane, JPanel[] indicators) {
-        for (int i = 0; i < pane.length; i++) {
-            pane[i].setBackground(new Color(23, 35, 51));
-
-        }
-        for (int i = 0; i < indicators.length; i++) {
-            indicators[i].setOpaque(false);
-        }
-
-    }
 
     CardLayout cd;
     private MatchesScrollPanel MatchesScrPanel;

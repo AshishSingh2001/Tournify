@@ -5,8 +5,6 @@
  */
 package Code;
 
-import java.beans.PropertyChangeSupport;
-import java.beans.VetoableChangeSupport;
 
 /**
  * Class that holds references to teams and their points to keep track of them
@@ -79,12 +77,5 @@ public class Match {
     public final int getTeam2Points() {
         return team2Points;
     }
-    private final transient PropertyChangeSupport propertyChangeSupport = new java.beans.PropertyChangeSupport(this);
-    private final transient VetoableChangeSupport vetoableChangeSupport = new java.beans.VetoableChangeSupport(this);
-    public static final String PROP_TEAM1 = "team1";
-    public static final String PROP_TEAM2 = "team2";
-    public static final String PROP_TEAM1POINTS = "team1Points";
-    public static final String PROP_TEAM2POINTS = "team2Points";
-    public static final String PROP_DIFF = "diff";
 
 }

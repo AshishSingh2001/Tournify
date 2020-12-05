@@ -11,8 +11,6 @@ import GUI.HomeWindow.Home;
 import java.awt.*;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
 import keeptoo.Drag;
 
@@ -202,13 +200,13 @@ public class Login extends javax.swing.JFrame {
                 System.out.println("check saveclose");
                 tms.saveAndClose();
             } catch (IOException ex) {
-                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                
             }
         } else {
             try {
                 new FileWriter("History.dat", false).close();
             } catch (IOException ex) {
-                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+               
             }
             System.exit(0);
         }
